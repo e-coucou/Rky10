@@ -104,7 +104,7 @@ app.get("/api/v1/search", function(req, res) {
             handleError(res, err.message, "Failed to get contact");
         } else {
 //            res.status(200).json(doc);
-            res.status(500).json(req.query.name);
+            res.status(200).send('oups' + req.query.name);
         }
     });
 });
