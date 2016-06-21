@@ -87,7 +87,7 @@ app.get("/contacts/:id", function(req, res) {
   });
 });
 
-app.get("/api/v1/:name", function(req, res) {
+app.get("/api/v1/tesr/:name", function(req, res) {
     console.log("Param: " + req.params.name);
     db.collection(CONTACTS_COLLECTION).find({ name: req.params.name }).toArray( function(err, doc) {
         if (err) {
