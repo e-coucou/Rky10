@@ -100,7 +100,6 @@ app.get("/api/v1/test/:name", function(req, res) {
 
 app.get("/api/v1/search", function(req, res) {
     console.log("Param: " + req.query.name);
-    var source = ""
         if (req.query.source="*") {
         source = "/*/"
         } else {
