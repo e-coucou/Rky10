@@ -101,12 +101,12 @@ app.get("/api/v1/test/:name", function(req, res) {
 app.get("/api/v1/search", function(req, res) {
     console.log("Param: " + req.query.name);
         if (req.query.source == "*") {
-        source = "/*/"
+        select = { name: req.query.name, source: { $regex: ".*.", $options:"i"}}
         } else {
-            source = req.query.source;
+        select = { name: req.query.name, source: req.query.source}
         }
     console.log("Source: " + source);
-        db.collection(CONTACTS_COLLECTION).find({ name: req.query.name, source: source }).toArray( function(err, doc) {
+        db.collection(CONTACTS_COLLECTION).find( select ).toArray( function(err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to find contact");
         } else {
