@@ -88,7 +88,7 @@ app.get("/contacts/:id", function(req, res) {
 });
 
 app.get("/api/v1/:name", function(req, res) {
-    db.collection(CONTACTS_COLLECTION).find({ name: req.params.name }, function(err, doc) {
+    db.collection(CONTACTS_COLLECTION).find({ name: req.params.name }).toArray( function(err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to get contact");
         } else {
