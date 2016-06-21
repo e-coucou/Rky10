@@ -102,11 +102,11 @@ app.get("/api/v1/search", function(req, res) {
     console.log("Param: " + req.query.name);
     console.log("Source: " + req.query.source);
         if (req.query.source == "*") {
-        selection = { name: req.query.name, source: { $regex: ".*.", $options:"i"}};
+        selection = { name: req.query.name, source: { $regex: "\w", $options:"i"}};
         } else {
         selection = { name: req.query.name, source: req.query.source };
         }
-    console.log("Selct: " + selection);
+    console.log("Select: " + selection);
         
     db.collection(CONTACTS_COLLECTION).find( selection ).toArray( function(err, doc) {
         if (err) {
