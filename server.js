@@ -98,6 +98,7 @@ app.get("/api/v1/:name", function(req, res) {
 });
 
 app.get("/api/v1/search", function(req, res) {
+    console.log("PAram: " + req.query.name);
     db.collection(CONTACTS_COLLECTION).find({ name: req.query.name }).toArray( function(err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to get contact");
