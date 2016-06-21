@@ -100,7 +100,7 @@ app.get("/api/v1/test/:name", function(req, res) {
 
 app.get("/api/v1/search", function(req, res) {
     console.log("Param: " + req.query.name);
-    db.collection(CONTACTS_COLLECTION).find({ name: req.query.name }).toArray( function(err, doc) {
+        db.collection(CONTACTS_COLLECTION).find({ name: req.query.name, source: req.query.source }).toArray( function(err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to get contact");
         } else {
