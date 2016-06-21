@@ -90,13 +90,22 @@ app.get("/contacts/:id", function(req, res) {
 app.get("/api/v1/:name", function(req, res) {
     db.collection(CONTACTS_COLLECTION).find({ name: req.params.name }).toArray( function(err, doc) {
         if (err) {
-            handleError(res, err.message, "Failed to get contact");
+            handleError(res, err.message, "Failed to list name");
         } else {
             res.status(200).json(doc);
         }
     });
 });
 
+app.get("/api/v1/search", function(req, res) {
+    db.collection(CONTACTS_COLLECTION).find({ name: req.query.name }).toArray( function(err, doc) {
+        if (err) {
+            handleError(res, err.message, "Failed to get contact");
+        } else {
+            res.status(200).json(doc);
+        }
+    });
+});
 
 app.put("/contacts/:id", function(req, res) {
   var updateDoc = req.body;
