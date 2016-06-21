@@ -87,7 +87,7 @@ app.get("/contacts/:id", function(req, res) {
   });
 });
 
-app.get("/api/v1/tesr/:name", function(req, res) {
+app.get("/api/v1/test/:name", function(req, res) {
     console.log("Param: " + req.params.name);
     db.collection(CONTACTS_COLLECTION).find({ name: req.params.name }).toArray( function(err, doc) {
         if (err) {
@@ -105,7 +105,7 @@ app.get("/api/v1/search", function(req, res) {
             handleError(res, err.message, "Failed to get contact");
         } else {
 //            res.status(200).json(doc);
-            res.status(200).send('oups' + req.query.name);
+            res.status(200).json(doc);
         }
     });
 });
