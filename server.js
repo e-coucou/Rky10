@@ -102,7 +102,7 @@ app.get("/api/v1/search", function(req, res) {
     console.log("Param: " + req.query.name);
     console.log("Source: " + req.query.source);
         if (req.query.source == "*") {
-        selection = { name: req.query.name, source: { $regex: "\w", $options:"i"}};
+        selection = { name: req.query.name, source: { $regex: /\w/, $options:"i"}};
         } else {
         selection = { name: req.query.name, source: req.query.source };
         }
