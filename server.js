@@ -100,13 +100,15 @@ app.get("/api/v1/test/:name", function(req, res) {
 
 app.get("/api/v1/search", function(req, res) {
     console.log("Param: " + req.query.name);
-        if (req.query.source == "*") {
-        select = { name: req.query.name, source: { $regex: ".*.", $options:"i"}}
-        } else {
-        select = { name: req.query.name, source: req.query.source}
-        }
     console.log("Source: " + source);
-        db.collection(CONTACTS_COLLECTION).find( select ).toArray( function(err, doc) {
+        if (req.query.source == "*") {
+        selection = { name: req.query.name, source: { $regex: ".*.", $options:"i"}};
+        } else {
+        selection = { name: req.query.name, source: req.query.source };
+        }
+    console.log("Selct: " + selection);
+        
+    db.collection(CONTACTS_COLLECTION).find( selection ).toArray( function(err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to find contact");
         } else {
