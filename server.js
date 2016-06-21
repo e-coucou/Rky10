@@ -87,16 +87,6 @@ app.get("/contacts/:id", function(req, res) {
   });
 });
 
-app.param("name", function(req, res, toto, name) {
-    db.collection(CONTACTS_COLLECTION).find({ name: name) }, function(err, doc) {
-        if (err) {
-            handleError(res, err.message, "Failed to get search");
-        } else {
-            req.doc = doc;
-        }
-    });
-});
-
 
 app.put("/contacts/:id", function(req, res) {
   var updateDoc = req.body;
