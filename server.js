@@ -108,7 +108,7 @@ app.get("/api/v1/search", function(req, res) {
         } else {
         selection = { name: req.query.name, source: req.query.source };
         }
-    console.log("Select: " + selection);
+    console.log("Select: " + selection[1]);
         
     db.collection(CONTACTS_COLLECTION).find( selection ).toArray( function(err, doc) {
         if (err) {
