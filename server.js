@@ -115,7 +115,7 @@ app.get("/api/v1/search", function(req, res) {
 	console.log("Param: " + name_t);
     console.log("Source: " + source_t);
         
-    db.collection(CONTACTS_COLLECTION).find( name: name_t, source: source_t ).toArray( function(err, doc) {
+    db.collection(CONTACTS_COLLECTION).find( { name: name_t, source: source_t } ).toArray( function(err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to find contact");
         } else {
