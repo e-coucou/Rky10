@@ -101,19 +101,8 @@ app.get("/api/v1/test/:name", function(req, res) {
 // API V1 -> SEARCH
 //
 app.get("/api/v1/search", function(req, res) {
-        if (req.query.source == "*") {
-			source_t = { $regex: /\w|/, $options:"i"}
-		} else { 
-			source_t = req.query.source
-        }
-        if (req.query.name == "*") { 
-			name_t = { $regex: /\w|/, $options:"i"} 
-		} else { 
-			name_t = req.query.name 
-		}
-
-	console.log("Param: " + name_t);
-    console.log("Source: " + source_t);
+        if (req.query.source == "*" || !(req.query.source)) { source = { $regex: /\w|/, $options:"i"} } else { source = req.query.source }
+        if (req.query.name == "*" || !(req.query.name)) { name = { $regex: /\w|/, $options:"i"} } else { name = req.query.name }
         
     db.collection(CONTACTS_COLLECTION).find( { name: name_t, source: source_t } ).toArray( function(err, doc) {
         if (err) {
