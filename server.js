@@ -104,13 +104,14 @@ app.get("/api/v1/search", function(req, res) {
     console.log("Param: " + req.query.name);
     console.log("Source: " + req.query.source);
         if (req.query.source == "*") {
-        selection = { name: req.query.name, source: { $regex: /\w|/, $options:"i"}};
-        } else {
-        selection = { name: req.query.name, source: req.query.source };
+		source = { $regex: /\w|/, $options:"i"}
+//        selection = { name: req.query.name, source: };
+		} else { source = req.query.source
+//        selection = { name: req.query.name, source: req.query.source };
         }
-    console.log("Select: " + selection[1]);
+        if (req.query.name == "*") { name = { $regex: /\w|/, $options:"i"} } else { name = req.query.sname }
         
-    db.collection(CONTACTS_COLLECTION).find( selection ).toArray( function(err, doc) {
+    db.collection(CONTACTS_COLLECTION).find( name: name, source: source ).toArray( function(err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to find contact");
         } else {
