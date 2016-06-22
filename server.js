@@ -102,8 +102,8 @@ app.get("/api/v1/test/:name", function(req, res) {
 //
 app.get("/api/v1/search", function(req, res) {
 	console.log("query source : "+req.query.source);
-        if (req.query.source == "*" || ( typeof req.query.source !== 'undefined')) { source = { $regex: /\w|/, $options:"i"} } else { source = req.query.source }
-        if (req.query.name == "*" || (typeof req.query.name !== 'undefined')) { name = { $regex: /\w|/, $options:"i"} } else { name = req.query.name }
+        if (req.query.source == "*" || ( typeof req.query.source == 'undefined')) { source = { $regex: /\w|/, $options:"i"} } else { source = req.query.source }
+        if (req.query.name == "*" || (typeof req.query.name == 'undefined')) { name = { $regex: /\w|/, $options:"i"} } else { name = req.query.name }
         
     db.collection(CONTACTS_COLLECTION).find( { name: name, source: source } ).toArray( function(err, doc) {
         if (err) {
