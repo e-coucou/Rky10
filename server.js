@@ -108,8 +108,8 @@ app.get("/api/v1/search", function(req, res) {
 //    if (typeof req.query.after == 'undefined')) { after = ObjectID(Math.floor((new Date('2016/01/01'))/1000).toString(16) + "0000000000000000") } else { after = ObjectID(Math.floor((new Date(req.query.after))/1000).toString(16) + "0000000000000000") }
     
 	selection = { name: name, source: source } ;
-	before = ObjectID(Math.floor((new Date('2016/06/21'))/1000).toString(16) + "0000000000000000");
-	after = ObjectID(Math.floor((new Date('2016/06/20'))/1000).toString(16) + "0000000000000000");
+	before = ObjectID(Math.floor((new Date('9999/12/31'))/1000).toString(16) + "0000000000000000");
+	after = ObjectID(Math.floor((new Date('2016/01/01'))/1000).toString(16) + "0000000000000000");
 	console.log("before = "+before+"  after : "+after);
 	
     db.collection(CONTACTS_COLLECTION).find( { name: name, source: source } ).toArray( function(err, doc) {
