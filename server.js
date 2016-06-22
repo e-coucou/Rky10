@@ -109,7 +109,11 @@ app.get("/api/v1/search", function(req, res) {
 		} else { source = req.query.source
 //        selection = { name: req.query.name, source: req.query.source };
         }
-        if (req.query.name == "*") { name = { $regex: /\w|/, $options:"i"} } else { name = req.query.sname }
+        if (req.query.name == "*") { 
+			name = { $regex: /\w|/, $options:"i"} 
+		} else { 
+			name = req.query.name 
+		}
         
     db.collection(CONTACTS_COLLECTION).find( name: name, source: source ).toArray( function(err, doc) {
         if (err) {
