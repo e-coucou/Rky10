@@ -101,6 +101,7 @@ app.get("/api/v1/test/:name", function(req, res) {
 // API V1 -> SEARCH
 //
 app.get("/api/v1/search", function(req, res) {
+	console.log("query source : "+req.query.source);
         if (req.query.source == "*" || !(req.query.source)) { source = { $regex: /\w|/, $options:"i"} } else { source = req.query.source }
         if (req.query.name == "*" || !(req.query.name)) { name = { $regex: /\w|/, $options:"i"} } else { name = req.query.name }
         
