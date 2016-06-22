@@ -106,7 +106,7 @@ app.get("/api/v1/search", function(req, res) {
         if (req.query.name == "*" || (typeof req.query.name == 'undefined')) { name = { $regex: /\w|/, $options:"i"} } else { name = req.query.name }
     
 	selection = { name: name, source: source } ;
-	before = ObjectId(Math.floor((new Date('2016/21/6'))/1000).toString(16) + "0000000000000000");
+	before = ObjectID(Math.floor((new Date('2016/21/6'))/1000).toString(16) + "0000000000000000");
 	console.log("before = "+before);
 	
     db.collection(CONTACTS_COLLECTION).find( { name: name, source: source } ).toArray( function(err, doc) {
