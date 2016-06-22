@@ -104,12 +104,12 @@ app.get("/api/v1/search", function(req, res) {
 	console.log("query source : "+req.query.source);
     if (req.query.source == "*" || ( typeof req.query.source == 'undefined')) { source = { $regex: /\w|/, $options:"i"} } else { source = req.query.source }
     if (req.query.name == "*" || (typeof req.query.name == 'undefined')) { name = { $regex: /\w|/, $options:"i"} } else { name = req.query.name }
-//    if (typeof req.query.before == 'undefined')) { before = ObjectID(Math.floor((new Date('9999/12/31'))/1000).toString(16) + "0000000000000000") } else { before = ObjectID(Math.floor((new Date(req.query.before))/1000).toString(16) + "0000000000000000") }
-//    if (typeof req.query.after == 'undefined')) { after = ObjectID(Math.floor((new Date('2016/01/01'))/1000).toString(16) + "0000000000000000") } else { after = ObjectID(Math.floor((new Date(req.query.after))/1000).toString(16) + "0000000000000000") }
+    if (typeof req.query.before == 'undefined')) { before = ObjectID(Math.floor((new Date('2100/12/31'))/1000).toString(16) + "0000000000000000") } else { before = ObjectID(Math.floor((new Date(req.query.before))/1000).toString(16) + "0000000000000000") }
+    if (typeof req.query.after == 'undefined')) { after = ObjectID(Math.floor((new Date('2016/01/01'))/1000).toString(16) + "0000000000000000") } else { after = ObjectID(Math.floor((new Date(req.query.after))/1000).toString(16) + "0000000000000000") }
     
 	selection = { name: name, source: source } ;
-	before = ObjectID(Math.floor((new Date('2100/12/31'))/1000).toString(16) + "0000000000000000");
-	after = ObjectID(Math.floor((new Date('2016/01/01'))/1000).toString(16) + "0000000000000000");
+//	before = ObjectID(Math.floor((new Date('2100/12/31'))/1000).toString(16) + "0000000000000000");
+//	after = ObjectID(Math.floor((new Date('2016/01/01'))/1000).toString(16) + "0000000000000000");
 	console.log("before = "+before+"  after : "+after);
 	
     db.collection(CONTACTS_COLLECTION).find( { name: name, source: source } ).toArray( function(err, doc) {
