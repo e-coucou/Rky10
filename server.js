@@ -110,7 +110,7 @@ app.get("/api/v1/search", function(req, res) {
 
 	console.log("before = "+before+"  after : "+after);
 	
-    db.collection(CONTACTS_COLLECTION).find( selection , { value: 1 } ).toArray( function(err, doc) {
+    db.collection(CONTACTS_COLLECTION).find( selection , { value: 1 , _id: 0} ).toArray( function(err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to find contact");
         } else {
