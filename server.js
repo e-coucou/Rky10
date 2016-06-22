@@ -106,11 +106,11 @@ app.get("/api/v1/search", function(req, res) {
     if (typeof req.query.before == 'undefined') { before = ObjectID(Math.floor((new Date('2100/12/31'))/1000).toString(16) + "0000000000000000") } else { before = ObjectID(Math.floor((new Date(req.query.before))/1000).toString(16) + "0000000000000000") }
     if (typeof req.query.after == 'undefined') { after = ObjectID(Math.floor((new Date('2016/01/01'))/1000).toString(16) + "0000000000000000") } else { after = ObjectID(Math.floor((new Date(req.query.after))/1000).toString(16) + "0000000000000000") }
     
-	selection = { value: 1, name: name, source: source , _id: {$lt: before, $gt: after}} ;
+	selection = { name: name, source: source , _id: {$lt: before, $gt: after}} ;
 
 	console.log("before = "+before+"  after : "+after);
 	
-    db.collection(CONTACTS_COLLECTION).find( selection ).toArray( function(err, doc) {
+    db.collection(CONTACTS_COLLECTION).find( selection , { value: 1 } ).toArray( function(err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to find contact");
         } else {
