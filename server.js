@@ -104,7 +104,7 @@ app.get("/api/v1/search", function(req, res) {
         if (req.query.source == "*" || !(req.query.source)) { source = { $regex: /\w|/, $options:"i"} } else { source = req.query.source }
         if (req.query.name == "*" || !(req.query.name)) { name = { $regex: /\w|/, $options:"i"} } else { name = req.query.name }
         
-    db.collection(CONTACTS_COLLECTION).find( { name: name_t, source: source_t } ).toArray( function(err, doc) {
+    db.collection(CONTACTS_COLLECTION).find( { name: name, source: source } ).toArray( function(err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to find contact");
         } else {
