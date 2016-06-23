@@ -56,7 +56,9 @@ app.get("/contacts", function(req, res) {
 
 app.post("/contacts", function(req, res) {
   var newContact = req.body;
-    newContact.createDate = new Date().toLocaleDateString();
+  var d = new Date();
+    newContact.Date = d.toLocaleDateString();
+    newContact.Heure = d.toLocaleTimeString();
 
 //toLocaleString().substring(0,9);
 
@@ -135,6 +137,16 @@ app.get("/api/v1/name", function(req, res) {
 
 app.get("/api/v1/source", function(req, res) {
     db.collection(CONTACTS_COLLECTION).distinct( "source" , function(err, doc) {
+        if (err) {
+            handleError(res, err.message, "Failed to find contact");
+        } else {
+            res.status(200).json(doc);
+        }
+    });
+});
+
+app.get("/api/v1/date", function(req, res) {
+    db.collection(CONTACTS_COLLECTION).distinct( "date" , function(err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to find contact");
         } else {
