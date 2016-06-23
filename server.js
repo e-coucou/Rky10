@@ -123,7 +123,9 @@ app.get("/api/v1/search", function(req, res) {
         }
     });
 });
-
+//----------------------------
+// API for IOS
+//
 app.get("/api/v1/name", function(req, res) {
         db.collection(CONTACTS_COLLECTION).distinct( "name" , function(err, doc) {
             if (err) {
@@ -133,7 +135,6 @@ app.get("/api/v1/name", function(req, res) {
             }
     });
 });
-
 
 app.get("/api/v1/source", function(req, res) {
     db.collection(CONTACTS_COLLECTION).distinct( "source" , function(err, doc) {
@@ -155,6 +156,17 @@ app.get("/api/v1/date", function(req, res) {
     });
 });
 
+app.get("/api/v1/heure", function(req, res) {
+    db.collection(CONTACTS_COLLECTION).distinct( "heure" , function(err, doc) {
+        if (err) {
+            handleError(res, err.message, "Failed to find contact");
+        } else {
+            res.status(200).json(doc);
+        }
+    });
+});
+
+//--------xxxxx
 app.put("/contacts/:id", function(req, res) {
   var updateDoc = req.body;
   delete updateDoc._id;
@@ -167,7 +179,9 @@ app.put("/contacts/:id", function(req, res) {
     }
   });
 });
-
+//------------------------------------------------
+// API delete
+//
 app.delete("/api/v1/:id", function(req, res) {
   db.collection(CONTACTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
     if (err) {
