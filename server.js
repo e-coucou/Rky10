@@ -122,14 +122,24 @@ app.get("/api/v1/search", function(req, res) {
 
 app.get("/api/v1/name", function(req, res) {
         db.collection(CONTACTS_COLLECTION).distinct( "name" , function(err, doc) {
-                if (err) {
-                    handleError(res, err.message, "Failed to find contact");
-                } else {
+            if (err) {
+                handleError(res, err.message, "Failed to find contact");
+            } else {
                 res.status(200).json(doc);
-                }
+            }
     });
 });
 
+
+app.get("/api/v1/source", function(req, res) {
+    db.collection(CONTACTS_COLLECTION).distinct( "source" , function(err, doc) {
+        if (err) {
+            handleError(res, err.message, "Failed to find contact");
+        } else {
+            res.status(200).json(doc);
+        }
+    });
+});
 
 app.put("/contacts/:id", function(req, res) {
   var updateDoc = req.body;
