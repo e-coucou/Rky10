@@ -57,8 +57,8 @@ app.get("/contacts", function(req, res) {
 app.post("/contacts", function(req, res) {
   var newContact = req.body;
   var d = new Date();
-    newContact.Date = d.toLocaleDateString();
-    newContact.Heure = d.toLocaleTimeString();
+    newContact.date = d.toLocaleDateString();
+    newContact.heure = d.toLocaleTimeString();
 
 //toLocaleString().substring(0,9);
 
@@ -180,6 +180,16 @@ app.delete("/api/v1/:id", function(req, res) {
 
 app.delete("/api/v1/name/:name", function(req, res) {
     db.collection(CONTACTS_COLLECTION).deleteMany({ name: req.params.name}, function(err, result) {
+        if (err) {
+            handleError(res, err.message, "Failed to delete contact");
+        } else {
+            res.status(204).end();
+        }
+    });
+});
+
+app.delete("/api/v1/source/:source", function(req, res) {
+    db.collection(CONTACTS_COLLECTION).deleteMany({ name: req.params.source }, function(err, result) {
         if (err) {
             handleError(res, err.message, "Failed to delete contact");
         } else {
