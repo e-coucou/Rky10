@@ -189,7 +189,7 @@ app.delete("/api/v1/name/:name", function(req, res) {
 });
 
 app.delete("/api/v1/source/:source", function(req, res) {
-    db.collection(CONTACTS_COLLECTION).deleteMany({ name: req.params.source }, function(err, result) {
+    db.collection(CONTACTS_COLLECTION).deleteMany({ source: req.params.source }, function(err, result) {
         if (err) {
             handleError(res, err.message, "Failed to delete contact");
         } else {
