@@ -120,6 +120,17 @@ app.get("/api/v1/search", function(req, res) {
     });
 });
 
+app.get("/api/v1/name", function(req, res) {
+        db.collection(CONTACTS_COLLECTION).distinct( "name" ).toArray( function(err, doc) {
+                if (err) {
+                    handleError(res, err.message, "Failed to find contact");
+                } else {
+                res.status(200).json(doc);
+                }
+    });
+});
+
+
 app.put("/contacts/:id", function(req, res) {
   var updateDoc = req.body;
   delete updateDoc._id;
