@@ -56,7 +56,11 @@ app.get("/contacts", function(req, res) {
 
 app.post("/contacts", function(req, res) {
   var newContact = req.body;
-  newContact.createDate = new Date();
+  var d = new Date();
+    newContact.date = d.toLocaleDateString();
+    newContact.heure = d.toLocaleTimeString();
+
+//toLocaleString().substring(0,9);
 
 //  if (!(req.body.firstName || req.body.lastName)) {
 //    handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
@@ -120,6 +124,37 @@ app.get("/api/v1/search", function(req, res) {
     });
 });
 
+app.get("/api/v1/name", function(req, res) {
+        db.collection(CONTACTS_COLLECTION).distinct( "name" , function(err, doc) {
+            if (err) {
+                handleError(res, err.message, "Failed to find contact");
+            } else {
+                res.status(200).json(doc);
+            }
+    });
+});
+
+
+app.get("/api/v1/source", function(req, res) {
+    db.collection(CONTACTS_COLLECTION).distinct( "source" , function(err, doc) {
+        if (err) {
+            handleError(res, err.message, "Failed to find contact");
+        } else {
+            res.status(200).json(doc);
+        }
+    });
+});
+
+app.get("/api/v1/date", function(req, res) {
+    db.collection(CONTACTS_COLLECTION).distinct( "date" , function(err, doc) {
+        if (err) {
+            handleError(res, err.message, "Failed to find contact");
+        } else {
+            res.status(200).json(doc);
+        }
+    });
+});
+
 app.put("/contacts/:id", function(req, res) {
   var updateDoc = req.body;
   delete updateDoc._id;
@@ -133,7 +168,7 @@ app.put("/contacts/:id", function(req, res) {
   });
 });
 
-app.delete("/contacts/:id", function(req, res) {
+app.delete("/api/v1/:id", function(req, res) {
   db.collection(CONTACTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
     if (err) {
       handleError(res, err.message, "Failed to delete contact");
@@ -141,4 +176,24 @@ app.delete("/contacts/:id", function(req, res) {
       res.status(204).end();
     }
   });
+});
+
+app.delete("/api/v1/name/:name", function(req, res) {
+    db.collection(CONTACTS_COLLECTION).deleteMany({ name: req.params.name}, function(err, result) {
+        if (err) {
+            handleError(res, err.message, "Failed to delete contact");
+        } else {
+            res.status(204).end();
+        }
+    });
+});
+
+app.delete("/api/v1/source/:source", function(req, res) {
+    db.collection(CONTACTS_COLLECTION).deleteMany({ source: req.params.source }, function(err, result) {
+        if (err) {
+            handleError(res, err.message, "Failed to delete contact");
+        } else {
+            res.status(204).end();
+        }
+    });
 });
