@@ -141,6 +141,21 @@ app.get("/api/v1/search", function(req, res) {
         }
     });
 });
+// /api/v1/scale
+app.get("/api/v1/list/scale", function(req, res) {
+
+    if (req.query.scale == "*" || ( typeof req.query.scale == 'undefined')) { scale = { $regex: /\w|/, $options:"i"} } else { scale = req.query.scale }
+        
+        selection = { scale : scale } ;
+        
+        db.collection(CONTACTS_COLLECTION).find( selection ).toArray( function(err, doc) {
+            if (err) {
+                handleError(res, err.message, "Failed to find scale");
+            } else {
+                res.status(200).json(doc);
+            }
+        });
+    });
 //----------------------------
 // API for IOS
 //
