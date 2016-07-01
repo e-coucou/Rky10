@@ -75,6 +75,24 @@ app.post("/contacts", function(req, res) {
   });
 });
 
+//----------------------
+// add scale value
+//
+// scale : name
+// high / low
+app.post("/api/v1/scale", function(req, res) {
+    var newScale = req.body;
+    
+    db.collection(CONTACTS_COLLECTION).insertOne(newScale, function(err, doc) {
+        if (err) {
+            handleError(res, err.message, "Failed to create new scale value.");
+        } else {
+        res.status(201).json(doc.ops[0]);
+        }
+    });
+});
+
+
 /*  "/contacts/:id"
  *    GET: find contact by id
  *    PUT: update contact by id
@@ -129,7 +147,7 @@ app.get("/api/v1/search", function(req, res) {
 app.get("/api/v1/name", function(req, res) {
         db.collection(CONTACTS_COLLECTION).distinct( "name" , function(err, doc) {
             if (err) {
-                handleError(res, err.message, "Failed to find contact");
+                handleError(res, err.message, "Failed to find name");
             } else {
                 res.status(200).json(doc);
             }
@@ -139,7 +157,7 @@ app.get("/api/v1/name", function(req, res) {
 app.get("/api/v1/source", function(req, res) {
     db.collection(CONTACTS_COLLECTION).distinct( "source" , function(err, doc) {
         if (err) {
-            handleError(res, err.message, "Failed to find contact");
+            handleError(res, err.message, "Failed to find source");
         } else {
             res.status(200).json(doc);
         }
@@ -149,7 +167,7 @@ app.get("/api/v1/source", function(req, res) {
 app.get("/api/v1/date", function(req, res) {
     db.collection(CONTACTS_COLLECTION).distinct( "date" , function(err, doc) {
         if (err) {
-            handleError(res, err.message, "Failed to find contact");
+            handleError(res, err.message, "Failed to find date");
         } else {
             res.status(200).json(doc);
         }
@@ -159,9 +177,18 @@ app.get("/api/v1/date", function(req, res) {
 app.get("/api/v1/heure", function(req, res) {
     db.collection(CONTACTS_COLLECTION).distinct( "heure" , function(err, doc) {
         if (err) {
-            handleError(res, err.message, "Failed to find contact");
+            handleError(res, err.message, "Failed to find heure");
         } else {
             res.status(200).json(doc);
+        }
+    });
+});
+app.get("/api/v1/scale", function(req, res) {
+    db.collection(CONTACTS_COLLECTION).distinct( "scale" , function(err, doc) {
+        if (err) {
+            handleError(res, err.message, "Failed to find scale value");
+        } else {
+        res.status(200).json(doc);
         }
     });
 });
