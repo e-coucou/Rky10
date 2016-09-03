@@ -253,3 +253,16 @@ app.delete("/api/v1/source/:source", function(req, res) {
         }
     });
 });
+// delete with value and name
+app.delete("/api/v1/valeur", function(req, res) {
+
+  selection = { name: name, , value: {$lt: max, $gt: min}} ;
+
+    db.collection(CONTACTS_COLLECTION).deleteMany( selection , function(err, result) {
+        if (err) {
+            handleError(res, err.message, "Failed to delete contact");
+        } else {
+            res.status(204).end();
+        }
+    });
+});
