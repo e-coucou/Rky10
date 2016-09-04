@@ -257,7 +257,8 @@ app.delete("/api/v1/source/:source", function(req, res) {
 app.delete("/api/v1/valeur", function(req, res) {
 
   console.log("before = "+req.query.max+"  after : "+req.query.min);
-  selection = { name: req.query.name, value: {$lt: req.query.min, $gt: req.query.max}} ;
+  selection = { name: req.query.name, value: req.query.max } ;
+//  selection = { name: req.query.name, value: {$lt: req.query.min, $gt: req.query.max}} ;
 
     db.collection(CONTACTS_COLLECTION).deleteMany( selection , function(err, result) {
         if (err) {
