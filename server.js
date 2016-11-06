@@ -1,3 +1,8 @@
+//-------------
+// version 1.0
+// maj 11/2016
+// by e-Coucou
+//-------------
 var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
