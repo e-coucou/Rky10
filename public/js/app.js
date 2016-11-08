@@ -13,7 +13,7 @@ angular.module("rky10App", ['ngRoute'])
   })
   .service("Sensors", function($http) {
     this.getSensors = function() {
-      return $http.get("/name").
+      return $http.get("/api/v1/name").
         then(function(response) {
             return response;
         }, function(response) {
