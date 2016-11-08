@@ -5,7 +5,7 @@ angular.module("rky10App", ['ngRoute'])
         templateUrl: "list.html",
         controller: "ListController",
         resolve: {
-          sensors: function(sensors) {
+          sensors: function(Sensors) {
               return Sensors.getSensors();
           }
         }
