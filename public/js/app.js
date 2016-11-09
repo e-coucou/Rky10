@@ -12,7 +12,7 @@ angular.module("rky10App", ['ngRoute'])
       })
       .when("/graph", {
         templateUrl: "graph.html",
-        controller: "GrapController",
+        controller: "GraphController",
         resolve: {
           data : function(Data) {
               return "coucou";
@@ -32,7 +32,7 @@ angular.module("rky10App", ['ngRoute'])
   })
   .controller("ListController", function(sensors, $scope) {
     $scope.sensors = sensors.data;
-  });
+  })
   
   .controller("GraphController", function(data, $scope) {
     $scope.data = "RAS";
