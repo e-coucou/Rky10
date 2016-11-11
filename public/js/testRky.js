@@ -5,10 +5,10 @@
     .controller('testRky', ['$scope', function($scope){
       $scope.title = "testRky";
       $scope.d3Data = [
-        {name: "Rky_L", score:12},
-        {name: "Rky_L", score:43},
-        {name: "Rky_L", score:10},
-        {name: "Rky_L", score: 87}
+        {capteur: "Rky_L", score:12},
+        {capteur: "Rky_L", score:43},
+        {capteur: "Rky_L", score:10},
+        {capteur: "Rky_L", score: 87}
       ];
     }]);
 
