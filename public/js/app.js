@@ -10,7 +10,7 @@
   // setup dependency injection
   angular.module('d3', []);
   angular.module('RkyApp.controllers', []);
-//  angular.module('myApp.directives', ['d3']);
+  angular.module('RkyApp.directives', ['d3']);
 
 
 }());
