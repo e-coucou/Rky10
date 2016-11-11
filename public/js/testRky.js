@@ -11,6 +11,9 @@
         {sensors: "Rky_L", value:34},
         {sensors: "Rky_L", value:55}
       ];
+      $scope.d3OnClick = function(item){
+        alert(item.sensors);
+      };
     }]);
 
 }());
