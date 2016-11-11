@@ -19,7 +19,7 @@
   angular.module('RkyApp.controllers')
     .controller('httpRky', ['$scope', '$http', function($scope, $http){
       $scope.title = "httpRky";
-var url = "https://rky10.herokuapp.com/api/v1/list/scale";
+var url = "/api/v1/list/scale";
 $http.get(url)
 .then(function(response){
   console.log(response.data);
