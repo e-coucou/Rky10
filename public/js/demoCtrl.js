@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('myApp.controllers')
+  angular.module('RkyApp.controllers')
     .controller('DemoCtrl', ['$scope', function($scope){
       $scope.title = "DemoCtrl";
       $scope.d3Data = [
