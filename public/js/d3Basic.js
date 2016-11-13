@@ -136,8 +136,8 @@
             mini = Math.min.apply(Math, data.map(function(x) {return x.score; }));
               console.log(max,min, data.length, width,height);
 
-            max = maxi + 0.03 * (max-min);
-            min = mini - 0.20 * (max-min);
+            max = maxi + 0.03 * (maxi-mini);
+            min = mini - 0.20 * (maxi-mini);
 
             // set the height based on the calculations above
             svg.attr('height', height)
