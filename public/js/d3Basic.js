@@ -154,13 +154,13 @@
                 .attr("x", function(d, i){
                   return i * (width / data.length);
                 }) // height + margin between bars
-                .attr("fill", function(d) {
-                  var val = ((d.score -min)/((max-min)/255));
-                  console.log(val);
-                  return "rgb(0, 0, " + val + ")"; 
-                })
                 .transition()
                   .duration(1000) // time of duration
+                  .attr("fill", function(d) {
+                    var val = ((d.score -min)/((max-min)/255));
+                    console.log(val);
+                    return "rgb(0, 0, " + val + ")"; 
+                    })
                   .attr("height", function(d) { return d.score; }) // half of the 20 side margin specified above
                   .attr("y", function(d){
                     return (height - (d.score-min)/((max-min)/height));
