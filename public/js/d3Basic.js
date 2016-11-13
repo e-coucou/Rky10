@@ -137,7 +137,7 @@
               console.log(max,min, data.length, width,height);
 
             max = max + 0.03 * (max-min);
-            min = min - 0.10 * (max-min);
+            min = min - 0.20 * (max-min);
 
             // set the height based on the calculations above
             svg.attr('height', height)
