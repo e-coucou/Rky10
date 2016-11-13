@@ -21,8 +21,8 @@
     .controller('httpRky', ['$scope', '$http', function($scope, $http){
       $scope.title = "httpRky ... in progress";
       var url1 = "/api/v1/list/scale";
-      var url ="/api/v1/search?name=Rky_P&source=*&after=2016/11/10" + $scope.date;
-      console.log(url);
+      var url ="/api/v1/search?name=Rky_P&source=*&after=2016/11/10"; // + $scope.date;
+      console.log($scope.date);
       var data = [];
       $http.get(url)
         .then(function(response){
