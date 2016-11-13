@@ -133,6 +133,7 @@
               //
 //            max = Math.max.apply(Math, _.map(data, ((val)-> val.count)))
             max = Math.max.apply(Math, data);
+            console.log(max);
 
             // set the height based on the calculations above
             svg.attr('height', height);
