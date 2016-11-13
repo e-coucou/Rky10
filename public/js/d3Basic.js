@@ -155,7 +155,9 @@
                   return i * (width / data.length);
                 }) // height + margin between bars
                 .attr("fill", function(d) {
-                  return "rgb(0, 0, " + ((d.score -min)/((max-min)/100)) + ")"; 
+                  val = ((d.score -min)/((max-min)/100));
+                  console.log(val);
+                  return "rgb(0, 0, " + val + ")"; 
                 })
                 .transition()
                   .duration(1000) // time of duration
