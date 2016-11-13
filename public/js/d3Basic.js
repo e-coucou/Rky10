@@ -132,9 +132,9 @@
               // this can also be found dynamically when the data is not static
               //
 //            max = Math.max.apply(Math, _.map(data, ((val)-> val.count)))
-//            max = Math.max.apply(Math, data.products.map(data, function(x) {return x.count; }));
             console.log(data);
-            max = Math.max.apply(Math, data.score);
+//            max = Math.max.apply(Math, data.score);
+            max = Math.max.apply(Math, data.score.map(data, function(x) {return x.count; }));
               console.log(max);
 
             // set the height based on the calculations above
