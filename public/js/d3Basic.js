@@ -132,7 +132,7 @@
               // this can also be found dynamically when the data is not static
               //
 //            max = Math.max.apply(Math, _.map(data, ((val)-> val.count)))
-            max = Math.max.apply(Math, $.map(data, function(x) {return x.count; }));
+            max = Math.max.apply(Math, data.products.map(data, function(x) {return x.count; }));
 //            max = Math.max.apply(Math, data);
               console.log(max);
 
