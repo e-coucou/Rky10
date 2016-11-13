@@ -153,9 +153,9 @@
                 }) // height + margin between bars
                 .transition()
                   .duration(1000) // time of duration
-                  .attr("height", function(d) { return d; }) // half of the 20 side margin specified above
+                  .attr("height", function(d) { return d.score; }) // half of the 20 side margin specified above
                   .attr("y", function(d){
-                    return height - (d.score-min)/((max-min)/height);
+                    return (height - (d.score-min)/((max-min)/height));
                   }); // width based on scale
 
             svg.selectAll("text")
