@@ -18,14 +18,15 @@
 
   angular.module('RkyApp.controllers')
     .controller('httpRky', ['$scope', '$http', function($scope, $http){
-      $scope.title = "httpRky";
+      $scope.title = "httpRky ... in progress";
       var url = "/api/v1/list/scale";
+      var data = [];
       $http.get(url)
         .then(function(response){
         angular.forEach(response.data,function(value){
-          console.log(value.scale);
+          data.push({ capteur: value.scale, score: value.high }); 
         });
-        });
+      });
+    console.log(data);
     }]);
-
 }());
