@@ -134,7 +134,7 @@
               // 35 = 30(bar height) + 5(margin between bars)
 // debug            console.log(data.map(function(o) { return o.score; }));
             max = Math.max.apply(Math, data.map(function(x) {return x.score; })) * 1.03;
-            min = Math.min.apply(Math, data.map(function(x) {return x.score; })) * 0.80;
+            min = Math.min.apply(Math, data.map(function(x) {return x.score; })) * 0.85;
               console.log(max,min, data.length, width,height);
 
             // set the height based on the calculations above
@@ -148,14 +148,14 @@
                 .on("click", function(d, i){return scope.onClick({item: d});})
                 .attr("height", 0) // height of each bar
                 .attr("width", width / data.length - padding) // initial width of 0 for transition
-                .attr("y", 0) // half of the 20 side margin specified above
                 .attr("x", function(d, i){
                   return i * (width / data.length);
                 }) // height + margin between bars
                 .transition()
                   .duration(1000) // time of duration
-                  .attr("height", function(d){
-                    return (d.score-min)/((max-min)/height);
+                  .attr("height", function(d) { return d; }) // half of the 20 side margin specified above
+                  .attr("y", function(d){
+                    return height - (d.score-min)/((max-min)/height);
                   }); // width based on scale
 
             svg.selectAll("text")
