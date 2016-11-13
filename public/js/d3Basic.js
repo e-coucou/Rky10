@@ -164,7 +164,8 @@
                 .attr("fill", "#fff")
                 .attr("y", function(d, i){return i * 35 + 22;})
                 .attr("x", 15)
-                .text(function(d){return d[scope.label];});
+//                .text(function(d){return d[scope.label];});
+                .text(function(d){return d[scope.value];});
 
           };
         }
