@@ -129,7 +129,7 @@
 
             height = d3.select(iElement[0])[0][0].offsetWidth - 20;
               // 20 is for margins and can be changed
-            width = scope.data.length * 35;
+            width = 800 ;//scope.data.length * 35;
               // 35 = 30(bar height) + 5(margin between bars)
 // debug            console.log(data.map(function(o) { return o.score; }));
             max = Math.max.apply(Math, data.map(function(x) {return x.score; })) * 1.03;
