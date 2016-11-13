@@ -154,6 +154,9 @@
                 .attr("x", function(d, i){
                   return i * (width / data.length);
                 }) // height + margin between bars
+                .attr("fill", function(d) {
+                  return "rgb(0, 0, " + ((d.score -min)/((max-min)/100)) + ")"; 
+                })
                 .transition()
                   .duration(1000) // time of duration
                   .attr("height", function(d) { return d.score; }) // half of the 20 side margin specified above
