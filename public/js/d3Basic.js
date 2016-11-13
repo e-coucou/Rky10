@@ -146,15 +146,15 @@
               .enter()
                 .append("rect")
                 .on("click", function(d, i){return scope.onClick({item: d});})
-                .attr("height", 30) // height of each bar
-                .attr("width", 0) // initial width of 0 for transition
+                .attr("height", 0) // height of each bar
+                .attr("width", 3) // initial width of 0 for transition
                 .attr("x", 10) // half of the 20 side margin specified above
                 .attr("y", function(d, i){
                   return i * 35;
                 }) // height + margin between bars
                 .transition()
                   .duration(1000) // time of duration
-                  .attr("width", function(d){
+                  .attr("height", function(d){
                     return d.score/(max/width);
                   }); // width based on scale
 
