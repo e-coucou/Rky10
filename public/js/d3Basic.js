@@ -133,12 +133,16 @@
             height = 300 ;
               // 35 = 30(bar height) + 5(margin between bars)
 // debug            console.log(data.map(function(o) { return o.score; }));
-            max = Math.max.apply(Math, data.map(function(x) {return x.score; })) * 1.03;
-            min = Math.min.apply(Math, data.map(function(x) {return x.score; })) * 0.90;
+            max = Math.max.apply(Math, data.map(function(x) {return x.score; }));
+            min = Math.min.apply(Math, data.map(function(x) {return x.score; }));
               console.log(max,min, data.length, width,height);
 
+            max = max * 1.03;
+            min = min * 0.93;
+
             // set the height based on the calculations above
-            svg.attr('height', height);
+            svg.attr('height', height)
+               .attr('width',  width);
 
             //create the rectangles for the bar chart
             svg.selectAll("rect")
