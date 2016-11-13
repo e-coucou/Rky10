@@ -132,8 +132,8 @@
               // this can also be found dynamically when the data is not static
               //
 //            max = Math.max.apply(Math, _.map(data, ((val)-> val.count)))
-            max = Math.max.apply(Math, data);
-            console.log(max);
+            max = Math.max.apply(Math, _.map(data, function(x) {return x.count; }));
+//            max = Math.max.apply(Math, data);
 
             // set the height based on the calculations above
             svg.attr('height', height);
