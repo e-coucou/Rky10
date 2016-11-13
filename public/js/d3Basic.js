@@ -131,7 +131,9 @@
               // 20 is for margins and can be changed
             width = 800 ;//scope.data.length * 35;
             height = 300 ;
+            if (data.length > 700 ) { padding = 0;
               // 35 = 30(bar height) + 5(margin between bars)
+            }
 // debug            console.log(data.map(function(o) { return o.score; }));
             max = Math.max.apply(Math, data.map(function(x) {return x.score; }));
             min = Math.min.apply(Math, data.map(function(x) {return x.score; }));
@@ -151,7 +153,7 @@
                 .append("rect")
                 .on("click", function(d, i){return scope.onClick({item: d});})
                 .attr("height", 0) // height of each bar
-                .attr("width", width / data.length - padding) // initial width of 0 for transition
+                .attr("width", width / data.length - padding)
                 .attr("x", function(d, i){
                   return i * (width / data.length);
                 }) // height + margin between bars
