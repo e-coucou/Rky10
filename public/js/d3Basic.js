@@ -124,7 +124,7 @@
             svg.selectAll("*").remove();
 
             // setup variables
-            var width, height, max, min;
+            var width, height, max,maxi, min,mini;
             var padding = 1;
 
             height = d3.select(iElement[0])[0][0].offsetWidth - 20;
@@ -132,12 +132,12 @@
             width = 800 ;//scope.data.length * 35;
             height = 300 ;
             if (data.length > 700 ) { padding = 0; } // no padding si trop de data
-            max = Math.max.apply(Math, data.map(function(x) {return x.score; }));
-            min = Math.min.apply(Math, data.map(function(x) {return x.score; }));
+            maxi = Math.max.apply(Math, data.map(function(x) {return x.score; }));
+            mini = Math.min.apply(Math, data.map(function(x) {return x.score; }));
               console.log(max,min, data.length, width,height);
 
-            max = max + 0.03 * (max-min);
-            min = min - 0.20 * (max-min);
+            max = maxi + 0.03 * (max-min);
+            min = mini - 0.20 * (max-min);
 
             // set the height based on the calculations above
             svg.attr('height', height)
