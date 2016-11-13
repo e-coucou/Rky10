@@ -22,9 +22,9 @@
       var url = "/api/v1/list/scale";
       $http.get(url)
         .then(function(response){
-        });
         angular.forEach(response.data,function(value){
           console.log(value.scale);
+        });
         });
     }]);
 
