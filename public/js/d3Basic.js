@@ -134,7 +134,7 @@
             if (data.length > 700 ) { padding = 0; } // no padding si trop de data
             maxi = Math.max.apply(Math, data.map(function(x) {return x.score; }));
             mini = Math.min.apply(Math, data.map(function(x) {return x.score; }));
-              console.log(max,min, data.length, width,height);
+//              console.log(max,min, data.length, width,height);
 
             max = maxi + 0.03 * (maxi-mini);
             min = mini - 0.20 * (maxi-mini);
@@ -158,7 +158,7 @@
                   .duration(1000) // time of duration
                   .attr("fill", function(d) {
                     var val = ((d.score -min)/((max-min)/255));
-                    console.log(val);
+//                    console.log(val);
                     return "rgb(0, 0, " + val + ")"; 
                     })
                   .attr("height", function(d) { return d.score; }) // half of the 20 side margin specified above
