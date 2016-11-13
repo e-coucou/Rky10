@@ -27,6 +27,6 @@
           data.push({ capteur: value.scale, score: value.high }); 
         });
       });
-    console.log(data);
+      $scope.d3Data = data;
     }]);
 }());
