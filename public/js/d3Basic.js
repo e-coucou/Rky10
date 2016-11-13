@@ -148,9 +148,9 @@
                 .on("click", function(d, i){return scope.onClick({item: d});})
                 .attr("height", 0) // height of each bar
                 .attr("width", 3) // initial width of 0 for transition
-                .attr("x", 10) // half of the 20 side margin specified above
-                .attr("y", function(d, i){
-                  return i * 35;
+                .attr("y", 100) // half of the 20 side margin specified above
+                .attr("x", function(d, i){
+                  return i * 4;
                 }) // height + margin between bars
                 .transition()
                   .duration(1000) // time of duration
