@@ -153,8 +153,9 @@
                 }) // height + margin between bars
                 .transition()
                   .duration(1000) // time of duration
+                  .attr("width", width / data.length - padding)
                   .attr("height", function(d){
-                    return d.score/(max/width);
+                    return d.score/(max/height);
                   }); // width based on scale
 
             svg.selectAll("text")
