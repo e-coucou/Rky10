@@ -45,6 +45,7 @@
             max = 98;
               // this can also be found dynamically when the data is not static
               // max = Math.max.apply(Math, _.map(data, ((val)-> val.count)))
+              console.log(max);
 
             // set the height based on the calculations above
             svg.attr('height', height);
@@ -133,8 +134,8 @@
               //
 //            max = Math.max.apply(Math, _.map(data, ((val)-> val.count)))
             max = Math.max.apply(Math, _.map(data, function(x) {return x.count; }));
-            max = 1030;
 //            max = Math.max.apply(Math, data);
+              console.log(max);
 
             // set the height based on the calculations above
             svg.attr('height', height);
@@ -164,8 +165,7 @@
                 .attr("fill", "#fff")
                 .attr("y", function(d, i){return i * 35 + 22;})
                 .attr("x", 15)
-//                .text(function(d){return d[scope.label];});
-                .text(function(d){return d[scope.value];});
+                .text(function(d){return d[scope.label];});
 
           };
         }
