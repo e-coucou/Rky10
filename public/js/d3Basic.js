@@ -155,7 +155,7 @@
                   return i * (width / data.length);
                 }) // height + margin between bars
                 .attr("fill", function(d) {
-                  var val = ((d.score -min)/((max-min)/100));
+                  var val = ((d.score -min)/((max-min)/255));
                   console.log(val);
                   return "rgb(0, 0, " + val + ")"; 
                 })
