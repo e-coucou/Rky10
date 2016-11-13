@@ -130,6 +130,7 @@
             height = d3.select(iElement[0])[0][0].offsetWidth - 20;
               // 20 is for margins and can be changed
             width = 800 ;//scope.data.length * 35;
+            height = 300 ;
               // 35 = 30(bar height) + 5(margin between bars)
 // debug            console.log(data.map(function(o) { return o.score; }));
             max = Math.max.apply(Math, data.map(function(x) {return x.score; })) * 1.03;
@@ -154,7 +155,7 @@
                 .transition()
                   .duration(1000) // time of duration
                   .attr("height", function(d){
-                    return d.score/(max/height);
+                    return (d.score-min)/((max-min)/height);
                   }); // width based on scale
 
             svg.selectAll("text")
