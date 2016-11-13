@@ -134,7 +134,7 @@
 // debug            console.log(data.map(function(o) { return o.score; }));
             max = Math.max.apply(Math, data.map(function(x) {return x.score; })) * 1.03;
             min = Math.min.apply(Math, data.map(function(x) {return x.score; })) * 0.97;
-              console.log(max,min);
+              console.log(max,min, data.length, width,height);
 
             // set the height based on the calculations above
             svg.attr('height', height);
@@ -145,15 +145,14 @@
               .enter()
                 .append("rect")
                 .on("click", function(d, i){return scope.onClick({item: d});})
-                .attr("height", height) // height of each bar
-                .attr("width", 3) // initial width of 0 for transition
-                .attr("y", 100) // half of the 20 side margin specified above
+                .attr("height", 0) // height of each bar
+                .attr("width", width / data.length - padding) // initial width of 0 for transition
+                .attr("y", 0) // half of the 20 side margin specified above
                 .attr("x", function(d, i){
                   return i * (width / data.length);
                 }) // height + margin between bars
                 .transition()
                   .duration(1000) // time of duration
-                  .attr("width", width / data.length - padding)
                   .attr("height", function(d){
                     return d.score/(max/height);
                   }); // width based on scale
