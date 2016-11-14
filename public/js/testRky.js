@@ -20,6 +20,7 @@
   angular.module('RkyApp.controllers')
     .controller('httpRky', ['$scope', '$http', function($scope, $http){
       $scope.title = "httpRky ... in progress";
+      $scope.date = "2016/11/01";
       var url1 = "/api/v1/list/scale";
       var url ="/api/v1/search?name=Rky_P&source=*&after=2016/11/10"; // + $scope.date;
       console.log($scope.date);
@@ -32,4 +33,8 @@
       });
       $scope.d3Data = data;
     }]);
-}());
+  
+    // watch for data changes and re-render
+    scope.$watch($scope.date, $scope.$apply, true);
+
+ }());
