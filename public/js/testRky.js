@@ -22,7 +22,7 @@
       $scope.title = "httpRky ... in progress";
       $scope.date = "2016/11/01";
       var url1 = "/api/v1/list/scale";
-      var url ="/api/v1/search?name=Rky_P&source=*&after=2016/11/10"; // + $scope.date;
+      var url ="/api/v1/search?name=Rky_P&source=*&after="+ $scope.date;
       var data = [];
 
       $http.get(url)
@@ -35,7 +35,7 @@
       $scope.d3Data = data;
 
       $scope.clickButton = function() {
-            console.log($scope.date);
+            console.log($scope.url);
         }
 
 
