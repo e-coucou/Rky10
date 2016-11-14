@@ -35,7 +35,7 @@
       $scope.d3Data = data;
 
       $scope.clickButton = function() {
-            console.log($scope.url);
+            console.log(url);
         }
 
 
