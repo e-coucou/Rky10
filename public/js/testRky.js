@@ -32,9 +32,9 @@
         });
       });
       $scope.d3Data = data;
-    }]);
   
-    // watch for data changes and re-render
-    $scope.$watch($scope.date, $scope.$apply, true);
-
+      // watch for data changes and re-render
+      $scope.$watch($scope.date, $scope.$apply);
+  }]);
+  
  }());
