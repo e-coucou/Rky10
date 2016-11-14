@@ -40,7 +40,6 @@
       $scope.clickButton = function() {
           url = urlBase + $scope.date;
           console.log(url);
-          data = [];
           getData();
         }
 
