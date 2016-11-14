@@ -38,7 +38,7 @@
     };
   
       // watch for data changes and re-render
-      $scope.$watch($scope.date, affDebug,true);
+      $scope.$watch($scope.date,$scope.apply,true);
   }]);
   
  }());
