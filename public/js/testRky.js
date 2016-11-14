@@ -31,14 +31,9 @@
           data.push({ capteur: value.heure, score: value.value }); 
         });
       });
+
       $scope.d3Data = data;
 
-      function affDebug(newValue, oldValue, scope){
-        console.log(newValue);
-    };
-  
-      // watch for data changes and re-render
-      $scope.$watch($scope.date,$scope.apply,true);
   }]);
   
  }());
