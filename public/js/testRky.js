@@ -26,19 +26,21 @@
       var url = urlBase + $scope.date;
       var data = [];
 
-      $http.get(url)
+      function getData () {
+        $http.get(url)
         .then(function(response){
         angular.forEach(response.data,function(value){
           data.push({ capteur: value.heure, score: value.value }); 
-        });
-      });
+         });
+       });
+      }
 
       $scope.d3Data = data;
 
       $scope.clickButton = function() {
           url = urlBase + $scope.date;
           console.log(url);
-          $scope.$digest();
+          getData();
         }
 
 
