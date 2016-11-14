@@ -24,9 +24,9 @@
       var url1 = "/api/v1/list/scale";
       var urlBase ="/api/v1/search?name=Rky_P&source=*&after=";
       var url = urlBase + $scope.date;
-      var data = [];
 
       function getData () {
+        var data = [];
         $http.get(url)
         .then(function(response){
         angular.forEach(response.data,function(value){
