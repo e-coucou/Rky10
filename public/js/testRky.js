@@ -27,7 +27,6 @@
       var data = [];
 
       function getData () {
-        data = [];
         $http.get(url)
         .then(function(response){
         angular.forEach(response.data,function(value){
@@ -41,6 +40,7 @@
       $scope.clickButton = function() {
           url = urlBase + $scope.date;
           console.log(url);
+          data = [];
           getData();
         }
 
