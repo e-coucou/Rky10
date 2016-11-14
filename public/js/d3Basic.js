@@ -113,12 +113,6 @@
             }
           );
     
-          function affDebug(newValue, oldValue, scope){
-             console.log(newValue);
-          };
-  
-          $scope.$watch($scope.date,affDebug);
-
           // watch for data changes and re-render
           scope.$watch('data', function(newVals, oldVals) {
             return scope.render(newVals);
