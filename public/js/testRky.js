@@ -23,8 +23,8 @@
       $scope.date = "2016/11/01";
       var url1 = "/api/v1/list/scale";
       var url ="/api/v1/search?name=Rky_P&source=*&after=2016/11/10"; // + $scope.date;
-      console.log($scope.date);
       var data = [];
+
       $http.get(url)
         .then(function(response){
         angular.forEach(response.data,function(value){
@@ -33,6 +33,11 @@
       });
 
       $scope.d3Data = data;
+
+      $scope.clickButton = function() {
+            console.log("button");
+        }
+
 
   }]);
   
