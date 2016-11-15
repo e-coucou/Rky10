@@ -39,7 +39,6 @@
           $scope.nb = $scope.nb + 1;
          });
        });
-       $scope.moyenne = $scope.moyenne / $scope.nb;
        console.log($scope);
       }
 
@@ -51,6 +50,7 @@
           $scope.nb=0;
           $scope.moyenne=0.0;
           console.log(url);
+          console.log($scope.moyenne);
           getData();
         }
 
