@@ -36,14 +36,17 @@
         angular.forEach(response.data,function(value){
           data.push({ capteur: value.heure, score: value.value });
           $scope.somme = $scope.somme + parseFloat(value.value); 
-          console.log(parseFloat(value.value),$scope.somme);
           $scope.nb = $scope.nb + 1;
          });
        });
        console.log($scope);
       }
 
-      $scope.moyenne = $scope.somme / $scope.nb;
+      function calculMoyenne() {
+        console.log($scope);
+        $scope.moyenne = $scope.somme / $scope.nb;
+      }
+
       $scope.d3Data = data;
 
       $scope.clickButton = function() {
@@ -56,6 +59,7 @@
           getData();
         }
 
+      $scope.$watch($scope.nb,calculMoyenne);
 
   }]);
   
