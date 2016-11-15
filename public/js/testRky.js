@@ -37,6 +37,7 @@
           data.push({ capteur: value.heure, score: value.value });
           $scope.somme += parseFloat(value.value); 
           $scope.nb += 1;
+          $scope.moyenne = $scope.somme / $scope.nb;
          });
        });
       }
