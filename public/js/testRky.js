@@ -38,6 +38,7 @@
           $scope.somme += parseFloat(value.value); 
           $scope.nb += 1;
           $scope.moyenne = $scope.somme / $scope.nb;
+          console.log($scope.moyenne);
          });
        });
       }
