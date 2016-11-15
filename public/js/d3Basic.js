@@ -156,6 +156,7 @@
                 }) // height + margin between bars
                 .transition()
                   .duration(1000) // time of duration
+                  .stroke(rgb(0,0,0))
                   .attr("fill", function(d) {
                     var val = ((d.score -min)/((max-min)/255));
 //                    console.log(val);
