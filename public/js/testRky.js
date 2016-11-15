@@ -20,9 +20,10 @@
   angular.module('RkyApp.controllers')
     .controller('httpRky', ['$scope', '$http', function($scope, $http){
       $scope.title = "httpRky ... in progress";
-      $scope.date = "2016/11/01";
+      $scope.after = "2016/11/01";
+      $scope.before = "2016/11/02";
       var url1 = "/api/v1/list/scale";
-      var urlBase ="/api/v1/search?name=Rky_P&source=*&after=";
+      var urlBase ="/api/v1/search?name=Rky_P&source=*";
       var url = urlBase + $scope.date;
       var data = [];
 
@@ -38,7 +39,7 @@
       $scope.d3Data = data;
 
       $scope.clickButton = function() {
-          url = urlBase + $scope.date;
+          url = urlBase +"&after="+ $scope.after+"before=";
           data.length = 0;
           console.log(url);
           getData();
