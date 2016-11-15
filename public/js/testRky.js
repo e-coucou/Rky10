@@ -33,10 +33,11 @@
         .then(function(response){
         angular.forEach(response.data,function(value){
           data.push({ capteur: value.heure, score: value.value });
-          $scope.moyenne = $scope.moyenne + value.value; 
+          $scope.moyenne = $scope.moyenne + parseFloat(value.value); 
          });
        });
-       $scope.nb = data.length;
+        console.log($scope.moyenne);
+       $scope.nb = d3Data.length;
        $scope.moyenne = $scope.moyenne / $scope.nb;
        console.log($scope);
       }
