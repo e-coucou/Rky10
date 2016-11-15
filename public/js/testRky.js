@@ -39,7 +39,7 @@
       $scope.d3Data = data;
 
       $scope.clickButton = function() {
-          url = urlBase +"&after="+ $scope.after+"before=";
+          url = urlBase +"&after="+ $scope.after+"&before=" +$scope.before;
           data.length = 0;
           console.log(url);
           getData();
