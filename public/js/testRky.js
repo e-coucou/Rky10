@@ -22,6 +22,7 @@
       $scope.title = "httpRky ... in progress";
       $scope.after = "2016/11/01";
       $scope.before = "2016/11/02";
+      $scope.moyenne = 0;
       var url1 = "/api/v1/list/scale";
       var urlBase ="/api/v1/search?name=Rky_P&source=*";
       var url = urlBase + $scope.date;
@@ -31,12 +32,15 @@
         $http.get(url)
         .then(function(response){
         angular.forEach(response.data,function(value){
-          data.push({ capteur: value.heure, score: value.value }); 
+          data.push({ capteur: value.heure, score: value.value });
+          $scope.moyenne = $scope.moyenne + value.value; 
          });
        });
       }
 
       $scope.d3Data = data;
+      $scope.nb = data.length;
+      $scope.moyenne = $scope.moyenne / $scope.nb;
 
       $scope.clickButton = function() {
           url = urlBase +"&after="+ $scope.after+"&before=" +$scope.before;
