@@ -154,6 +154,7 @@
                 .attr("x", function(d, i){
                   return i * (width / data.length);
                 }) // height + margin between bars
+                .attr("fill","yellow")
                 .transition()
                   .duration(1000) // time of duration
                   .attr("stroke-width",0)
