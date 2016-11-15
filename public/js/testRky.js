@@ -23,6 +23,7 @@
       $scope.after = "2016/11/01";
       $scope.before = "2016/11/02";
       $scope.moyenne = 0.0;
+      $scope.nb = 0;
       var url1 = "/api/v1/list/scale";
       var urlBase ="/api/v1/search?name=Rky_P&source=*";
       var url = urlBase + $scope.date;
@@ -34,10 +35,10 @@
         angular.forEach(response.data,function(value){
           data.push({ capteur: value.heure, score: value.value });
           $scope.moyenne = $scope.moyenne + parseFloat(value.value); 
+          console.log(parseFloat(value.value));
+          $scope.nb = $scope.nb + 1;
          });
        });
-        console.log($scope.moyenne, data);
-       $scope.nb = $scope.d3Data.length;
        $scope.moyenne = $scope.moyenne / $scope.nb;
        console.log($scope);
       }
