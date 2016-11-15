@@ -37,7 +37,7 @@
           data.push({ capteur: value.heure, score: value.value });
           $scope.somme += parseFloat(value.value); 
           $scope.nb += 1;
-          $scope.moyenne = $scope.somme / $scope.nb;
+          $scope.moyenne = ($scope.somme / $scope.nb).toFixed(2);
          });
        });
       }
@@ -54,6 +54,7 @@
           data.length = 0;
           $scope.nb=0;
           $scope.somme=0.0;
+          $scope.moyenne = "waiting for data";
           console.log(url);
           getData();
         }
