@@ -35,16 +35,16 @@
         .then(function(response){
         angular.forEach(response.data,function(value){
           data.push({ capteur: value.heure, score: value.value });
-          $scope.somme = $scope.somme + parseFloat(value.value); 
-          $scope.nb = $scope.nb + 1;
+          $scope.somme += parseFloat(value.value); 
+          $scope.nb += 1;
          });
        });
        console.log($scope);
       }
 
       function calculMoyenne() {
-        console.log($scope);
         $scope.moyenne = $scope.somme / $scope.nb;
+        console.log($scope.somme,$scope.nb,$scope.moyenne);
       }
 
       $scope.d3Data = data;
