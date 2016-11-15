@@ -36,12 +36,12 @@
           $scope.moyenne = $scope.moyenne + value.value; 
          });
        });
+       $scope.nb = data.length;
+       $scope.moyenne = $scope.moyenne / $scope.nb;
+       console.log($scope);
       }
 
-      $scope.nb = data.length;
-      $scope.moyenne = $scope.moyenne / $scope.nb;
       $scope.d3Data = data;
-      console.log($scope);
 
       $scope.clickButton = function() {
           url = urlBase +"&after="+ $scope.after+"&before=" +$scope.before;
