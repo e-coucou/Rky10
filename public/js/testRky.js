@@ -14,7 +14,7 @@
       $scope.title = "selectRky";
       $scope.data =  { 
         model: null,
-        availableOptions: [ _id: "1", scale: "liste"]
+        availableOptions: [ {_id: '1', scale: 'liste'}, {_id: '2', scale: 'liste_2'} ]
       };
     }]);
     console.log($scope.data);
