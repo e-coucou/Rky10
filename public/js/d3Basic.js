@@ -160,7 +160,7 @@
                   .attr("fill", function(d) {
                     var val = ((d.score -min)/((max-min)/255));
 //                    console.log(val);
-                    return "rgb(0, "+ 255-val +", " + val + ")"; 
+                    return "rgb(0, "+ 0 +", " + val + ")"; 
                     })
                   .attr("height", function(d) { return d.score; }) // half of the 20 side margin specified above
                   .attr("y", function(d){
