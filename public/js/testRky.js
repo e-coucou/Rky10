@@ -59,7 +59,7 @@
           getData();
         }
 
-      $watch($scope.nb,calculMoyenne);
+      $scope.$watch($scope.nb,calculMoyenne);
 
   }]);
   
