@@ -22,7 +22,7 @@
       $scope.title = "httpRky ... in progress";
       $scope.after = "2016/11/01";
       $scope.before = "2016/11/02";
-      $scope.moyenne = 0;
+      $scope.moyenne = 0.0;
       var url1 = "/api/v1/list/scale";
       var urlBase ="/api/v1/search?name=Rky_P&source=*";
       var url = urlBase + $scope.date;
@@ -37,7 +37,7 @@
          });
        });
         console.log($scope.moyenne);
-       $scope.nb = d3Data.length;
+       $scope.nb = data.length;
        $scope.moyenne = $scope.moyenne / $scope.nb;
        console.log($scope);
       }
