@@ -12,7 +12,7 @@
             return response;
         }, function(response) {
             alert("Error retrieving name of sensors.");
-        });
+        })
       };
     }]);
     console.log($scope.data);
