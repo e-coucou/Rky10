@@ -4,18 +4,23 @@
   angular.module('RkyApp.controllers')
     .controller('selectRky', ['$scope','$http', function($scope,$http){
       var url = "/api/v1/list/scale";
-      var liste = $http.get("/api/v1/list/scale")
-        .then(function(response) {
-            return response;
-        }, function(response) {
-            alert("Error retrieving name of sensors.");
-        });
+      var liste = getScale();
       console.log(liste);
       $scope.title = "selectRky";
       $scope.data =  { 
         model: null,
         availableOptions: [ {_id: '1', scale: 'liste'}, {_id: '2', scale: 'liste_2'} ]
       };
+
+      function getScale() { 
+        return   $http.get("/api/v1/list/scale")
+        .then(function(response) {
+            return response;
+        }, function(response) {
+            alert("Error retrieving name of sensors.");
+        });
+      }
+
     console.log($scope.data);
     }]);
 }());
