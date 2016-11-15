@@ -39,7 +39,6 @@
           $scope.nb += 1;
          });
        });
-       console.log($scope);
       }
 
       function calculMoyenne() {
@@ -59,7 +58,7 @@
           getData();
         }
 
-      $scope.$watch($scope.nb,calculMoyenne);
+      $scope.$watch(data,calculMoyenne);
 
   }]);
   
