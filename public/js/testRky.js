@@ -37,7 +37,7 @@
          });
        });
         console.log($scope.moyenne, data);
-       $scope.nb = data.length;
+       $scope.nb = $scope.d3Data.length;
        $scope.moyenne = $scope.moyenne / $scope.nb;
        console.log($scope);
       }
