@@ -7,7 +7,7 @@
       $scope.title = "selectRky";
       $scope.data =  { 
         model: null,
-        availableOptions: $http.get("/api/v1/name")
+        availableOptions: $http.get("/api/v1/list/scale")
         .then(function(response) {
             return response;
         }, function(response) {
