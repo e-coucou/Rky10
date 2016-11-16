@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('RkyApp.controllers')
-    .controller('selectRky', ['$scope','$http', 'partage' function($scope,$http,partage){
+    .controller('selectRky', ['$scope','$http', 'partage', function($scope,$http,partage){
       var url = "/api/v1/list/scale";
 
       $scope.title = "selectRky";
@@ -34,7 +34,7 @@
 //xx  'use strict';
 
 //xx  angular.module('RkyApp.controllers')
-    .controller('httpRky', ['$scope', '$http', 'partage' function($scope, $http, partage){
+    .controller('httpRky', ['$scope', '$http', 'partage', function($scope, $http, partage){
       $scope.title = "httpRky ... in progress";
       $scope.partage = partage;
       console.log($scope.partage);
