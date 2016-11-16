@@ -5,12 +5,15 @@
     .controller('selectRky', ['$scope','$http', function($scope,$http){
       var url = "/api/v1/list/scale";
       $scope.title = "selectRky";
+      var liste =  function(Select) {
+              return Select.getScale();};
+      console.log(liste);
+
       $scope.data =  { 
         model: null,
-        availableOptions: [
-          function(Select) {
-              return Select.getScale();}
+        availableOptions: [ { _id: 1, scale: "toto"}
           ]
+        }
        }
     }])
     .service("Select", function($http) {
