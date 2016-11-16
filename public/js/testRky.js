@@ -19,7 +19,7 @@
     this.getScale = function() {
         return   $http.get("/api/v1/list/scale")
         .then(function(response) {
-            return response;
+            return response.data;
         }, function(response) {
             alert("Error retrieving name of sensors.");
         });
