@@ -26,7 +26,7 @@
   angular.module('RkyApp.controllers')
     .controller('httpRky', ['$scope', '$http', function($scope, $http){
       $scope.title = "httpRky ... in progress";
-      $scope.after = "2016/11/16";
+      $scope.after = "2016/11/17";
       $scope.before = "2016/11/18";
       $scope.moyenne = 0.0;
       $scope.somme = 0.0;
