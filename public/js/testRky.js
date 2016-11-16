@@ -4,8 +4,8 @@
   angular.module('RkyApp.controllers')
     .controller('selectRky', ['$scope','$http', function($scope,$http){
       var url = "/api/v1/list/scale";
-      var liste = getScale();
-      console.log(liste);
+      var liste = [];
+      console.log(getScale());
       $scope.title = "selectRky";
       $scope.data =  { 
         model: null,
