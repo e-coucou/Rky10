@@ -7,19 +7,15 @@
 
       $scope.title = "selectRky";
       $scope.d = "";
-      $http.get("/api/v1/name").
+      $http.get(url).
         then(function(response) {
-            $scope.d = response.data;
-      console.log($scope.d); 
+          $scope.data =  { 
+          model: null,
+          availableOptions: { [ response.data ] }
+          }
+          console.log($scope.data); 
         });
       
-      console.log($scope.d); 
-
-      $scope.data =  { 
-        model: null,
-        availableOptions: [ { _id: 1, scale: "toto"}
-          ]
-       }
 }])} ());
 
 // --------
