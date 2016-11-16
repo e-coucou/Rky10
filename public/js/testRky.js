@@ -5,8 +5,8 @@
     .controller('selectRky', ['$scope','$http', function($scope,$http){
       var url = "/api/v1/list/scale";
       $scope.title = "selectRky";
-      var liste = { type: [ function(Select) {
-              return Select.getScale();} ] };
+      var liste = { type:  function(Select) {
+              return Select.getScale();}  };
       console.log(liste);
 
       $scope.data =  { 
@@ -17,7 +17,7 @@
     }])
     .service("Select", function($http) {
     this.getScale = function() {
-        return   $http.get("/api/v1/list/scale")
+        return   $http.get("/api/v1/name")
         .then(function(response) {
             return response.data;
         }, function(response) {
