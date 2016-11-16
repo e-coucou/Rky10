@@ -15,6 +15,11 @@
           }
           console.log($scope.data); 
         });
+
+      $scope.$watch($scope.data,function($scope, partage) {
+        partage.capteur = $scope.data.model;
+        console.log(partage);
+      });
       
 }])
 
