@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('RkyApp.controllers')
-    .controller('selectRky', ['$scope','$http', function($scope,$http){
+    .controller('selectRky', ['$scope','$http', 'partage' function($scope,$http,partage){
       var url = "/api/v1/list/scale";
 
       $scope.title = "selectRky";
@@ -17,6 +17,15 @@
         });
       
 }])
+
+    .service('partage', function() {
+      var Data = {
+        capteur: '',
+        dateFrom: '',
+        dateTo: ''
+      };
+      return Data;
+    })
 //xx  } ());
 
 // --------
@@ -25,8 +34,10 @@
 //xx  'use strict';
 
 //xx  angular.module('RkyApp.controllers')
-    .controller('httpRky', ['$scope', '$http', function($scope, $http){
+    .controller('httpRky', ['$scope', '$http', 'partage' function($scope, $http, partage){
       $scope.title = "httpRky ... in progress";
+      $scope.partage = partage;
+      console.log($scope.partage);
       $scope.after = "2016/11/17";
       $scope.before = "2016/11/18";
       $scope.moyenne = 0.0;
