@@ -12,6 +12,7 @@
               return Select.getScale();}
           ]
        }
+    }])
     .service("Select", function($http) {
     this.getScale = function() {
         return   $http.get("/api/v1/list/scale")
@@ -22,7 +23,7 @@
         });
       }
     });
-    }]);
+
 }());
 
 // --------
