@@ -16,14 +16,15 @@
           console.log($scope.data); 
         });
       
-}])} ());
+}])
+//xx  } ());
 
 // --------
 // recuperation des valeur depuis MongoDB
-(function () {
-  'use strict';
+//xx(function () {
+//xx  'use strict';
 
-  angular.module('RkyApp.controllers')
+//xx  angular.module('RkyApp.controllers')
     .controller('httpRky', ['$scope', '$http', function($scope, $http){
       $scope.title = "httpRky ... in progress";
       $scope.after = "2016/11/17";
