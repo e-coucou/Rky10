@@ -6,7 +6,7 @@
       var url = "/api/v1/list/scale";
 
       $scope.title = "selectRky";
-      $scope.d = "";
+      $scope.data= {};
       $http.get(url).
         then(function(response) {
           $scope.data =  { 
@@ -16,10 +16,12 @@
           console.log($scope.data); 
         });
 
-      $watch($scope.data,function($scope, partage) {
+      function updateCapteur() {
         partage.capteur = $scope.data.model;
         console.log(partage);
-      });
+      };
+
+      $scope.$watch($scope.data,  updateCapteur);
       
 }])
 
