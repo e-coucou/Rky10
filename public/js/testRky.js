@@ -4,14 +4,12 @@
   angular.module('RkyApp.controllers')
     .controller('selectRky', ['$scope','$http', function($scope,$http){
       var url = "/api/v1/list/scale";
-      var liste = [];
-      console.log(getScale());
       $scope.title = "selectRky";
       $scope.data =  { 
         model: null,
         availableOptions: [
-          function(scale) {
-              return scale.getScale();}
+          function(Select) {
+              return Select.getScale();}
           ]
        }
     .service("Select", function($http) {
