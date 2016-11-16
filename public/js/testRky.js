@@ -9,20 +9,21 @@
       $scope.title = "selectRky";
       $scope.data =  { 
         model: null,
-        availableOptions: [ {_id: '1', scale: 'liste'}, {_id: '2', scale: 'liste_2'} ]
-      };
-
-      function getScale() { 
+        availableOptions: [
+          function(scale) {
+              return scale.getScale();}
+          ]
+       }
+    .service("Select", function($http) {
+    this.getScale = function() {
         return   $http.get("/api/v1/list/scale")
         .then(function(response) {
-            console.log(response);
-            return response.data;
+            return response;
         }, function(response) {
             alert("Error retrieving name of sensors.");
         });
       }
-
-    console.log($scope.data);
+    });
     }]);
 }());
 
