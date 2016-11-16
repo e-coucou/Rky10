@@ -27,7 +27,7 @@
   <form name="myForm">
     <label for="repeatSelect"> Repeat select: </label>
     <select name="repeatSelect" id="repeatSelect" ng-model="data.model">
-      <option ng-repeat="option in data.availableOptions" value="{{option._id}}">{{option.scale}}</option>
+      <option ng-repeat="option in data.availableOptions" value="{{option.name}}">{{option.name}}</option>
     </select>
   </form>
   <hr>
