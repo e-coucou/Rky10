@@ -61,6 +61,7 @@
           $scope.somme=0.0;
           $scope.moyenne = "waiting for data";
           console.log(url);
+          console.log($scope.data);
           getData();
         }
 
