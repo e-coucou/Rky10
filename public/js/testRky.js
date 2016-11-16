@@ -15,16 +15,16 @@
           ]
        }
     }])
-    .service("Select", function($http) {
+  .service("Select", function($http) {
     this.getScale = function() {
-        return   $http.get("/api/v1/name")
-        .then(function(response) {
-            return response.data;
+      return $http.get("/api/v1/name").
+        then(function(response) {
+            return response;
         }, function(response) {
             alert("Error retrieving name of sensors.");
         });
-      }
-    });
+    }
+  });
 
 }());
 
