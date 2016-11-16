@@ -10,6 +10,7 @@
       $http.get("/api/v1/name").
         then(function(response) {
             $scope.d = response.data;
+      console.log($scope.d); 
         });
       
       console.log($scope.d); 
