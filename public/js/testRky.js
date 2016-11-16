@@ -11,7 +11,7 @@
         then(function(response) {
           $scope.data =  { 
           model: null,
-          availableOptions: { response.data }
+          availableOptions: response.data
           }
           console.log($scope.data); 
         });
