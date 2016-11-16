@@ -5,26 +5,18 @@
     .controller('selectRky', ['$scope','$http', function($scope,$http){
       var url = "/api/v1/list/scale";
       $scope.title = "selectRky";
-      var liste = { type:  function(Select) {
-              return Select.getScale();}  };
-      console.log(liste);
+      $http.get("/api/v1/name").
+        then(function(response) {
+            $scope.d = response.data;
+        });
+      console.log($scope.d); 
 
       $scope.data =  { 
         model: null,
         availableOptions: [ { _id: 1, scale: "toto"}
           ]
        }
-    }])
-  .service("Select", function($http) {
-    this.getScale = function() {
-      return $http.get("/api/v1/name").
-        then(function(response) {
-            return response.data;
-        });
-    }
-  });
-
-}());
+}])} ());
 
 // --------
 // recuperation des valeur depuis MongoDB
