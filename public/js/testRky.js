@@ -87,7 +87,9 @@
       $scope.$watch(data,calculMoyenne);
 
       function test() {
-        console.log('change : ', partage.capteur);
+        urlBase = "/api/v1/search?name="+partage.capteur+"&source=*";
+        console.log('change : ', urlBase);
+        $scope.clickButton;
       }
       $scope.$watchCollection('partage.capteur',test);
 
