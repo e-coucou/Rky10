@@ -16,8 +16,8 @@
         });
 
       function updateCapteur() {
-        partage.capteur = $scope.data.model;
-        console.log('update: ' + partage.model);
+        partage.capteur = $scope.data.model.scale;
+        console.log('update: ' + partage.capteur);
       };
 
       $scope.$watchCollection('data.model.scale',  updateCapteur);
