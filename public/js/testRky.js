@@ -13,12 +13,11 @@
           model: null,
           availableOptions: response.data
           }
-          console.log($scope.data); 
         });
 
       function updateCapteur() {
         partage.capteur = $scope.data.model;
-        console.log(partage);
+        console.log('update: ' + partage.model);
       };
 
       $scope.$watch($scope.data.model,  updateCapteur);
@@ -44,7 +43,7 @@
     .controller('httpRky', ['$scope', '$http', 'partage', function($scope, $http, partage){
       $scope.title = "httpRky ... in progress";
       $scope.partage = partage;
-      console.log($scope.partage);
+      console.log('httpRky: ' + $scope.partage.model);
       $scope.after = "2016/11/17";
       $scope.before = "2016/11/18";
       $scope.moyenne = 0.0;
