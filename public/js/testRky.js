@@ -10,7 +10,7 @@
       $http.get(url).
         then(function(response) {
           $scope.data =  { 
-          model: null,
+          model: "Rky_P",
           availableOptions: response.data
           }
         });
