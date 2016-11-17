@@ -6,7 +6,7 @@
       var url = "/api/v1/list/scale";
 
       $scope.title = "selectRky";
-      $scope.data= {};
+      $scope.data= { model: 'Rky_P'};
       $http.get(url).
         then(function(response) {
           $scope.data =  { 
