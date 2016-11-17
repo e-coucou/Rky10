@@ -27,10 +27,6 @@
   <label>Capteur :
     <select ng-model="data.model" ng-options="option.scale for option in data.availableOptions"></select>
   </label><br/>
-    <label for="repeatSelect"> Capteur : </label>
-    <select name="repeatSelect" id="repeatSelect" ng-model="data.model">
-      <option ng-repeat="option in data.availableOptions" value="{{option.scale}}">{{option.scale}}</option>
-    </select>
       <tt>model = </tt><span ng-bind="data.model.scale"></span>
 </div>
 
