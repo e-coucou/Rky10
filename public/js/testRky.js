@@ -20,7 +20,7 @@
         console.log('update: ' + partage.model);
       };
 
-      $scope.$watch($scope.data.model,  updateCapteur);
+      $scope.$watchCollection($scope.data,  updateCapteur);
       
 }])
 
