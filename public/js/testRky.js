@@ -13,6 +13,7 @@
           model: null,
           availableOptions: response.data
           }
+          $scope.data.model = $scope.data.availableOptions[3];
         });
 
       function updateCapteur() {
