@@ -26,14 +26,14 @@
 <div ng-controller="selectRky">
   <form name="myCapteur">
   <label>Capteur :
-    <select ng-model="data.model" ng-options="option.scale for option in data.availableOptions"></select>
+    <select ng-model="option.model" ng-options="option.scale for option in data.availableOptions"></select>
   </label><br/>
     <label for="repeatSelect"> Capteur : </label>
     <select name="repeatSelect" id="repeatSelect" ng-model="data.model">
       <option ng-repeat="option in data.availableOptions" value="{{option.scale}}">{{option.scale}}</option>
     </select>
   </form>
-  <tt>model = </tt><span ng-bind="data.model"></span>
+      <tt>model = </tt><span ng-bind="data.model"></span>
 </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
