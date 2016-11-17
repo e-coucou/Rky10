@@ -26,7 +26,7 @@
 <div ng-controller="selectRky">
   <form name="myCapteur">
   <label>Capteur (null not allowed):
-    <select ng-model="myCapteur" ng-options="option.availableOptions for option in data"></select>
+    <select ng-model="data.model" ng-options="option.availableOptions for option in data"></select>
   </label><br/>
     <label for="repeatSelect"> Capteur : </label>
     <select name="repeatSelect" id="repeatSelect" ng-model="data.model">
