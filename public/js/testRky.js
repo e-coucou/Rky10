@@ -21,7 +21,7 @@
         console.log(partage);
       };
 
-      $scope.$watch($scope.data,  updateCapteur);
+      $scope.$watch($scope.data.model,  updateCapteur);
       
 }])
 
