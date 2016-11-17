@@ -33,8 +33,21 @@
       <option ng-repeat="option in data.availableOptions" value="{{option.scale}}">{{option.scale}}</option>
     </select>
   </form>
-  <tt>model = </tt><span nb-bind="data.model"></span><br/>
+  <tt>model = </tt><span nb-bind="data.model"></span>
+  <br/>
+<ul>
+    <li ng-repeat="option in data">
+      <label>Name: <input ng-model="option.availableOptions"></label>
+      <label><input type="checkbox" ng-model="color.notAnOption"> Disabled?</label>
+      <button ng-click="colors.splice($index, 1)" aria-label="Remove">X</button>
+    </li>
+    <li>
+      <button ng-click="colors.push({})">add</button>
+    </li>
+  </ul>
+  <hr/>
 </div>
+
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/d3.js"></script>
