@@ -25,7 +25,7 @@
     </div>
 <div ng-controller="selectRky">
   <label>Capteur :
-    <select ng-model="data.model" ng-options="option.scale for option in data.availableOptions"></select>
+    <select ng-model="data.option.scale" ng-options="option.scale for option in data.availableOptions"></select>
   </label><br/>
     <label for="repeatSelect"> Capteur : </label>
     <select name="repeatSelect" id="repeatSelect" ng-model="data.model">
