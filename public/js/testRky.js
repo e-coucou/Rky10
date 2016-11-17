@@ -85,6 +85,11 @@
 
       $scope.$watch(data,calculMoyenne);
 
+      function test() {
+        console.log('change : ' : partage.capteur);
+      }
+      $scope.$watchCollection('partage.capteur',test);
+
   }]);
   
  }());
