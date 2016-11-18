@@ -130,6 +130,10 @@
             function y(d) { return height - (height - (d.score-min)/((max-min)/height)); }
             function h(d) { return (height - (d.score-min)/((max-min)/height));}
 
+            // fonction
+            function info(d,i) {
+              console(d.scope);
+            }
             // remove all previous items before render
             svg.selectAll("*").remove();
 
@@ -153,6 +157,7 @@
             svg.selectAll("rect")
               .data(data)
               .enter()
+              .on("mouseover",function (d,i) { return info(d,i);})
                 .append("rect")
                 .on("click", function(d, i){return scope.onClick({item: d});})
                 .attr("height", 0) // height of each bar
