@@ -127,8 +127,8 @@
 
             // accessor 
             function x(d,i) { return i * (width / data.length);}
-            function h(d) { return d.score; }
-            function y(d) { return (height - (d.score-min)/((max-min)/height));}
+            function y(d) { return d.score; }
+            function h(d) { return (height - (d.score-min)/((max-min)/height));}
 
             // remove all previous items before render
             svg.selectAll("*").remove();
