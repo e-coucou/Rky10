@@ -87,7 +87,7 @@
 
       function test(from) {
         urlBase = "/api/v1/search?name="+partage.capteur+"&source=*";
-        console.log('change : ',from, " -> " urlBase);
+        console.log('change : ',from, " -> " , urlBase);
           data.length = 0;
           $scope.nb=0;
           $scope.somme=0.0;
