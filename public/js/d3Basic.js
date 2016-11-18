@@ -157,7 +157,7 @@
                 .on("click", function(d, i){return scope.onClick({item: d});})
                 .attr("height", 0) // height of each bar
                 .attr("width", width / data.length - padding)
-                .attr("x", x(d, i))  // height + margin between bars
+                .attr("x", function(d,i) { return x(d, i);})  // height + margin between bars
                 .attr("fill","yellow")
                 .transition()
                   .duration(1000) // time of duration
@@ -167,8 +167,8 @@
 //                    console.log(val);
                     return "rgb(0, "+ 0 +", " + val + ")"; 
                     })
-                  .attr("height", h(data)) // half of the 20 side margin specified above
-                  .attr("y", y(data)); // width based on scale
+                  .attr("height", function (d) { return h(d); }) // half of the 20 side margin specified above
+                  .attr("y", function (d) { return y(data);}); // width based on scale
 
             svg.selectAll("text")
               .data(data)
