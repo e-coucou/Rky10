@@ -5,6 +5,15 @@
     <meta name="description" content="d3 and Angular">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
   </head>
+  <style>
+    text {
+        font: 10px sans-serif;
+    }
+    .year.label {
+        font: 500 112px "helvetica neue";
+        fill: #ddd;
+    }
+  </style>
   <body ng-app="RkyApp">
     <div class="row">
       <div class="col-md-6 col-md-offset-3" ng-controller="httpRky">
@@ -30,10 +39,7 @@
       <tt>model = </tt><span ng-bind="data.model.scale"></span>
 </div>
 <br>
-<aside>Passez la souris au dessus de l'axe des abscisses pour vous déplacer dans le temps.<br><br>
-Cliquez sur les pastilles des Pays pour voir l'évolution des classements.<br><br>
-Passez la souris sur les dates de Coupes du Monde pour voir les statistiques.<br><br>
-Cliquez sur les compétions pour découvrir les matches. En passant la souris sur les matchs vous découvrirez les détails des joueurs, arbitres, stades ...<br></aside>
+<aside>Passez la souris au dessus de l'axe des abscisses pour vous déplacer dans le temps.<br></aside>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
     <script src="js/app.js"></script>
