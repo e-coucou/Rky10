@@ -85,6 +85,7 @@
       }
 
       $scope.clickButton = function() {
+        console.log('click');
           updateData;
         }
 
