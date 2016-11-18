@@ -157,9 +157,9 @@
             svg.selectAll("rect")
               .data(data)
               .enter()
-              .on("mouseover",function (d,i) { return info(d,i);})
                 .append("rect")
                 .on("click", function(d, i){return scope.onClick({item: d});})
+                .on("mouseover",function (d,i) { return info(d,i);})
                 .attr("height", 0) // height of each bar
                 .attr("width", width / data.length - padding)
                 .attr("x", function(d,i) { return x(d, i);})  // height + margin between bars
