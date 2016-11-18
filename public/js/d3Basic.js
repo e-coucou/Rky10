@@ -127,7 +127,7 @@
 
             // accessor 
             function x(d,i) { return i * (width / data.length);}
-            function y(d) { return 0 ;} //height - (height - (d.score-min)/((max-min)/height)); }
+            function y(d) { return (height - (d.score-min)/((max-min)/height)); }
             function h(d) { return ((d.score-min)/((max-min)/height));}
 
             // fonction
