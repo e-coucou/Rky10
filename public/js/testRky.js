@@ -63,7 +63,8 @@
           $scope.nb += 1;
           $scope.moyenne = ($scope.somme / $scope.nb).toFixed(2);
          });
-       });
+        console.log($scope.data);
+        });
       }
 
       function calculMoyenne() {
@@ -81,7 +82,6 @@
           $scope.moyenne = "waiting for data";
           getData();
           console.log(url);
-          console.log($scope.data);
         }
 
       $scope.$watch(data,calculMoyenne);
@@ -94,7 +94,6 @@
           $scope.somme=0.0;
           $scope.moyenne = "waiting for data";
           console.log(url);
-          console.log($scope.data);
           getData();
       }
 
