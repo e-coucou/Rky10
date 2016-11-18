@@ -86,13 +86,13 @@
 
       $scope.clickButton = function() {
         console.log('click');
-          updateData;
+          updateData();
         }
 
       $scope.$watch(data,calculMoyenne);
 
       $scope.$watchCollection('partage.capteur',updateData);
-      $scope.$watchCollection('$scope.after',updateData);
+      $scope.$watch($scope.after,updateData);
       $scope.$watchCollection('$scope.before',updateData);
 
   }]);
