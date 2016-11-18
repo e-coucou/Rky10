@@ -79,9 +79,9 @@
           $scope.nb=0;
           $scope.somme=0.0;
           $scope.moyenne = "waiting for data";
+          getData();
           console.log(url);
           console.log($scope.data);
-          getData();
         }
 
       $scope.$watch(data,calculMoyenne);
