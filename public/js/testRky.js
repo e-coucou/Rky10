@@ -89,9 +89,18 @@
       function test() {
         urlBase = "/api/v1/search?name="+partage.capteur+"&source=*";
         console.log('change : ', urlBase);
-        $scope.clickButton;
+          data.length = 0;
+          $scope.nb=0;
+          $scope.somme=0.0;
+          $scope.moyenne = "waiting for data";
+          console.log(url);
+          console.log($scope.data);
+          getData();
       }
+
       $scope.$watchCollection('partage.capteur',test);
+      $scope.$watch($scope.after,test);
+      $scope.$watch($scope.before,test);
 
   }]);
   

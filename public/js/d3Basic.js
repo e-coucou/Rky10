@@ -134,7 +134,7 @@
             if (data.length > 700 ) { padding = 0; } // no padding si trop de data
             maxi = Math.max.apply(Math, data.map(function(x) {return x.score; }));
             mini = Math.min.apply(Math, data.map(function(x) {return x.score; }));
-//              console.log(max,min, data.length, width,height);
+            console.log("max: ",max,"min: ",min);
 
             max = maxi + 0.03 * (maxi-mini);
             min = mini - 0.20 * (maxi-mini);
