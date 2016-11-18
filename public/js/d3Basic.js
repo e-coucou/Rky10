@@ -134,7 +134,13 @@
             function info(d,i) {
               console.log(d.value,d);
               label.text(Math.round(d.value*100)/100) ;
-            }
+  var datac = [ { "x" : x(d,i), "y" : 0 }, { "x" : x(d,i), "y" : height } ];
+  d3.selectAll(".curseur").remove();
+  svg.append("path")
+    .datum(datac)
+    .attr("class", "curseur")
+    .attr("d", curseur);
+             }
             // remove all previous items before render
             svg.selectAll("*").remove();
 
@@ -161,6 +167,10 @@ var label = svg.append("text")
     .attr("y", height - 24)
     .attr("x", width)
     .text('VALEUR');               
+
+var curseur = d3.svg.line()
+    .x(function(d) { return d.x; })
+    .y(function(d) { return d.y; });
 
             //create the rectangles for the bar chart
             svg.selectAll("rect")
