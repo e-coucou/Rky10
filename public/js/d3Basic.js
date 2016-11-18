@@ -163,7 +163,7 @@
                   .duration(1000) // time of duration
                   .attr("stroke-width",0)
                   .attr("fill", function(d) {
-                    var val = ((data.score -min)/((max-min)/255));
+                    var val = ((d.score -min)/((max-min)/255));
 //                    console.log(val);
                     return "rgb(0, "+ 0 +", " + val + ")"; 
                     })
