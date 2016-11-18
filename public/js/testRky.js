@@ -91,8 +91,8 @@
       $scope.$watch(data,calculMoyenne);
 
       $scope.$watchCollection('partage.capteur',updateData);
-      $scope.$watch($scope.after,updateData);
-      $scope.$watch($scope.before,updateData);
+      $scope.$watchCollection('$scope.after',updateData);
+      $scope.$watchCollection('$scope.before',updateData);
 
   }]);
   
