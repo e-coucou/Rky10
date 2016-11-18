@@ -64,7 +64,7 @@
                 .transition()
                   .duration(1000) // time of duration
                   .attr("width", function(d){
-                    return d.score/(max/width);
+                    return d.value/(max/width);
                   }); // width based on scale
 
             svg.selectAll("text")
@@ -127,12 +127,12 @@
 
             // accessor 
             function x(d,i) { return i * (width / data.length);}
-            function y(d) { return (height - (d.score-min)/((max-min)/height)); }
-            function h(d) { return ((d.score-min)/((max-min)/height));}
+            function y(d) { return (height - (d.value-min)/((max-min)/height)); }
+            function h(d) { return ((d.value-min)/((max-min)/height));}
 
             // fonction
             function info(d,i) {
-              console.log(d.score,d);
+              console.log(d.value,d);
             }
             // remove all previous items before render
             svg.selectAll("*").remove();
@@ -142,8 +142,8 @@
             width = 800 ;//scope.data.length * 35;
             height = 300 ;
             if (data.length > 700 ) { padding = 0; } // no padding si trop de data
-            maxi = Math.max.apply(Math, data.map(function(x) {return x.score; }));
-            mini = Math.min.apply(Math, data.map(function(x) {return x.score; }));
+            maxi = Math.max.apply(Math, data.map(function(x) {return x.value; }));
+            mini = Math.min.apply(Math, data.map(function(x) {return x.value; }));
             console.log("max: ",maxi,"min: ",mini);
 
             max = maxi + 0.03 * (maxi-mini);
@@ -168,7 +168,7 @@
                   .duration(3000) // time of duration
                   .attr("stroke-width",0)
                   .attr("fill", function(d) {
-                    var val = ((d.score -min)/((max-min)/255));
+                    var val = ((d.value -min)/((max-min)/255));
                     return "rgb(0, "+ 0 +", " + val + ")"; 
                     })
                   .attr("height", function (d) { return h(d); }) // half of the 20 side margin specified above

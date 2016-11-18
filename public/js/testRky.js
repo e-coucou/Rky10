@@ -58,7 +58,7 @@
         $http.get(url)
         .then(function(response){
         angular.forEach(response.data,function(value){
-          data.push({ capteur: value.heure, score: value.value });
+          data.push({ date: value.date, heure: value.heure, value: value.value });
           $scope.somme += parseFloat(value.value); 
           $scope.nb += 1;
           $scope.moyenne = ($scope.somme / $scope.nb).toFixed(2);
