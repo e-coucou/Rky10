@@ -133,7 +133,7 @@
             // fonction
             function info(d,i) {
               console.log(d.value,d);
-              label.text(d.value);
+              label.text(Math.round(d.value*100)/100) ;
             }
             // remove all previous items before render
             svg.selectAll("*").remove();
