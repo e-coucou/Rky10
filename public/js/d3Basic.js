@@ -133,6 +133,7 @@
             // fonction
             function info(d,i) {
               console.log(d.value,d);
+              label.text(d.value);
             }
             // remove all previous items before render
             svg.selectAll("*").remove();
@@ -159,7 +160,7 @@ var label = svg.append("text")
     .attr("text-anchor", "end")
     .attr("y", height - 24)
     .attr("x", width)
-    .text('12/2003');               
+    .text('VALEUR');               
 
             //create the rectangles for the bar chart
             svg.selectAll("rect")
