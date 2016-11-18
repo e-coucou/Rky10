@@ -160,7 +160,7 @@
                 .attr("x", function(d,i) { return x(d, i);})  // height + margin between bars
                 .attr("fill","yellow")
                 .transition()
-                  .duration(1000) // time of duration
+                  .duration(3000) // time of duration
                   .attr("stroke-width",0)
                   .attr("fill", function(d) {
                     var val = ((d.score -min)/((max-min)/255));
