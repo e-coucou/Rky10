@@ -153,6 +153,14 @@
             svg.attr('height', height)
                .attr('width',  width);
 
+// Add the year label; the value is set on transition.
+var label = svg.append("text")
+    .attr("class", "year label")
+    .attr("text-anchor", "end")
+    .attr("y", height - 24)
+    .attr("x", width)
+    .text('12/2003');               
+
             //create the rectangles for the bar chart
             svg.selectAll("rect")
               .data(data)
