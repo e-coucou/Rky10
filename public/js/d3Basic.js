@@ -132,7 +132,7 @@
 
             // fonction
             function info(d,i) {
-              console.log(d.scope);
+              console.log(d.score,d);
             }
             // remove all previous items before render
             svg.selectAll("*").remove();
