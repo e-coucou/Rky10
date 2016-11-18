@@ -132,15 +132,14 @@
 
             // fonction
             function info(d,i) {
-              console.log(d.value,d);
               label.text(Math.round(d.value*100)/100) ;
-  var datac = [ { "x" : x(d,i), "y" : 0 }, { "x" : x(d,i), "y" : height } ];
-  d3.selectAll(".curseur").remove();
-  svg.append("path")
-    .datum(datac)
-    .attr("class", "curseur")
-    .attr("d", curseur);
-             }
+              var datac = [ { "x" : x(d,i), "y" : 0 }, { "x" : x(d,i), "y" : height } ];
+              d3.selectAll(".curseur").remove();
+              svg.append("path")
+                .datum(datac)
+                .attr("class", "curseur")
+                .attr("d", curseur);
+              }
             // remove all previous items before render
             svg.selectAll("*").remove();
 
@@ -188,7 +187,7 @@ var curseur = d3.svg.line()
                   .attr("stroke-width",0)
                   .attr("fill", function(d) {
                     var val = ((d.value -min)/((max-min)/16));
-                    return "rgb(128, 128, " + val*15+val + ")"; 
+                    return "rgb(0, 0, " + val*15+val + ")"; 
                     })
                   .attr("height", function (d) { return h(d); }) // half of the 20 side margin specified above
                   .attr("y", function (d) { return y(d);}); // width based on scale
