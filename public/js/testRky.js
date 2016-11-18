@@ -63,7 +63,7 @@
           $scope.nb += 1;
           $scope.moyenne = ($scope.somme / $scope.nb).toFixed(2);
          });
-        console.log($scope.data);
+        console.log(data);
         });
       }
 
