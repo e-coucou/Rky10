@@ -168,8 +168,8 @@
                     return "rgb(0, "+ 0 +", " + val + ")"; 
                     })
                   .attr("height", function (d) { return h(d); }) // half of the 20 side margin specified above
-                  .attr("y", height );function (d) { return y(d);}); // width based on scale
-""
+                  .attr("y", height ); //function (d) { return y(d);}); // width based on scale
+
             svg.selectAll("text")
               .data(data)
               .enter()
