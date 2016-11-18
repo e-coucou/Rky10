@@ -127,7 +127,7 @@
 
             // accessor 
             function x(d,i) { return i * (width / data.length);}
-            function y(d) { return d.score; }
+            function y(d) { return height - d.score; }
             function h(d) { return (height - (d.score-min)/((max-min)/height));}
 
             // remove all previous items before render
@@ -168,7 +168,7 @@
                     return "rgb(0, "+ 0 +", " + val + ")"; 
                     })
                   .attr("height", function (d) { return h(d); }) // half of the 20 side margin specified above
-                  .attr("y", 0 ); //function (d) { return y(d);}); // width based on scale
+                  .attr("y", function (d) { return y(d);}); // width based on scale
 
             svg.selectAll("text")
               .data(data)
