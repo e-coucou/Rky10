@@ -177,8 +177,8 @@ var label = svg.append("text")
                   .duration(3000) // time of duration
                   .attr("stroke-width",0)
                   .attr("fill", function(d) {
-                    var val = ((d.value -min)/((max-min)/255));
-                    return "rgb(0, "+ 0 +", " + val + ")"; 
+                    var val = ((d.value -min)/((max-min)/16));
+                    return "rgb(0, "+ 0 +", " + val*16 + ")"; 
                     })
                   .attr("height", function (d) { return h(d); }) // half of the 20 side margin specified above
                   .attr("y", function (d) { return y(d);}); // width based on scale
