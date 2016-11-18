@@ -120,12 +120,18 @@
 
           // define render function
           scope.render = function(data){
-            // remove all previous items before render
-            svg.selectAll("*").remove();
 
             // setup variables
             var width, height, max,maxi, min,mini;
             var padding = 1;
+            
+            // accessor 
+            function x(d,i) {return i * (width / data.length);}
+            function h(d) { return d.score; }
+            function y(d) { return (height - (d.score-min)/((max-min)/height));}
+
+            // remove all previous items before render
+            svg.selectAll("*").remove();
 
             height = d3.select(iElement[0])[0][0].offsetWidth - 20;
               // 20 is for margins and can be changed
@@ -151,9 +157,7 @@
                 .on("click", function(d, i){return scope.onClick({item: d});})
                 .attr("height", 0) // height of each bar
                 .attr("width", width / data.length - padding)
-                .attr("x", function(d, i){
-                  return i * (width / data.length);
-                }) // height + margin between bars
+                .attr("x", x(d, i))  // height + margin between bars
                 .attr("fill","yellow")
                 .transition()
                   .duration(1000) // time of duration
@@ -163,10 +167,8 @@
 //                    console.log(val);
                     return "rgb(0, "+ 0 +", " + val + ")"; 
                     })
-                  .attr("height", function(d) { return d.score; }) // half of the 20 side margin specified above
-                  .attr("y", function(d){
-                    return (height - (d.score-min)/((max-min)/height));
-                  }); // width based on scale
+                  .attr("height", h(d)) // half of the 20 side margin specified above
+                  .attr("y", y(d)); // width based on scale
 
             svg.selectAll("text")
               .data(data)
