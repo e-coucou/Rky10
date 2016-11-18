@@ -73,19 +73,7 @@
 
       $scope.d3Data = data;
 
-      $scope.clickButton = function() {
-          url = urlBase +"&after="+ $scope.after+"&before=" +$scope.before;
-          data.length = 0;
-          $scope.nb=0;
-          $scope.somme=0.0;
-          $scope.moyenne = "waiting for data";
-          getData();
-          console.log(url);
-        }
-
-      $scope.$watch(data,calculMoyenne);
-
-      function test(from) {
+      function updateData() {
         urlBase = "/api/v1/search?name="+partage.capteur+"&source=*";
         url = urlBase +"&after="+ $scope.after+"&before=" +$scope.before;
           data.length = 0;
@@ -96,9 +84,15 @@
           getData();
       }
 
-      $scope.$watchCollection('partage.capteur',test);
-      $scope.$watch($scope.after,test);
-      $scope.$watch($scope.before,test);
+      $scope.clickButton = function() {
+          updateData;
+        }
+
+      $scope.$watch(data,calculMoyenne);
+
+      $scope.$watchCollection('partage.capteur',updateData);
+      $scope.$watch($scope.after,updateData);
+      $scope.$watch($scope.before,updateData);
 
   }]);
   
