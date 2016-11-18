@@ -63,7 +63,6 @@
           $scope.nb += 1;
           $scope.moyenne = ($scope.somme / $scope.nb).toFixed(2);
          });
-        console.log(data);
         });
       }
 
@@ -86,9 +85,9 @@
 
       $scope.$watch(data,calculMoyenne);
 
-      function test() {
+      function test(from) {
         urlBase = "/api/v1/search?name="+partage.capteur+"&source=*";
-        console.log('change : ', urlBase);
+        console.log('change : ',from, " -> " urlBase);
           data.length = 0;
           $scope.nb=0;
           $scope.somme=0.0;
@@ -97,9 +96,9 @@
           getData();
       }
 
-      $scope.$watchCollection('partage.capteur',test);
-      $scope.$watch($scope.after,test);
-      $scope.$watch($scope.before,test);
+      $scope.$watchCollection('partage.capteur',test("partage"));
+      $scope.$watch($scope.after,test("after"));
+      $scope.$watch($scope.before,test("before"));
 
   }]);
   
