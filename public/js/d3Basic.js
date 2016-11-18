@@ -124,7 +124,7 @@
             // setup variables
             var width, height, max,maxi, min,mini;
             var padding = 1;
-            
+
             // accessor 
             function x(d,i) {return i * (width / data.length);}
             function h(d) { return d.score; }
@@ -163,12 +163,12 @@
                   .duration(1000) // time of duration
                   .attr("stroke-width",0)
                   .attr("fill", function(d) {
-                    var val = ((d.score -min)/((max-min)/255));
+                    var val = ((data.score -min)/((max-min)/255));
 //                    console.log(val);
                     return "rgb(0, "+ 0 +", " + val + ")"; 
                     })
-                  .attr("height", h(d)) // half of the 20 side margin specified above
-                  .attr("y", y(d)); // width based on scale
+                  .attr("height", h(data)) // half of the 20 side margin specified above
+                  .attr("y", y(data)); // width based on scale
 
             svg.selectAll("text")
               .data(data)
