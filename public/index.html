@@ -49,11 +49,9 @@
         <input type="text" ng-model="before"></input>
         <button ng-click="clickButton()">update</button>
         <d3-lines id="chart" data="d3Data" label="capteur" moyn="moyenne"></d3-lines>
-        <hr>
+        <aside>Passez la souris au dessus des bars pour afficher les valeurs et vous déplacer dans le temps.</aside>
         <span>Moyenne    -> {{moyenne}}</span><br>
         <span>Nb valeurs -> {{nb}}</span>
-        <br>
-        <aside>Passez la souris au dessus des bars pour afficher les valeurs et vous déplacer dans le temps.<br></aside>
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
