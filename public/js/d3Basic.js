@@ -124,7 +124,6 @@
             // setup variables
             var width, height, max,maxi, min,mini;
             var padding = 1;
-      console.log(scope.moyn, 'ou', moyn);
 
             // accessor 
             function x(d,i) { return i * (width / data.length);}
@@ -151,7 +150,7 @@
             if (data.length > 700 ) { padding = 0; } // no padding si trop de data
             maxi = Math.max.apply(Math, data.map(function(x) {return x.value; }));
             mini = Math.min.apply(Math, data.map(function(x) {return x.value; }));
-            console.log("max: ",maxi,"min: ",mini, "moyenne: ",moyn);
+            console.log("max: ",maxi,"min: ",mini, "moyenne: ",scope.moyn);
 
             max = maxi + 0.03 * (maxi-mini);
             min = mini - 0.20 * (maxi-mini);
@@ -222,7 +221,7 @@ var repere_moy = d3.svg.line()
               .attr("class", "repere")
               .style("stroke-dasharray", ("10,5,2,5"))
               .attr("d", repere_max);
-            ordonne = height - (moyn-min)/((max-min)/height);
+            ordonne = height - (scope.moyn-min)/((max-min)/height);
             datac = [ { "x" : 0, "y" : ordonne }, { "x" : width, "y" : ordonne } ];
             d3.selectAll(".repere_moy").remove();
             svg.append("path")
