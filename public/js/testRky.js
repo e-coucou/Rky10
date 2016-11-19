@@ -42,7 +42,7 @@
 
 //xx  angular.module('RkyApp.controllers')
     .controller('httpRky', ['$scope', '$http','$filter' ,'partage', function($scope, $http, $filter, partage) {
-      $scope.title = "httpRky ... in progress";
+      $scope.title = "Rky - Data Dashboard";
       $scope.partage = partage;
       console.log('httpRky: ' + $scope.partage.model);
         var now = new Date();
