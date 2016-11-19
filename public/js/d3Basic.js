@@ -119,7 +119,7 @@
           }, true);
 console.log(scope);
           // define render function
-          scope.render = function(data){
+          scope.render = function(data,moyn){
 
             // setup variables
             var width, height, max,maxi, min,mini, moyn;
@@ -150,7 +150,6 @@ console.log(scope);
             if (data.length > 700 ) { padding = 0; } // no padding si trop de data
             maxi = Math.max.apply(Math, data.map(function(x) {return x.value; }));
             mini = Math.min.apply(Math, data.map(function(x) {return x.value; }));
-            moyn = Math.sqrt.apply(Math, data.map(function(x) {return x.value; }));
             console.log("max: ",maxi,"min: ",mini, "moyenne: ",moyn);
 
             max = maxi + 0.03 * (maxi-mini);
