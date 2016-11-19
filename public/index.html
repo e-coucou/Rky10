@@ -42,13 +42,12 @@
             <label>Capteur :
             <select ng-model="data.model" ng-options="option.scale for option in data.availableOptions"></select>
             </label>
-<!--            <tt>model = </tt><span ng-bind="data.model.scale"></span> -->
-        <span>      From</span>
+<!--            <tt>model = </tt><span ng-bind="data.model.scale"></span> --></div>
+        <span>From</span>
         <input type="text" ng-model="after"></input>
         <span>to</span>
         <input type="text" ng-model="before"></input>
         <button ng-click="clickButton()">update</button>
-        </div>
         <d3-lines id="chart" data="d3Data" label="capteur" moyn="moyenne"></d3-lines>
         <hr>
         <span>Moyenne    -> {{moyenne}}</span><br>
