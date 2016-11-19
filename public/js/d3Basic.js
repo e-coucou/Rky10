@@ -172,6 +172,7 @@ var curseur = d3.svg.line()
     .y(function(d) { return d.y; });
 
 var repere_min = d3.svg.line()
+    .style("stroke-dasharray", ("10,5,2,5"))
     .x(function(d) { return d.x; })
     .y(function(d) { return d.y; });
 
@@ -213,6 +214,14 @@ var moyenne = d3.svg.line()
               .datum(datac)
               .attr("class", "repere")
               .attr("d", repere_min);
+            ordonne = height - (maxi-min)/((max-min)/height);
+            datac = [ { "x" : 0, "y" : ordonne }, { "x" : width, "y" : ordonne } ];
+            console.log(datac);
+            d3.selectAll(".repere_max").remove();
+            svg.append("path")
+              .datum(datac)
+              .attr("class", "repere")
+              .attr("d", repere_max);
 
             svg.selectAll("text")
               .data(data)
