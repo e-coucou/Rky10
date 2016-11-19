@@ -224,6 +224,7 @@ var repere_moy = d3.svg.line()
               .attr("d", repere_max);
             ordonne = height - (moyn-min)/((max-min)/height);
             datac = [ { "x" : 0, "y" : ordonne }, { "x" : width, "y" : ordonne } ];
+            console.log(datac);
             d3.selectAll(".repere_moy").remove();
             svg.append("path")
               .datum(datac)
