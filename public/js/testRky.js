@@ -85,7 +85,7 @@
       }
 
       $scope.clickButton = function() {
-        $scope.jour = $filter('date')(new Date(),'MM/DD/YYYY');
+        $scope.jour = $filter('date')(new Date(),'DD/MM/YYYY');
         console.log($scope.jour);
           updateData();
         }
