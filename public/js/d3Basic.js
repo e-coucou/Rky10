@@ -205,7 +205,8 @@ var moyenne = d3.svg.line()
                   .attr("y", function (d) { return y(d);}); // width based on scale
 
             // position des repères
-            var datac = [ { "x" : 0, "y" : height }, { "x" : width, "y" : height } ];
+            var ordonne = height - (mini-min)/((max-min)/height);
+            var datac = [ { "x" : 0, "y" : ordonne }, { "x" : width, "y" : ordonne } ];
             console.log(datac);
             d3.selectAll(".repere_min").remove();
             svg.append("path")
