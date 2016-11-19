@@ -28,7 +28,15 @@
         stroke: #425b8a;
         stroke-width: 0.75px;
     }
-  </style>
+.datepickerdemoBasicUsage {
+  /** Demo styles for mdCalendar. */ }
+  .datepickerdemoBasicUsage md-content {
+    padding-bottom: 200px; }
+  .datepickerdemoBasicUsage .validation-messages {
+    font-size: 12px;
+    color: #dd2c00;
+    margin-left: 15px; }
+</style>
 <header>
   <aside >Novembre, 2016</aside>
   <aside >by e-Coucou</aside>
@@ -39,9 +47,11 @@
         <h1>{{title}}</h1><hr>
         <p>
         <div ng-controller="selectRky">
+<md-content layout-padding>
 <div layout-gt-xs="row">
 <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
 </div>
+</md-content>
             <label>Capteur :
             <select ng-model="data.model" ng-options="option.scale for option in data.availableOptions"></select>
             </label>
