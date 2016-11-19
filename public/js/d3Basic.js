@@ -122,7 +122,7 @@
           scope.render = function(data){
 
             // setup variables
-            var width, height, max,maxi, min,mini;
+            var width, height, max,maxi, min,mini, moyn;
             var padding = 1;
 
             // accessor 
