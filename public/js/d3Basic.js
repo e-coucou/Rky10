@@ -119,12 +119,12 @@
             return scope.render(newVals);
           }, true);
           // define render function
-console.log(scope);
           scope.render = function(data,moyn){
 
             // setup variables
-            var width, height, max,maxi, min,mini, moyn;
+            var width, height, max,maxi, min,mini;
             var padding = 1;
+      console.log(scope.moyn, 'ou', moyn);
 
             // accessor 
             function x(d,i) { return i * (width / data.length);}
