@@ -41,7 +41,7 @@
 //xx  'use strict';
 
 //xx  angular.module('RkyApp.controllers')
-    .controller('httpRky', ['$scope', '$http', 'partage', function($scope, $http, partage){
+    .controller('httpRky', ['$scope', '$http','$filter, 'partage', function($scope, $http, $filter partage){
       $scope.title = "httpRky ... in progress";
       $scope.partage = partage;
       console.log('httpRky: ' + $scope.partage.model);
@@ -85,7 +85,7 @@
       }
 
       $scope.clickButton = function() {
-        $scope.jour = new Date().format('MM/DD/YYYY');
+        $scope.jour = $filter('date')(new Date(),'MM/DD/YYYY');
         console.log($scope.jour);
           updateData();
         }
