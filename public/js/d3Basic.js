@@ -145,15 +145,15 @@
 
             height = d3.select(iElement[0])[0][0].offsetWidth - 20;
               // 20 is for margins and can be changed
-            width = 800 ;//scope.data.length * 35;
-            height = 300 ;
-            if (data.length > 700 ) { padding = 0; } // no padding si trop de data
+            width = 900 ;//scope.data.length * 35;
+            height = 400 ;
+            if (data.length > 400 ) { padding = 0; } // no padding si trop de data
             maxi = Math.max.apply(Math, data.map(function(x) {return x.value; }));
             mini = Math.min.apply(Math, data.map(function(x) {return x.value; }));
             console.log("max: ",maxi,"min: ",mini, "moyenne: ",scope.moyn);
 
-            max = maxi + 0.03 * (maxi-mini);
-            min = mini - 0.20 * (maxi-mini);
+            max = maxi + 0.07 * (maxi-mini);
+            min = mini - 0.15 * (maxi-mini);
 
             // set the height based on the calculations above
             svg.attr('height', height)
