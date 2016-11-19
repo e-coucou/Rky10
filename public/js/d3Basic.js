@@ -117,7 +117,7 @@
           scope.$watch('data', function(newVals, oldVals) {
             return scope.render(newVals);
           }, true);
-
+console.log(scope);
           // define render function
           scope.render = function(data){
 
@@ -151,7 +151,7 @@
             maxi = Math.max.apply(Math, data.map(function(x) {return x.value; }));
             mini = Math.min.apply(Math, data.map(function(x) {return x.value; }));
             moyn = Math.sqrt.apply(Math, data.map(function(x) {return x.value; }));
-            console.log("max: ",maxi,"min: ",mini);
+            console.log("max: ",maxi,"min: ",mini, "moyenne: ",moyn);
 
             max = maxi + 0.03 * (maxi-mini);
             min = mini - 0.20 * (maxi-mini);
@@ -224,7 +224,6 @@ var repere_moy = d3.svg.line()
               .attr("d", repere_max);
             ordonne = height - (moyn-min)/((max-min)/height);
             datac = [ { "x" : 0, "y" : ordonne }, { "x" : width, "y" : ordonne } ];
-            console.log(datac);
             d3.selectAll(".repere_moy").remove();
             svg.append("path")
               .datum(datac)
