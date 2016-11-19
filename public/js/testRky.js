@@ -85,6 +85,7 @@
       }
 
       $scope.clickButton = function() {
+        $scope.jour = $filter(today)('shortDate');
         console.log('click');
           updateData();
         }
