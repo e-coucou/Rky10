@@ -85,7 +85,10 @@
       }
 
       $scope.clickButton = function() {
-        $scope.jour = $filter('date')(new Date(),"yyyy/MM/dd");
+        var now = new Date();
+        var demain = now + 1;
+        console.log(demain);
+        $scope.jour = $filter('date')(now,"yyyy/MM/dd");
         console.log('date :',$scope.jour);
           updateData();
         }
