@@ -150,6 +150,7 @@
             if (data.length > 700 ) { padding = 0; } // no padding si trop de data
             maxi = Math.max.apply(Math, data.map(function(x) {return x.value; }));
             mini = Math.min.apply(Math, data.map(function(x) {return x.value; }));
+            moyn = Math.sqrt.apply(Math, data.map(function(x) {return x.value; }));
             console.log("max: ",maxi,"min: ",mini);
 
             max = maxi + 0.03 * (maxi-mini);
@@ -207,7 +208,6 @@ var moyenne = d3.svg.line()
             // position des repères
             var ordonne = height - (mini-min)/((max-min)/height);
             var datac = [ { "x" : 0, "y" : ordonne }, { "x" : width, "y" : ordonne } ];
-            console.log(datac);
             d3.selectAll(".repere_min").remove();
             svg.append("path")
               .datum(datac)
@@ -216,13 +216,20 @@ var moyenne = d3.svg.line()
               .attr("d", repere_min);
             ordonne = height - (maxi-min)/((max-min)/height);
             datac = [ { "x" : 0, "y" : ordonne }, { "x" : width, "y" : ordonne } ];
-            console.log(datac);
             d3.selectAll(".repere_max").remove();
             svg.append("path")
               .datum(datac)
               .attr("class", "repere")
               .style("stroke-dasharray", ("10,5,2,5"))
               .attr("d", repere_max);
+            ordonne = height - (moyn-min)/((max-min)/height);
+            datac = [ { "x" : 0, "y" : ordonne }, { "x" : width, "y" : ordonne } ];
+            d3.selectAll(".repere_moy").remove();
+            svg.append("path")
+              .datum(datac)
+              .attr("class", "repere")
+              .style("stroke-dasharray", ("10,5,2,5"))
+              .attr("d", repere_moy);
 
             svg.selectAll("text")
               .data(data)
