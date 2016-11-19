@@ -143,10 +143,10 @@
             // remove all previous items before render
             svg.selectAll("*").remove();
 
-            height = d3.select(iElement[0])[0][0].offsetWidth - 20;
+            height = d3.select(iElement[0])[0][0].offsetWidth - 100;
               // 20 is for margins and can be changed
             width = 1160 ;//scope.data.length * 35;
-            height = 400 ;
+//            height = 500 ;
             if (data.length > 400 ) { padding = 0; } // no padding si trop de data
             maxi = Math.max.apply(Math, data.map(function(x) {return x.value; }));
             mini = Math.min.apply(Math, data.map(function(x) {return x.value; }));
