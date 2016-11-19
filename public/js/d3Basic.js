@@ -139,12 +139,6 @@
                 .datum(datac)
                 .attr("class", "curseur")
                 .attr("d", curseur);
-              var datac = [ { "x" : 0, "y" : y(mini) }, { "x" : width, "y" : y(mini) } ];
-              d3.selectAll(".minimum").remove();
-              svg.append("path")
-                .datum(datac)
-                .attr("class", "repere")
-                .attr("d", minimum);
               }
             // remove all previous items before render
             svg.selectAll("*").remove();
@@ -209,6 +203,14 @@ var moyenne = d3.svg.line()
                     })
                   .attr("height", function (d) { return h(d); }) // half of the 20 side margin specified above
                   .attr("y", function (d) { return y(d);}); // width based on scale
+
+            // position des repères
+            var datac = [ { "x" : 0, "y" : y(mini) }, { "x" : width, "y" : y(mini) } ];
+            d3.selectAll(".minimum").remove();
+            svg.append("path")
+              .datum(datac)
+              .attr("class", "repere")
+              .attr("d", minimum);
 
             svg.selectAll("text")
               .data(data)
