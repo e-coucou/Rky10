@@ -95,6 +95,7 @@
         scope: {
           data: "=",
           label: "@",
+          moyn: "=",
           onClick: "&"
         },
         link: function(scope, iElement, iAttrs) {
@@ -117,7 +118,6 @@
           scope.$watch('data', function(newVals, oldVals) {
             return scope.render(newVals);
           }, true);
-console.log(scope);
           // define render function
           scope.render = function(data,moyn){
 
