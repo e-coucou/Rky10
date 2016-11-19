@@ -38,7 +38,6 @@
         <span>Moyenne    -> {{moyenne}}</span>
         <span>Nb valeurs -> {{nb}}</span>
         <br>
-      </div>
     <div ng-controller="selectRky">
   <label>Capteur :
     <select ng-model="data.model" ng-options="option.scale for option in data.availableOptions"></select>
@@ -46,6 +45,7 @@
       <tt>model = </tt><span ng-bind="data.model.scale"></span>
     </div>
 <aside>Passez la souris au dessus de l'axe des abscisses pour vous déplacer dans le temps.<br></aside>
+      </div>
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
