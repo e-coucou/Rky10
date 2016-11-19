@@ -39,6 +39,7 @@
         <h1>{{title}}</h1><hr>
         <p>
         <div ng-controller="selectRky">
+<md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
             <label>Capteur :
             <select ng-model="data.model" ng-options="option.scale for option in data.availableOptions"></select>
             </label>
