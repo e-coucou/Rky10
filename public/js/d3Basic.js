@@ -145,7 +145,7 @@
 
             height = d3.select(iElement[0])[0][0].offsetWidth - 20;
               // 20 is for margins and can be changed
-            width = 900 ;//scope.data.length * 35;
+            width = 1160 ;//scope.data.length * 35;
             height = 400 ;
             if (data.length > 400 ) { padding = 0; } // no padding si trop de data
             maxi = Math.max.apply(Math, data.map(function(x) {return x.value; }));
