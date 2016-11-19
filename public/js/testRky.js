@@ -41,7 +41,7 @@
 //xx  'use strict';
 
 //xx  angular.module('RkyApp.controllers')
-    .controller('httpRky', ['$scope', '$http','$filter, 'partage', function($scope, $http, $filter partage){
+    .controller('httpRky', ['$scope', '$http','$filter' ,'partage', function($scope, $http, $filter, partage) {
       $scope.title = "httpRky ... in progress";
       $scope.partage = partage;
       console.log('httpRky: ' + $scope.partage.model);
