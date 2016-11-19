@@ -45,8 +45,11 @@
       $scope.title = "httpRky ... in progress";
       $scope.partage = partage;
       console.log('httpRky: ' + $scope.partage.model);
-      $scope.after = "2016/11/17";
-      $scope.before = "2016/11/18";
+        var now = new Date();
+        var demain = new Date();
+        demain.setDate(demain.getDate() + 1);
+      $scope.after = $filter('date')(now,"yyyy/MM/dd");
+      $scope.before = $filter('date')(demain,"yyyy/MM/dd");
       $scope.moyenne = 0.0;
       $scope.somme = 0.0;
       $scope.nb = 0;
@@ -85,12 +88,6 @@
       }
 
       $scope.clickButton = function() {
-        var now = new Date();
-        var demain = new Date();
-        demain.setDate(demain.getDate() + 1);
-        console.log(demain);
-        $scope.jour = $filter('date')(now,"yyyy/MM/dd");
-        console.log('date :',$scope.jour);
           updateData();
         }
 
