@@ -148,8 +148,8 @@
             console.log(height,width);
               // 20 is for margins and can be changed
 //            width = 1160 ;//scope.data.length * 35;
-//            height = 500 ;
-            if (data.length > 400 ) { padding = 0; } // no padding si trop de data
+            height = 450 ;
+            if (data.length > 500 ) { padding = 0; } // no padding si trop de data
             maxi = Math.max.apply(Math, data.map(function(x) {return x.value; }));
             mini = Math.min.apply(Math, data.map(function(x) {return x.value; }));
             console.log("max: ",maxi,"min: ",mini, "moyenne: ",scope.moyn);
