@@ -163,7 +163,7 @@
 var label = svg.append("text")
     .attr("class", "year label")
     .attr("text-anchor", "end")
-    .attr("y", height - 24)
+    .attr("y",  100)
     .attr("x", width)
     .text('VALEUR');               
 
