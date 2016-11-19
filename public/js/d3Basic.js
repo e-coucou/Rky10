@@ -119,6 +119,7 @@
             return scope.render(newVals);
           }, true);
           // define render function
+console.log(scope);
           scope.render = function(data,moyn){
 
             // setup variables
