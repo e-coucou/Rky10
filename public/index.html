@@ -39,15 +39,14 @@
         <span>Nb valeurs -> {{nb}}</span>
         <br>
       </div>
-    </div>
-<div ng-controller="selectRky">
+    <div ng-controller="selectRky">
   <label>Capteur :
     <select ng-model="data.model" ng-options="option.scale for option in data.availableOptions"></select>
   </label><br/>
       <tt>model = </tt><span ng-bind="data.model.scale"></span>
-</div>
-<br>
+    </div>
 <aside>Passez la souris au dessus de l'axe des abscisses pour vous déplacer dans le temps.<br></aside>
+    </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
     <script src="js/app.js"></script>
