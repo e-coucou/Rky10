@@ -4,6 +4,7 @@
     <title>Rky - dashBoard</title>
     <meta name="description" content="d3 and Angular">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <html class="rky">
   </head>
   <style>
     @import url(../visu.css);
@@ -24,8 +25,7 @@
     }
   </style>
   <body ng-app="RkyApp">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3" ng-controller="httpRky">
+      <div ng-controller="httpRky">
         <h1>{{title}}</h1>
         <br>
         <span>From</span>
@@ -46,7 +46,6 @@
       <tt>model = </tt><span ng-bind="data.model.scale"></span>
     </div>
 <aside>Passez la souris au dessus de l'axe des abscisses pour vous déplacer dans le temps.<br></aside>
-      </div>
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
