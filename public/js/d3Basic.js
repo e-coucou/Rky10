@@ -180,7 +180,7 @@ var repere_max = d3.svg.line()
     .x(function(d) { return d.x; })
     .y(function(d) { return d.y; });
 
-var moyenne = d3.svg.line()
+var repere_moy = d3.svg.line()
     .x(function(d) { return d.x; })
     .y(function(d) { return d.y; });
 
