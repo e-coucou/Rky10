@@ -144,7 +144,7 @@
             svg.selectAll("*").remove();
 
             height = d3.select(iElement[0])[0][0].offsetHeight - 100;
-            width = d3.select(iElement[0])[0][0].offsetWidth;
+            width = d3.select(iElement[0])[0][0].offsetWidth - 80;
             console.log(height,width);
               // 20 is for margins and can be changed
 //            width = 1160 ;//scope.data.length * 35;
@@ -165,7 +165,7 @@
 var label = svg.append("text")
     .attr("class", "year label")
     .attr("text-anchor", "end")
-    .attr("y",  100)
+    .attr("y",  70)
     .attr("x", width)
     .text('VALEUR');               
 
