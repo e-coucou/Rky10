@@ -144,7 +144,8 @@
             svg.selectAll("*").remove();
 
             height = d3.select(iElement[0])[0][0].offsetHeight - 100;
-            width = d3.select(iElement[0])[0][0].offsetWidth - 30;
+            width = d3.select(iElement[0])[0][0].offsetWidth;
+            console.log(height,width);
               // 20 is for margins and can be changed
 //            width = 1160 ;//scope.data.length * 35;
 //            height = 500 ;
