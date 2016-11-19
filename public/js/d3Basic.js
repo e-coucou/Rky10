@@ -139,6 +139,12 @@
                 .datum(datac)
                 .attr("class", "curseur")
                 .attr("d", curseur);
+              var datac = [ { "x" : 0, "y" : y(mini) }, { "x" : width, "y" : y(mini) } ];
+              d3.selectAll(".minimum").remove();
+              svg.append("path")
+                .datum(datac)
+                .attr("class", "repere")
+                .attr("d", minimum);
               }
             // remove all previous items before render
             svg.selectAll("*").remove();
@@ -168,6 +174,18 @@ var label = svg.append("text")
     .text('VALEUR');               
 
 var curseur = d3.svg.line()
+    .x(function(d) { return d.x; })
+    .y(function(d) { return d.y; });
+
+var minimum = d3.svg.line()
+    .x(function(d) { return d.x; })
+    .y(function(d) { return d.y; });
+
+var maximum = d3.svg.line()
+    .x(function(d) { return d.x; })
+    .y(function(d) { return d.y; });
+
+var moyenne = d3.svg.line()
     .x(function(d) { return d.x; })
     .y(function(d) { return d.y; });
 
