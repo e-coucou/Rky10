@@ -37,8 +37,18 @@ $scope.myDate = new Date();
 //xx  } ());
 
     .controller('dateRky', function($scope) {
-  $scope.myDate = new Date();
-})
+      $scope.myDate = new Date();
+    })
+    .config(function($mdDateLocaleProvider) {
+      $mdDateLocaleProvider.formatDate = function(date) {
+      return date ? moment(date).format('DD/MM/YYYY') : null;
+      };
+
+      $mdDateLocaleProvider.parseDate = function(dateString) {
+      var m = moment(dateString, 'DD/MM/YYYY', true);
+      return m.isValid() ? m.toDate() : new Date(NaN);
+      };      
+    })
 // --------
 // recuperation des valeur depuis MongoDB
 //xx(function () {
