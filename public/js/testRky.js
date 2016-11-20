@@ -18,7 +18,7 @@
 
       function updateCapteur() {
         partage.capteur = $scope.data.model.scale;
-        console.log('update: ' + partage.capteur);
+//        console.log('update: ' + partage.capteur);
       };
 
       $scope.$watchCollection('data.model.scale',  updateCapteur);
@@ -45,7 +45,7 @@
       function updateDate() {
           partage.dateFrom = $scope.fromDate;
           partage.dateTo = $scope.toDate;
-          console.log(partage);
+//          console.log(partage);
       }
       $scope.$watch('fromDate',updateDate);      
       $scope.$watch('toDate',updateDate);      
@@ -87,7 +87,6 @@
         .then(function(response){
         angular.forEach(response.data,function(value){
           inc = (inc+1) % $scope.delta;
-          console.log(inc);
           if (inc===0) {
           data.push({ date: value.date, heure: value.heure, value: value.value });
           $scope.somme += parseFloat(value.value); 
@@ -121,7 +120,7 @@
       function updateDate(){
         $scope.after = $filter('date')(partage.dateFrom,"yyyy/MM/dd");
         $scope.before = $filter('date')(partage.dateTo,"yyyy/MM/dd");
-        console.log('update picker : ', $scope.after, $scope.before);
+//        console.log('update picker : ', $scope.after, $scope.before);
       }
 
       $scope.clickButton = function() {

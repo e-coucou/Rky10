@@ -152,7 +152,7 @@
             if (data.length > 500 ) { padding = 0; } // no padding si trop de data
             maxi = Math.max.apply(Math, data.map(function(x) {return x.value; }));
             mini = Math.min.apply(Math, data.map(function(x) {return x.value; }));
-            console.log("max: ",maxi,"min: ",mini, "moyenne: ",scope.moyn);
+//            console.log("max: ",maxi,"min: ",mini, "moyenne: ",scope.moyn);
 
             max = maxi + 0.07 * (maxi-mini);
             min = mini - 0.15 * (maxi-mini);
