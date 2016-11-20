@@ -82,13 +82,18 @@
       var data = [];
 
       function getData () {
+        var inc=0;
         $http.get(url)
         .then(function(response){
         angular.forEach(response.data,function(value){
+          inc = (inc+1) % 3;
+          console.log(inc);
+          if (inc===0) {
           data.push({ date: value.date, heure: value.heure, value: value.value });
           $scope.somme += parseFloat(value.value); 
           $scope.nb += 1;
           $scope.moyenne = ($scope.somme / $scope.nb).toFixed(2);
+        }
          });
         });
       }
@@ -104,7 +109,8 @@
         console.log('update DATA');
         $scope.after = $filter('date')(partage.dateFrom,"yyyy/MM/dd");
         $scope.before = $filter('date')(partage.dateTo,"yyyy/MM/dd");
-        console.log("delta de ",(partage.dateTo-partage.dateFrom)/24/60/60/1000," jours");
+        $scope.delta = (partage.dateTo-partage.dateFrom)/24/60/60/1000;
+        console.log("delta de ",$scope.delta," jours");
         urlBase = "/api/v1/search?name="+partage.capteur+"&source=*";
         url = urlBase +"&after="+ $scope.after+"&before=" +$scope.before;
           data.length = 0;
