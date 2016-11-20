@@ -109,7 +109,8 @@ $scope.myDate = new Date();
       }
       function updateDate(){
         $scope.after = $filter('date')(partage.dateFrom,"yyyy/MM/dd");
-        console.log('update picker : ', $scope.after);
+        $scope.before = $filter('date')(partage.dateTo,"yyyy/MM/dd");
+        console.log('update picker : ', $scope.after, $scope.before);
       }
 
       $scope.clickButton = function() {
@@ -120,6 +121,7 @@ $scope.myDate = new Date();
 
       $scope.$watchCollection('partage.capteur',updateData);
       $scope.$watchCollection('partage.dateFrom',updateDate);
+      $scope.$watchCollection('partage.dateTo',updateDate);
       $scope.$watch('after',updateData);
       $scope.$watch('before',updateData);
 
