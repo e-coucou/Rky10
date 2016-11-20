@@ -86,7 +86,7 @@
         $http.get(url)
         .then(function(response){
         angular.forEach(response.data,function(value){
-          inc = (inc+1) % 3;
+          inc = (inc+1) % 1;
           console.log(inc);
           if (inc===0) {
           data.push({ date: value.date, heure: value.heure, value: value.value });
