@@ -45,8 +45,8 @@ $scope.myDate = new Date();
           partage.dateTo = $scope.toDate;
           console.log(partage);
       }
-      $scope.$watch('dateFrom',updateDate);      
-      $scope.$watch('dateTo',updateDate);      
+      $scope.$watch('fromDate',updateDate);      
+      $scope.$watch('toDate',updateDate);      
     }])
     .config(function($mdDateLocaleProvider) {
       $mdDateLocaleProvider.formatDate = function(date) {
