@@ -144,7 +144,7 @@
             svg.selectAll("*").remove();
 
             height = d3.select(iElement[0])[0][0].offsetHeight - 100;
-            width = d3.select(iElement[0])[0][0].offsetWidth;
+            width = d3.select(iElement[0])[0][0].offsetWidth -80;
             console.log(height,width);
               // 20 is for margins and can be changed
 //            width = 1160 ;//scope.data.length * 35;
@@ -187,7 +187,7 @@ var repere_moy = d3.svg.line()
 
 // Add a y-axis label.
 var yScale = d3.scale.linear().domain([max, min]).range([0,height]),
-    yAxis = d3.svg.axis().scale(yScale).orient("right");
+    yAxis = d3.svg.axis().scale(yScale).orient("left");
 
 svg.append("g")
     .attr("class", "y axis")
