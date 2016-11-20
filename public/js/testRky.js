@@ -58,7 +58,7 @@ $scope.myDate = new Date();
     .controller('httpRky', ['$scope', '$http','$filter' ,'partage', function($scope, $http, $filter, partage) {
       $scope.title = "Rky - Data Dashboard";
       $scope.partage = partage;
-      console.log('httpRky: ' + $scope.partage.model);
+      $scope.myDate = new Date();
         var now = new Date();
         var demain = new Date();
         demain.setDate(demain.getDate() + 1);
@@ -85,7 +85,7 @@ $scope.myDate = new Date();
 
       function calculMoyenne() {
         $scope.moyenne = $scope.somme / $scope.nb;
-        console.log($scope.somme,$scope.nb,$scope.moyenne);
+//        console.log($scope.somme,$scope.nb,$scope.moyenne);
       }
 
       $scope.d3Data = data;
@@ -97,7 +97,6 @@ $scope.myDate = new Date();
           $scope.nb=0;
           $scope.somme=0.0;
           $scope.moyenne = "waiting for data";
-          console.log(url);
           getData();
       }
 
@@ -110,6 +109,8 @@ $scope.myDate = new Date();
       $scope.$watchCollection('partage.capteur',updateData);
       $scope.$watch('after',updateData);
       $scope.$watch('before',updateData);
+
+      $scope.$watch('myDate',function($scope){ console.log($scope.myDate);});
 
   }]);
   

@@ -45,17 +45,6 @@
 </header>
 
   <body ng-app="RkyApp" >
-<div ng-controller="dateRky" ng-cloak>
-  <md-content layout-padding>
-
-    <div layout-gt-xs="row">
-      <div flex-gt-xs>
-        <h4>Quelle merde !!</h4>
-        <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
-      </div>
-    </div>
-  </md-content>
-</div>
       <div ng-controller="httpRky">
         <h1>{{title}}</h1><hr>
         <p>
@@ -63,6 +52,16 @@
             <label>Capteur :
             <select ng-model="data.model" ng-options="option.scale for option in data.availableOptions"></select>
             </label>
+<div ng-controller="dateRky" ng-cloak>
+  <md-content layout-padding>
+
+    <div layout-gt-xs="row">
+      <div flex-gt-xs>
+        <md-datepicker ng-model="myDate" md-placeholder="From"></md-datepicker>
+      </div>
+    </div>
+  </md-content>
+</div>
 <!--            <tt>model = </tt><span ng-bind="data.model.scale"></span> --></div>
         <span>From</span>
         <input type="text" ng-model="after"></input>
