@@ -102,9 +102,9 @@
           var svg = d3.select(iElement[0])
               .append("svg")
               .attr("width", "100%")
-              .attr("height", "100%")
+              .attr("height", 480)
               .append("g")
-              .attr("transform", "translate(" + 40 + "," + 40 + ")");
+              .attr("transform", "translate(" + 40 + "," + 20 + ")");
 
 
           // on window resize, re-render d3 canvas
