@@ -101,8 +101,8 @@
         link: function(scope, iElement, iAttrs) {
           var svg = d3.select(iElement[0])
               .append("svg")
-              .attr("width", "100%"),
-              .append("g"),
+              .attr("width", "100%")
+              .append("g")
               .attr("transform", "translate(" + 40 + "," + 40 + ")");
 
 
