@@ -29,7 +29,8 @@
       var Data = {
         capteur: '',
         dateFrom: '',
-        dateTo: ''
+        dateTo: '',
+        update: 0
       };
       return Data;
     })
