@@ -36,16 +36,25 @@ $scope.myDate = new Date();
     })
 //xx  } ());
 
-    .controller('dateRky', function($scope) {
-      $scope.myDate = new Date();
-    })
+    .controller('dateRky',['$scope', 'partage' , function($scope,partage) {
+      $scope.fromDate = new Date();
+      $scope.toDate = new Date();
+
+      function updateDate() {
+          partage.dateFrom = $scope.fromDate;
+          partage.dateTo = $scope.toDate;
+          console.log(partage);
+      }
+      $scope.$watch('dateFrom',updateDate);      
+      $scope.$watch('dateTo',updateDate);      
+    }])
     .config(function($mdDateLocaleProvider) {
       $mdDateLocaleProvider.formatDate = function(date) {
-      return date ? moment(date).format('DD/MM/YYYY') : null;
+      return date ? moment(date).format('YYYY/MM/DD') : null;
       };
 
       $mdDateLocaleProvider.parseDate = function(dateString) {
-      var m = moment(dateString, 'DD/MM/YYYY', true);
+      var m = moment(dateString, 'YYYY/MM/DD', true);
       return m.isValid() ? m.toDate() : new Date(NaN);
       };      
     })
@@ -58,7 +67,6 @@ $scope.myDate = new Date();
     .controller('httpRky', ['$scope', '$http','$filter' ,'partage', function($scope, $http, $filter, partage) {
       $scope.title = "Rky - Data Dashboard";
       $scope.partage = partage;
-      $scope.myDate = new Date();
         var now = new Date();
         var demain = new Date();
         demain.setDate(demain.getDate() + 1);
@@ -110,7 +118,6 @@ $scope.myDate = new Date();
       $scope.$watch('after',updateData);
       $scope.$watch('before',updateData);
 
-      $scope.$watch('myDate',function($scope){ console.log($scope.myDate);});
 
   }]);
   
