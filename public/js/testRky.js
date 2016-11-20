@@ -119,9 +119,9 @@ $scope.myDate = new Date();
 
       $scope.$watch(data,calculMoyenne);
 
-      $scope.$watchCollection('partage.capteur',updateData);
-      $scope.$watchCollection('partage.dateFrom',updateDate);
-      $scope.$watchCollection('partage.dateTo',updateDate);
+      $scope.$watchCollection('partage',updateData);
+//      $scope.$watchCollection('partage.dateFrom',updateDate);
+//      $scope.$watchCollection('partage.dateTo',updateDate);
       $scope.$watch('after',updateData);
       $scope.$watch('before',updateData);
 
