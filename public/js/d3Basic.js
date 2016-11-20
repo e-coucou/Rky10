@@ -101,7 +101,7 @@
         link: function(scope, iElement, iAttrs) {
           var svg = d3.select(iElement[0])
               .append("svg")
-              .attr("width", "90%");
+              .attr("width", "100%");
 
           // on window resize, re-render d3 canvas
           window.onresize = function() {
@@ -187,7 +187,7 @@ var repere_moy = d3.svg.line()
 
 // Add a y-axis label.
 var yScale = d3.scale.linear().domain([max, min]).range([0,height]),
-    yAxis = d3.svg.axis().scale(yScale).orient("left");
+    yAxis = d3.svg.axis().scale(yScale).orient("right");
 
 svg.append("g")
     .attr("class", "y axis")
