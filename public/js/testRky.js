@@ -127,8 +127,8 @@
       $scope.$watchCollection('partage',updateData);
 //      $scope.$watchCollection('partage.dateFrom',updateDate);
 //      $scope.$watchCollection('partage.dateTo',updateDate);
-      $scope.$watch('after',updateData);
-      $scope.$watch('before',updateData);
+//      $scope.$watch('after',updateData);
+//      $scope.$watch('before',updateData);
 
 
   }]);
