@@ -185,7 +185,7 @@ var repere_moy = d3.svg.line()
     .x(function(d) { return d.x; })
     .y(function(d) { return d.y; });
 
-var yScale = d3.scale.linear().domain([min, max]).range([0,height]),
+var yScale = d3.scale.linear().domain([min, max]).range([0,height]);
 var yAxis = d3.svg.axis().scale(yScale).orient("left");
 svg.append("g")
     .attr("class", "y axis")
