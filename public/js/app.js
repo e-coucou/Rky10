@@ -9,7 +9,7 @@
 
   // setup dependency injection
   angular.module('d3', []);
-  angular.module('RkyApp.controllers', ['ngMaterial']);
+  angular.module('RkyApp.controllers', ['ngMaterial', 'ngMessages', 'material.svgAssetsCache' ]);
   angular.module('RkyApp.directives', ['d3']);
 
 

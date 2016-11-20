@@ -36,6 +36,9 @@ $scope.myDate = new Date();
     })
 //xx  } ());
 
+    .controller('dateRky', function($scope) {
+  $scope.myDate = new Date();
+})
 // --------
 // recuperation des valeur depuis MongoDB
 //xx(function () {

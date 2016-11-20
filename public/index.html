@@ -42,16 +42,18 @@
   <aside >by e-Coucou</aside>
 </header>
 
-  <body ng-app="RkyApp" ng-cloak="">
+  <body ng-app="RkyApp" >
       <div ng-controller="httpRky">
+<div ng-controller="dateRky" class="datepickerdemoBasicUsage" ng-cloak="">
+    <md-content layout-padding>
+    <div layout-gt-xs="row">
+        <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+    </div>
+    </md-content>
+</div>
         <h1>{{title}}</h1><hr>
         <p>
-        <div ng-controller="selectRky" class="datepickerdemoBasicUsage" >
-<md-content layout-padding>
-<div layout-gt-xs="row">
-<md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
-</div>
-</md-content>
+        <div ng-controller="selectRky" >
             <label>Capteur :
             <select ng-model="data.model" ng-options="option.scale for option in data.availableOptions"></select>
             </label>
