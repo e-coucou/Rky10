@@ -104,6 +104,7 @@
         console.log('update DATA');
         $scope.after = $filter('date')(partage.dateFrom,"yyyy/MM/dd");
         $scope.before = $filter('date')(partage.dateTo,"yyyy/MM/dd");
+        console.log(partage.dateTo-partage.dateFrom);
         urlBase = "/api/v1/search?name="+partage.capteur+"&source=*";
         url = urlBase +"&after="+ $scope.after+"&before=" +$scope.before;
           data.length = 0;
