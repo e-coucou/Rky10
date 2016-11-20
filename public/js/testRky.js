@@ -109,7 +109,7 @@
         console.log('update DATA');
         $scope.after = $filter('date')(partage.dateFrom,"yyyy/MM/dd");
         $scope.before = $filter('date')(partage.dateTo,"yyyy/MM/dd");
-        $scope.delta = Math.floor((partage.dateTo-partage.dateFrom)/24/60/60/1000 /7); // 7 on maintien sur 1 semaine
+        $scope.delta = Math.floor((partage.dateTo-partage.dateFrom)/24/60/60/1000 /4) + 1; // 4 on maintien sur 1 semaine
         urlBase = "/api/v1/search?name="+partage.capteur+"&source=*";
         url = urlBase +"&after="+ $scope.after+"&before=" +$scope.before;
           data.length = 0;
