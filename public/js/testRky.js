@@ -107,7 +107,7 @@ $scope.myDate = new Date();
           $scope.moyenne = "waiting for data";
           getData();
       }
-      funtion updateDate(){
+      function updateDate(){
         $scope.after = $filter('date')(partage.dateFrom,"yyyy/MM/dd");
         console.log('update picker : ', $scope.after);
       }
