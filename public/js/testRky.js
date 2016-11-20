@@ -107,6 +107,10 @@ $scope.myDate = new Date();
           $scope.moyenne = "waiting for data";
           getData();
       }
+      funtion updateDate(){
+        $scope.after = $filter('date')(partage.dateFrom,"yyyy/MM/dd");
+        console.log('update picker : ', $scope.after);
+      }
 
       $scope.clickButton = function() {
           updateData();
@@ -115,6 +119,7 @@ $scope.myDate = new Date();
       $scope.$watch(data,calculMoyenne);
 
       $scope.$watchCollection('partage.capteur',updateData);
+      $scope.$watchCollection('partage.dateFrom',updateDate);
       $scope.$watch('after',updateData);
       $scope.$watch('before',updateData);
 

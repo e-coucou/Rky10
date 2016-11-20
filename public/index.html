@@ -48,26 +48,25 @@
       <div ng-controller="httpRky">
         <h1>{{title}}</h1><hr>
         <p>
-    <div layout-gt-xs="row">
-      <div flex-gt-xs>
         <div ng-controller="selectRky" >
             <label>Capteur :
             <select ng-model="data.model" ng-options="option.scale for option in data.availableOptions"></select>
             </label>
 <!--            <tt>model = </tt><span ng-bind="data.model.scale"></span> -->
         </div>
-    </div>
 <div ng-controller="dateRky" ng-cloak>
   <md-content layout-padding>
 
+    <div layout-gt-xs="row">
       <div flex-gt-xs>
         <md-datepicker ng-model="fromDate" md-placeholder="From"></md-datepicker>
       </div>
       <div flex-gt-xs>
         <md-datepicker ng-model="toDate" md-placeholder="to"></md-datepicker>
       </div>
+      <div flex-gt-xs>selectionnez des dates</div>
+    </div>
   </md-content>
-</div>
 </div>
         <span>From</span>
         <input type="text" ng-model="after"></input>
