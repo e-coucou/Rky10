@@ -68,7 +68,7 @@
 //xx  angular.module('RkyApp.controllers')
     .controller('httpRky', ['$scope', '$http','$filter' ,'partage', function($scope, $http, $filter, partage) {
       $scope.title = "Rky - Data Dashboard";
-//      $scope.partage = partage;
+      $scope.partage = partage;
         var now = new Date();
         var demain = new Date();
         demain.setDate(demain.getDate() + 1);
@@ -101,6 +101,7 @@
       $scope.d3Data = data;
 
       function updateData() {
+        console.log('update DATA');
         urlBase = "/api/v1/search?name="+partage.capteur+"&source=*";
         url = urlBase +"&after="+ $scope.after+"&before=" +$scope.before;
           data.length = 0;
