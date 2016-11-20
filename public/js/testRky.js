@@ -7,7 +7,8 @@
 
       $scope.title = "selectRky";
       $scope.data = {};
-      $http.get(url).
+$scope.myDate = new Date();
+       $http.get(url).
         then(function(response) {
           $scope.data =  { 
           model: null,

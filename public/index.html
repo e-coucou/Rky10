@@ -42,11 +42,11 @@
   <aside >by e-Coucou</aside>
 </header>
 
-  <body ng-app="RkyApp">
+  <body ng-app="RkyApp" ng-cloak="">
       <div ng-controller="httpRky">
         <h1>{{title}}</h1><hr>
         <p>
-        <div ng-controller="selectRky">
+        <div ng-controller="selectRky" class="datepickerdemoBasicUsage" >
 <md-content layout-padding>
 <div layout-gt-xs="row">
 <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
