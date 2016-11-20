@@ -101,7 +101,10 @@
         link: function(scope, iElement, iAttrs) {
           var svg = d3.select(iElement[0])
               .append("svg")
-              .attr("width", "100%");
+              .attr("width", "100%"),
+              .append("g"),
+              .attr("transform", "translate(" + 40 + "," + 40 + ")");
+
 
           // on window resize, re-render d3 canvas
           window.onresize = function() {
@@ -148,6 +151,7 @@
             console.log(height,width);
               // 20 is for margins and can be changed
 //            width = 1160 ;//scope.data.length * 35;
+            width = 1000;
             height = 450 ;
             if (data.length > 500 ) { padding = 0; } // no padding si trop de data
             maxi = Math.max.apply(Math, data.map(function(x) {return x.value; }));
