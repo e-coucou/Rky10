@@ -45,14 +45,16 @@
 </header>
 
   <body ng-app="RkyApp" >
-      <div ng-controller="httpRky">
+      <div ng-controller="httpRky" ng-cloak>
         <h1>{{title}}</h1><hr>
         <p>
         <div ng-controller="selectRky" >
             <label>Capteur :
             <select ng-model="data.model" ng-options="option.scale for option in data.availableOptions"></select>
             </label>
-<div ng-controller="dateRky" ng-cloak>
+<!--            <tt>model = </tt><span ng-bind="data.model.scale"></span> -->
+        </div>
+<!-- <div ng-controller="dateRky" ng-cloak>  -->
   <md-content layout-padding>
 
     <div layout-gt-xs="row">
@@ -61,8 +63,6 @@
       </div>
     </div>
   </md-content>
-</div>
-<!--            <tt>model = </tt><span ng-bind="data.model.scale"></span> --></div>
         <span>From</span>
         <input type="text" ng-model="after"></input>
         <span>to</span>
