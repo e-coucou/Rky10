@@ -144,9 +144,9 @@
               svg.append("text")
                  .data(datadate)
                  .attr("class", "date label")
-                 .attr("text-anchor", "end")
+                 .attr("text-anchor", "middle")
                  .attr("x",  function(d) {return d.x;} )
-                 .attr("y", height)
+                 .attr("y", 0)
                  .text(function(d) {return d.text});
 
               svg.append("path")
