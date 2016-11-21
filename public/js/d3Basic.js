@@ -179,7 +179,7 @@ var label = svg.append("text")
 var date = svg.append("text")
     .attr("class", "date label")
     .attr("text-anchor", "end")
-    .attr("x",  function() {return x(lineEnd);} )
+    .attr("x",  function() {return 100;} )
     .attr("y", height - 10)
     .text('DATE');
                  
