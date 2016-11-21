@@ -184,7 +184,8 @@ var date = svg.append("text")
                  
 var curseur = d3.svg.line()
     .x(function(d) { return d.x; })
-    .y(function(d) { return d.y; });
+    .y(function(d) { return d.y; })
+    .append("date");
 
 var repere_min = d3.svg.line()
     .x(function(d) { return d.x; })
