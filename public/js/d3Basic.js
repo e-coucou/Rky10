@@ -137,10 +137,18 @@
             // fonction
             function info(d,i) {
               label.text(Math.round(d.value*100)/100) ;
-              date.text(d.heure) ;
               var datac = [ { "x" : x(d,i), "y" : 0 }, { "x" : x(d,i), "y" : height } ];
               d3.selectAll(".curseur").remove();
-              
+              d3.selectAll(".date").remove();
+              var datadate = [{"x" : x(d,i), "text":d.heure}];
+              svg.append("text")
+                 .data(datadate)
+                 .attr("class", "date label")
+                 .attr("text-anchor", "end")
+                 .attr("x",  function(d) {return d.x;} )
+                 .attr("y", height - 10)
+                 .text(function(d) {return d.text});
+
               svg.append("path")
                 .datum(datac)
                 .attr("class", "curseur")
@@ -175,13 +183,6 @@ var label = svg.append("text")
     .attr("y",  55)
     .attr("x", width)
     .text('VALEUR');
-
-var date = svg.append("text")
-    .attr("class", "date label")
-    .attr("text-anchor", "end")
-    .attr("x",  function() {return 100;} )
-    .attr("y", height - 10)
-    .text('DATE');
                  
 var curseur = d3.svg.line()
     .x(function(d) { return d.x; })
