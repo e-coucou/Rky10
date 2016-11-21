@@ -136,8 +136,8 @@
 
             // fonction
             function info(d,i) {
-              var s_date = d.date.split('-');
-              var s_heure = d.heure.split("/");
+              var s_date = d.date.split(':');
+              var s_heure = d.heure.split('/');
               console.log(s_date, s_heure);
               var date_text = s_date[2]+'/'+s_date[0]+' '+s_heure[0]+':'+s_heure[1];
               console.log(date_text);
@@ -152,7 +152,7 @@
                  .attr("text-anchor", "middle")
                  .attr("x",  function(d) {return d.x;} )
                  .attr("y", 0)
-                 .text(function(d) {return d.text});
+                 .text(function(d) {return date_text;});
 
               svg.append("path")
                 .datum(datac)
