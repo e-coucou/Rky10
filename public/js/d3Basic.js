@@ -136,6 +136,10 @@
 
             // fonction
             function info(d,i) {
+              var s_date = d.date.split('-');
+              var s_heure = d.heure.split(":");
+              console.log(s_date,s_heure);
+//              var date_all = new Date(year, month, day, hours, minutes, seconds, milliseconds);
               label.text(Math.round(d.value*100)/100) ;
               var datac = [ { "x" : x(d,i), "y" : 0 }, { "x" : x(d,i), "y" : height } ];
               d3.selectAll(".curseur").remove();
