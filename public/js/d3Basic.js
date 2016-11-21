@@ -136,8 +136,8 @@
 
             // fonction
             function info(d,i) {
-              var s_date = d.date.split(':');
-              var s_heure = d.heure.split('/');
+              var s_date = d.date.split('/');
+              var s_heure = d.heure.split(':');
               console.log(s_date, s_heure);
               var date_text = s_date[2]+'/'+s_date[0]+' '+s_heure[0]+':'+s_heure[1];
               console.log(date_text);
