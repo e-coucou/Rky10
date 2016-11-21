@@ -146,7 +146,7 @@
                  .attr("class", "date label")
                  .attr("text-anchor", "end")
                  .attr("x",  function(d) {return d.x;} )
-                 .attr("y", height - 10)
+                 .attr("y", height)
                  .text(function(d) {return d.text});
 
               svg.append("path")
