@@ -175,7 +175,7 @@ var label = svg.append("text")
     .attr("x", width)
     .text('VALEUR');
 
-var date = d3.svg.append("text")
+var date = svg.append("text")
     .attr("class", "date label")
     .attr("text-anchor", "end")
     .attr("x",  function(d) {return d.x;} )
