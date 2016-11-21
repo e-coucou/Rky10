@@ -141,10 +141,6 @@
               var datac = [ { "x" : x(d,i), "y" : 0 }, { "x" : x(d,i), "y" : height } ];
               d3.selectAll(".curseur").remove();
               
-              svg.append("text")
-                .datum(datac)
-                .attr("d",date);
-
               svg.append("path")
                 .datum(datac)
                 .attr("class", "curseur")
@@ -183,8 +179,8 @@ var label = svg.append("text")
 var date = svg.append("text")
     .attr("class", "date label")
     .attr("text-anchor", "end")
-    .attr("x",  function(d) {return d.x;} )
-    .attr("y", height)
+    .attr("x",  function() {return x(lineEnd);} )
+    .attr("y", height - 10)
     .text('DATE');
                  
 var curseur = d3.svg.line()
