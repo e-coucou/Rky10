@@ -140,6 +140,11 @@
               date.text(d.heure) ;
               var datac = [ { "x" : x(d,i), "y" : 0 }, { "x" : x(d,i), "y" : height } ];
               d3.selectAll(".curseur").remove();
+              
+              svg.append("text")
+                .datum(datac)
+                .attr("d",date);
+
               svg.append("path")
                 .datum(datac)
                 .attr("class", "curseur")
@@ -184,8 +189,7 @@ var date = svg.append("text")
                  
 var curseur = d3.svg.line()
     .x(function(d) { return d.x; })
-    .y(function(d) { return d.y; })
-    .append("date");
+    .y(function(d) { return d.y; });
 
 var repere_min = d3.svg.line()
     .x(function(d) { return d.x; })
