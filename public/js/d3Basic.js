@@ -131,7 +131,7 @@
           scope.render = function(data,moyn){
 
             // setup variables
-            var width, height, max,maxi, min,mini;
+            var max,maxi, min,mini;
             var padding = 1;
 
             // accessor 
@@ -165,13 +165,13 @@
             // remove all previous items before render
             svg.selectAll("*").remove();
 
-            height = d3.select(iElement[0])[0][0].offsetHeight - 100;
-            width = d3.select(iElement[0])[0][0].offsetWidth -80;
-            console.log(height,width);
+             console.log(d3.select(iElement[0])[0][0].offsetHeight);
+            console.log(d3.select(iElement[0])[0][0].offsetWidth);
+//            console.log(height,width);
               // 20 is for margins and can be changed
 //            width = 1160 ;//scope.data.length * 35;
-            width = 1000;
-            height = 450 ;
+//            width = 1000;
+//            height = 450 ;
             if (data.length > 500 ) { padding = 0; } // no padding si trop de data
             maxi = Math.max.apply(Math, data.map(function(x) {return x.value; }));
             mini = Math.min.apply(Math, data.map(function(x) {return x.value; }));
