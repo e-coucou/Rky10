@@ -100,14 +100,10 @@
         },
         link: function(scope, iElement, iAttrs) {
         // Dimensions.
-             console.log(d3.select(iElement[0])[0][0].offsetHeight);
-            console.log(d3.select(iElement[0])[0][0].offsetWidth);
-
         var margin = {top: 20, right: 20, bottom: 30, left: 40},
             width = 1080 - margin.right-margin.left,
             height = 450 - margin.top - margin.bottom;
         // creation du contenair
-        console.log(iElement[0]);
         var svg = d3.select(iElement[0])
               .append("svg")
               .attr("width", width + margin.left + margin.right)
