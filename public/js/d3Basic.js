@@ -104,6 +104,7 @@
             width = 1080 - margin.right-margin.left,
             height = 450 - margin.top - margin.bottom;
         // creation du contenair
+        console.log(iElement[0]);
         var svg = d3.select(iElement[0])
               .append("svg")
               .attr("width", width + margin.left + margin.right)
