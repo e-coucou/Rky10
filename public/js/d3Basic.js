@@ -101,14 +101,15 @@
         link: function(scope, iElement, iAttrs) {
         // Dimensions.
         var margin = {top: 20, right: 20, bottom: 30, left: 40},
-            width = 1080 - margin.right-margin.left,
-            height = 450 - margin.top - margin.bottom;
+            width = 800 - margin.right-margin.left,
+            height = 400 - margin.top - margin.bottom;
         // creation du contenair
         var svg = d3.select(iElement[0])
               .append("svg")
               .attr("width", "100%")
 //              .attr("width", width + margin.left + margin.right)
-              .attr("height", height + margin.top + margin.bottom)
+//              .attr("height", height + margin.top + margin.bottom)
+              .attr("height", "100%")
             .append("g")
               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
