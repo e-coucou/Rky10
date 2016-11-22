@@ -131,6 +131,8 @@
           // define render function
           scope.render = function(data,moyn){
 
+             console.log(d3.select(iElement[0])[0][0].offsetHeight);
+            console.log(d3.select(iElement[0])[0][0].offsetWidth);
             // setup variables
             var max,maxi, min,mini;
             var padding = 1;
@@ -166,8 +168,6 @@
             // remove all previous items before render
             svg.selectAll("*").remove();
 
-             console.log(d3.select(iElement[0])[0][0].offsetHeight);
-            console.log(d3.select(iElement[0])[0][0].offsetWidth);
 //            console.log(height,width);
               // 20 is for margins and can be changed
 //            width = 1160 ;//scope.data.length * 35;
