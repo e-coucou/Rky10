@@ -100,7 +100,7 @@
         },
         link: function(scope, iElement, iAttrs) {
         // Dimensions.
-             console.log(d3.select(iElement[0]).offsetHeight);
+             console.log(d3.select(iElement[0])[0][0].offsetHeight);
             console.log(d3.select(iElement[0])[0][0].offsetWidth);
 
         var margin = {top: 20, right: 20, bottom: 30, left: 40},
