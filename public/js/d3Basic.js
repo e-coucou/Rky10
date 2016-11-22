@@ -113,7 +113,7 @@
             .append("g")
               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 console.log(d3.select(iElement[0])[0][0].offsetWidth);
-console.log(d3.select(iElement[0])[1][0].offsetHeight);
+console.log(d3.select(iElement[1])[0][0].offsetHeight);
 
           // on window resize, re-render d3 canvas
           window.onresize = function() {
