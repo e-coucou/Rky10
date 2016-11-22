@@ -99,12 +99,17 @@
           onClick: "&"
         },
         link: function(scope, iElement, iAttrs) {
-          var svg = d3.select(iElement[0])
+        // Dimensions.
+        var margin = {top: 20, right: 20, bottom: 30, left: 40},
+            width = 1080 - margin.right-margin.left,
+            height = 450 - margin.top - margin.bottom;
+        // creation du contenair
+        var svg = d3.select(iElement[0])
               .append("svg")
-              .attr("width", "100%")
-              .attr("height", 480)
-              .append("g")
-              .attr("transform", "translate(" + 40 + "," + 20 + ")");
+              .attr("width", width + margin.left + margin.right)
+              .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
           // on window resize, re-render d3 canvas
