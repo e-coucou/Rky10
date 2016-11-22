@@ -100,6 +100,9 @@
         },
         link: function(scope, iElement, iAttrs) {
         // Dimensions.
+             console.log(d3.select(iElement[0])[0][0].offsetHeight);
+            console.log(d3.select(iElement[0])[0][0].offsetWidth);
+
         var margin = {top: 20, right: 20, bottom: 30, left: 40},
             width = 1080 - margin.right-margin.left,
             height = 450 - margin.top - margin.bottom;
@@ -131,8 +134,6 @@
           // define render function
           scope.render = function(data,moyn){
 
-             console.log(d3.select(iElement[0])[0][0].offsetHeight);
-            console.log(d3.select(iElement[0])[0][0].offsetWidth);
             // setup variables
             var max,maxi, min,mini;
             var padding = 1;
