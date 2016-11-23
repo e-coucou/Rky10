@@ -100,21 +100,20 @@
         },
         link: function(scope, iElement, iAttrs) {
         // Dimensions.
-		console.log(iElement[0]); //[0][0].getBoundingClientRect();
-        var margin = {top: 20, right: 20, bottom: 30, left: 40},
-            width =  1000 - margin.right -margin.left,
-            height = 400 - margin.top - margin.bottom;
+//		console.log(iElement[0]); //[0][0].getBoundingClientRect();
         // creation du conteneur
         var svg = d3.select(iElement[0])
               .append("svg")
               .attr("width", "100%")
 //              .attr("width", width + margin.left + margin.right)
-              .attr("height", height + margin.top + margin.bottom)
+              .attr("height", 550)
 //              .attr("height", "100%")
             .append("g")
               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-console.log(d3.select(iElement[0]).node.offsetWidth);
-console.log(d3.select(iElement[0])[0][0].offsetHeight);
+
+		var margin = {top: 20, right: 20, bottom: 30, left: 40},
+            width =  d3.select(iElement[0])[0][0].offsetWidth - margin.right -margin.left,
+            height = 550 - margin.top - margin.bottom;
 
           // on window resize, re-render d3 canvas
           window.onresize = function() {
