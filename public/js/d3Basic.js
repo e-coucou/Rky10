@@ -102,7 +102,7 @@
         // Dimensions.
 //		console.log(iElement[0]); //[0][0].getBoundingClientRect();
         // creation du conteneur
-		var margin = {top: 10, right: 40, bottom: 30, left: 50};
+		var margin = {top: 5, right: 50, bottom: 35, left: 50};
         var svg = d3.select(iElement[0])
               .append("svg")
               .attr("width", "100%")
