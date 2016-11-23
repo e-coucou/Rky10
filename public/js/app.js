@@ -6,7 +6,7 @@
     'RkyApp.controllers',
     'RkyApp.directives',
     'ngRoute'
-    ]
+    ])
     .config(['$routeProvider',
       function($routeProvider) { 
         
@@ -21,8 +21,7 @@
             controller: 'httpRky'
         });
       }
-    ])
-  );
+    ]);
 
   // setup dependency injection
   angular.module('d3', []);
