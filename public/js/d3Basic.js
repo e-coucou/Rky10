@@ -100,7 +100,7 @@
         },
         link: function(scope, iElement, iAttrs) {
         // Dimensions.
-		var width = d3.select(iElement[0])[0][0].offsetWidth;
+		var width = (iElement[0])[0][0].getBoundingClientRect();
 		console.log(width);
         var margin = {top: 20, right: 20, bottom: 30, left: 40},
             width =  width - margin.right -margin.left,
