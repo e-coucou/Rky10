@@ -287,7 +287,7 @@ svg.append("text")
 			  .data(datac)
 			  .attr("x", width)
 			  .attr("y", function(d) { return d.y;})
-			  .text(Math.floor(moyn*10)/10);
+			  .text(Math.floor(scope.moyn*10)/10);
 
             svg.selectAll("text")
               .data(data)
