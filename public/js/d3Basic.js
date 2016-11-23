@@ -100,10 +100,9 @@
         },
         link: function(scope, iElement, iAttrs) {
         // Dimensions.
-		var width = (iElement[0])[0][0].getBoundingClientRect();
-		console.log(width);
+		console.log(iElement[0]); //[0][0].getBoundingClientRect();
         var margin = {top: 20, right: 20, bottom: 30, left: 40},
-            width =  width - margin.right -margin.left,
+            width =  1000 - margin.right -margin.left,
             height = 400 - margin.top - margin.bottom;
         // creation du conteneur
         var svg = d3.select(iElement[0])
