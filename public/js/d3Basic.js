@@ -152,7 +152,7 @@
               d3.selectAll(".curseur").remove();
               d3.selectAll(".date").remove();
               var datadate = [{"x" : x(d,i), "text":d.heure}];
-              svg.append("tspan")
+              svg.append("text")
                  .data(datadate)
                  .attr("class", "date label")
                  .attr("text-anchor", "middle")
