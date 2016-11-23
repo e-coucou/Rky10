@@ -1,20 +1,8 @@
 (function () {
   'use strict';
 
-  angular.module('RkyApp.controllers', ['ngRoute'])
-    .config(function($routeProvider) {
-    $routeProvider
-      .when("/", {
-        templateUrl: "index.html",
-        controller: "httpRky",
-        resolve: {
-          sensors: function(Sensors) {
-              return Sensors.getSensors();
-          }
-        }
-      })
-  })
-
+  angular.module('RkyApp.controllers')
+  
     .controller('selectRky', ['$scope','$http', 'partage', function($scope,$http,partage){
       var url = "/api/v1/list/scale";
 
