@@ -146,13 +146,13 @@
             function info(d,i) {
               var s_date = d.date.split('/');
               var s_heure = d.heure.split(':');
-              var date_text = s_date[1]+'/'+s_date[0]+'\\n'+s_heure[0]+':'+s_heure[1];
+              var date_text = s_date[1]+'/'+s_date[0]+'\n'+s_heure[0]+':'+s_heure[1];
               label.text(Math.round(d.value*100)/100) ;
               var datac = [ { "x" : x(d,i), "y" : 20 }, { "x" : x(d,i), "y" : height } ];
               d3.selectAll(".curseur").remove();
               d3.selectAll(".date").remove();
               var datadate = [{"x" : x(d,i), "text":d.heure}];
-              svg.append("text")
+              svg.append("tspan")
                  .data(datadate)
                  .attr("class", "date label")
                  .attr("text-anchor", "middle")
