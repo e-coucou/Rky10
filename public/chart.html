@@ -1,0 +1,116 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rky - dashBoard</title>
+    <meta name="description" content="d3 and Angular">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <html class="rky">
+  </head>
+  <style>
+    @import url(https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.css);
+    @import url(https://material.angularjs.org/1.1.1/docs.css);
+    @import url(../visu.css);
+    #chart {
+		margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        height: 550px;
+        width: 100%;
+    }
+    text {
+        font: 10px sans-serif;
+    }
+    .year.label {
+        font: 500 62px "helvetica neue";
+        fill: #888;
+    }
+    .date.label {
+        font: 500 12px "helvetica neue";
+        fill: #888;
+    }
+    .curseur {
+        stroke: #191970;
+        stroke-width: 0.75px;
+    }
+    .repere {
+        stroke: #425b8a;
+        stroke-width: 0.75px;
+    }
+.datepickerdemoBasicUsage {
+  /** Demo styles for mdCalendar. */ }
+  .datepickerdemoBasicUsage md-content {
+    background: #f5fffa;
+    color: #789;
+    margin-left: 10px;
+    margin-top: 0px;
+    width: 100%;
+    padding-bottom: 0px; }  /*change 200*/
+  .datepickerdemoBasicUsage .validation-messages {
+    background: #f5fffa;
+    color: #789;
+    font-family: "PT Serif", serif;
+    font-size: 8px;  }
+</style>
+<header>
+  <aside >Novembre, 2016</aside>
+  <aside >by e-Coucou</aside>
+</header>
+
+  <body ng-app="RkyApp" >
+      <div ng-controller="httpRky">
+        <h1>{{title}}</h1><hr>
+        <p>
+        <div ng-controller="selectRky" >
+            <label>Capteur :
+            <select ng-model="data.model" ng-options="option.scale for option in data.availableOptions"></select>
+            </label>
+<!--            <tt>model = </tt><span ng-bind="data.model.scale"></span> -->
+        </div>
+<div ng-controller="dateRky" ng-cloak class = "datepickerdemoBasicUsage">
+  <md-content layout-padding>
+
+    <div layout-gt-xs="row">
+      <div flex-gt-xs>
+        <md-datepicker ng-model="fromDate" md-placeholder="From"></md-datepicker>
+      </div>
+      <div flex-gt-xs>
+        <md-datepicker ng-model="toDate" md-placeholder="to"></md-datepicker>
+      </div>
+      <div flex-gt-xs>selectionnez des dates</div>
+      <div flex-gt-xs><button ng-click="clickButton()">update</button>
+      </div>
+    </div>
+  </md-content>
+</div>
+<!--        <span>From</span>
+        <input type="text" ng-model="after"></input>
+        <span>to</span>
+        <input type="text" ng-model="before"></input>
+        <button ng-click="clickButton()">update</button>
+-->
+        </p>
+        <d3-lines id="chart" data="d3Data" label="capteur" moyn="moyenne"></d3-lines>
+        <aside>Passez la souris au dessus les bars pour afficher les valeurs et vous déplacer dans le temps.</aside><br>
+        <span>Moyenne    -> {{moyenne}}</span><br>
+        <span>Nb valeurs -> {{nb}}</span>
+    </div>
+    <p class="attribution">Source: <a href="https://github.com/e-coucou/Rky10">gitHub</a>.<br>
+    eMail: <a href="mailto:eric@e-coucou.com">eric</a>.<br>
+    c) <a href="https://rugby.e-coucou.com">e-Coucou</a></p>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/d3.js"></script>
+    <script src="js/demoCtrl.js"></script>
+    <script src="js/demoCtrl2.js"></script>
+    <script src="js/testRky.js"></script>
+    <script src="js/d3Basic.js"></script>
+
+  </body>
+</html>
