@@ -191,7 +191,7 @@ var label = svg.append("text")
     .attr("text-anchor", "end")
     .attr("y",  55)
     .attr("x", width)
-    .text('VALEUR');
+    .text(Math.floor(scope.moyn*10)/10);
                  
 var curseur = d3.svg.line()
     .x(function(d) { return d.x; })
