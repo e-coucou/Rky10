@@ -102,6 +102,7 @@
         // Dimensions.
 //		console.log(iElement[0]); //[0][0].getBoundingClientRect();
         // creation du conteneur
+		var margin = {top: 20, right: 20, bottom: 30, left: 50};
         var svg = d3.select(iElement[0])
               .append("svg")
               .attr("width", "100%")
@@ -111,8 +112,7 @@
             .append("g")
               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-		var margin = {top: 20, right: 20, bottom: 30, left: 40},
-            width =  d3.select(iElement[0])[0][0].offsetWidth - margin.right -margin.left,
+        var width =  d3.select(iElement[0])[0][0].offsetWidth - margin.right -margin.left,
             height = 550 - margin.top - margin.bottom;
 
           // on window resize, re-render d3 canvas
