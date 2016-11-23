@@ -254,14 +254,12 @@ svg.append("text")
               .datum(datac)
               .attr("class", "repere")
               .style("stroke-dasharray", ("10,5,2,5"))
-              .attr("d", repere_min);
-			   
+              .attr("d", repere_min);	   
 			svg.append("text")
 			  .data(datac)
 			  .attr("x", width)
 			  .attr("y", function(d) { return d.y;})
-			  .text(mini);
-	  
+			  .text(Math.floor(mini*10)/10);
 			  
             ordonne = height - (maxi-min)/((max-min)/height);
             datac = [ { "x" : 0, "y" : ordonne }, { "x" : width, "y" : ordonne } ];
@@ -271,7 +269,13 @@ svg.append("text")
               .attr("class", "repere")
               .style("stroke-dasharray", ("10,5,2,5"))
               .attr("d", repere_max);
-            ordonne = height - (scope.moyn-min)/((max-min)/height);
+			svg.append("text")
+			  .data(datac)
+			  .attr("x", width)
+			  .attr("y", function(d) { return d.y;})
+			  .text(Math.floor(maxi*10)/10);
+
+			ordonne = height - (scope.moyn-min)/((max-min)/height);
             datac = [ { "x" : 0, "y" : ordonne }, { "x" : width, "y" : ordonne } ];
             d3.selectAll(".repere_moy").remove();
             svg.append("path")
@@ -279,6 +283,11 @@ svg.append("text")
               .attr("class", "repere")
               .style("stroke-dasharray", ("10,5,2,5"))
               .attr("d", repere_moy);
+			svg.append("text")
+			  .data(datac)
+			  .attr("x", width)
+			  .attr("y", function(d) { return d.y;})
+			  .text(Math.floor(moyn*10)/10);
 
             svg.selectAll("text")
               .data(data)
