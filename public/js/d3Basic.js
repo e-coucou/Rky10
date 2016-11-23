@@ -102,7 +102,7 @@
         // Dimensions.
 //		console.log(iElement[0]); //[0][0].getBoundingClientRect();
         // creation du conteneur
-		var margin = {top: 10, right: 40, bottom: 10, left: 50};
+		var margin = {top: 10, right: 40, bottom: 30, left: 50};
         var svg = d3.select(iElement[0])
               .append("svg")
               .attr("width", "100%")
@@ -157,8 +157,9 @@
                  .attr("class", "date label")
                  .attr("text-anchor", "middle")
                  .attr("x",  function(d) {return d.x;} )
-                 .attr("y", 0)
-                 .text(function(d) {return date_text;});
+                 .attr("y", height)
+                  .append("tspan").attr("dy", "1.3em").text(function(d) {return date_text.split('\n')[0];})
+                  .append("tspan").attr("x",  function(d) {return d.x;} ).attr("dy", "1.3em").text(function(d) {return date_text.split('\n')[1];});
 
               svg.append("path")
                 .datum(datac)
