@@ -254,8 +254,14 @@ svg.append("text")
               .datum(datac)
               .attr("class", "repere")
               .style("stroke-dasharray", ("10,5,2,5"))
-              .attr("d", repere_min)
-			  .append("text").attr("x",width+5).attr("text",mini);
+              .attr("d", repere_min);
+			   
+			svg.append("text")
+			  .data(datac)
+			  .attr("x", width)
+			  .attr("y", function(d) { return d.y;})
+			  .text(mini);
+	  
 			  
             ordonne = height - (maxi-min)/((max-min)/height);
             datac = [ { "x" : 0, "y" : ordonne }, { "x" : width, "y" : ordonne } ];
