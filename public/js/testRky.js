@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('RkyApp.controllers')
+  angular.module('RkyApp.controllers', ['ngRoute'])
     .config(function($routeProvider) {
     $routeProvider
       .when("/", {
