@@ -51,60 +51,26 @@
     font-family: "PT Serif", serif;
     font-size: 8px;  }
 </style>
-<header>
-  <aside >Novembre, 2016</aside>
-  <aside >by e-Coucou</aside>
-</header>
-
+  <header>
+    <aside >Novembre, 2016</aside>
+    <aside >by e-Coucou</aside>
+  </header>
   <body ng-app="RkyApp" >
-      <div ng-controller="httpRky">
-        <h1>{{title}}</h1><hr>
-        <p>
-        <div ng-controller="selectRky" >
-            <label>Capteur :
-            <select ng-model="data.model" ng-options="option.scale for option in data.availableOptions"></select>
-            </label>
-<!--            <tt>model = </tt><span ng-bind="data.model.scale"></span> -->
-        </div>
-<div ng-controller="dateRky" ng-cloak class = "datepickerdemoBasicUsage">
-  <md-content layout-padding>
+    <div>
+      
+    </div>
 
-    <div layout-gt-xs="row">
-      <div flex-gt-xs>
-        <md-datepicker ng-model="fromDate" md-placeholder="From"></md-datepicker>
-      </div>
-      <div flex-gt-xs>
-        <md-datepicker ng-model="toDate" md-placeholder="to"></md-datepicker>
-      </div>
-      <div flex-gt-xs>selectionnez des dates</div>
-      <div flex-gt-xs><button ng-click="clickButton()">update</button>
-      </div>
-    </div>
-  </md-content>
-</div>
-<!--        <span>From</span>
-        <input type="text" ng-model="after"></input>
-        <span>to</span>
-        <input type="text" ng-model="before"></input>
-        <button ng-click="clickButton()">update</button>
--->
-        </p>
-        <d3-lines id="chart" data="d3Data" label="capteur" moyn="moyenne"></d3-lines>
-        <aside>Passez la souris au dessus les bars pour afficher les valeurs et vous déplacer dans le temps.</aside><br>
-        <span>Moyenne    -> {{moyenne}}</span><br>
-        <span>Nb valeurs -> {{nb}}</span>
-    </div>
     <p class="attribution">Source: <a href="https://github.com/e-coucou/Rky10">gitHub</a>.<br>
     eMail: <a href="mailto:eric@e-coucou.com">eric</a>.<br>
     c) <a href="https://rugby.e-coucou.com">e-Coucou</a></p>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
     <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
-<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
     <script src="js/app.js"></script>
     <script src="js/d3.js"></script>
     <script src="js/demoCtrl.js"></script>
