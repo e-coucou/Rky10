@@ -24,7 +24,7 @@
             controller: 'httpRky'
         });
     }
-  ]);
+  ]));
   angular.module('RkyApp.directives', ['d3']);
 
 
