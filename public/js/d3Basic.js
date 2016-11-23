@@ -106,7 +106,6 @@
         var svg = d3.select(iElement[0])
               .append("svg")
               .attr("width", "100%")
-//              .attr("width", width + margin.left + margin.right)
               .attr("height", 550)
 //              .attr("height", "100%")
             .append("g")
@@ -148,7 +147,7 @@
               var s_heure = d.heure.split(':');
               var date_text = s_date[1]+'/'+s_date[0]+'\n'+s_heure[0]+':'+s_heure[1];
               label.text(Math.round(d.value*100)/100) ;
-              var datac = [ { "x" : x(d,i), "y" : 20 }, { "x" : x(d,i), "y" : height } ];
+              var datac = [ { "x" : x(d,i), "y" : 0 }, { "x" : x(d,i), "y" : height+2 } ];
               d3.selectAll(".curseur").remove();
               d3.selectAll(".date").remove();
               var datadate = [{"x" : x(d,i), "text":d.heure}];
@@ -255,7 +254,9 @@ svg.append("text")
               .datum(datac)
               .attr("class", "repere")
               .style("stroke-dasharray", ("10,5,2,5"))
-              .attr("d", repere_min);
+              .attr("d", repere_min)
+			  .append("text").attr("x",width+5).attr("text",mini);
+			  
             ordonne = height - (maxi-min)/((max-min)/height);
             datac = [ { "x" : 0, "y" : ordonne }, { "x" : width, "y" : ordonne } ];
             d3.selectAll(".repere_max").remove();
