@@ -101,9 +101,9 @@
         link: function(scope, iElement, iAttrs) {
         // Dimensions.
         var margin = {top: 20, right: 20, bottom: 30, left: 40},
-            width = 800 - margin.right-margin.left,
+            width = d3.select(iElement[0])[0][0].offsetWidth - margin.right-margin.left,
             height = 400 - margin.top - margin.bottom;
-        // creation du contenair
+        // creation du conteneur
         var svg = d3.select(iElement[0])
               .append("svg")
               .attr("width", "100%")
