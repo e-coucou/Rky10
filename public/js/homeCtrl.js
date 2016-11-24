@@ -11,3 +11,20 @@
     }]);
 
 }());
+
+
+
+
+(function () {
+  'use strict';
+
+  angular.module('RkyApp.controllers')
+    .controller('newCtrl', ['$scope', function($scope){
+      $scope.title = "Listes des Capteurs";
+      
+      $scope.d3OnClick = function(item){
+        alert(item.name);
+      };
+    }]);
+
+}());

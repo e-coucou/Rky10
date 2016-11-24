@@ -19,6 +19,13 @@
         .when('/chart', {
             templateUrl: 'chart.html',
             controller: 'httpRky'
+        })
+        .when('/creer', {
+            templateUrl: 'new.html',
+            controller: 'newRky'
+        })
+		.otherwise({
+            redirectTo: '/home'
         });
       }
     ]);
