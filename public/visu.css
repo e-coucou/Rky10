@@ -4,6 +4,8 @@
 
 html {
   min-width: 1160px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 .rky body {
   background: #f5fffa;
