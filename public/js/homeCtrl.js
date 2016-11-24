@@ -21,7 +21,7 @@
   angular.module('RkyApp.controllers')
     .controller('newRky', ['$scope', function($scope){
       $scope.title = "Listes des Capteurs";
-      var capteur = { tag:'', info:'', name:'', unit:''};
+      $scope.capteur = { tag:'', info:'', name:'', unit:''};
       $scope.clickButton = function(){
         alert(capteur.name,'/',capteur.tag);
         console.log(capteur);
