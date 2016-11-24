@@ -23,7 +23,8 @@
       $scope.title = "Listes des Capteurs";
       var capteur = { tag:'', info:'', name:'', unit:''};
       $scope.clickButton = function(item){
-        alert(item.name,'/',item.tag);
+        alert(item.name,'/',capteur.tag);
+        console.log(capteur);
       };
     }]);
 
