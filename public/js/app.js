@@ -20,7 +20,7 @@
             templateUrl: 'chart.html',
             controller: 'httpRky'
         })
-        .when('/creer', {
+        .when('/new', {
             templateUrl: 'new.html',
             controller: 'newRky'
         })
