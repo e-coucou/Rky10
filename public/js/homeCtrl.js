@@ -21,7 +21,7 @@
   angular.module('RkyApp.controllers')
     .controller('newRky', ['$scope', function($scope){
       $scope.title = "Listes des Capteurs";
-      var capteur = { tag:'', info:'', name:'', unit''};
+      var capteur = { tag:'', info:'', name:'', unit:''};
       $scope.d3OnClick = function(item){
         alert(capteur.name,'/',capteur.tag);
       };
