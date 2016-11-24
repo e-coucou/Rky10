@@ -12,15 +12,19 @@
         <p>
 		c'est parti pour créer des mesures ...
         </p>
+        <div layout-gt-xs="row">
         <span>Tag:</span>
-        <input type="text" ng-model="capteur.tag"></input>
+        <input type="text" ng-model="capteur.tag"></input><br>
         <span>Libellé:</span>
-        <input type="text" ng-model="capteur.name"></input>
+        <input type="text" ng-model="capteur.name"></input><br>
         <span>Désignation:</span>
-        <input type="text" ng-model="capteur.info"></input>
+        <input type="text" ng-model="capteur.info"></input><br>
         <span>Unité:</span>
-        <input type="text" ng-model="capteur.unit"></input>
-        <button ng-click="clickButton()">créer</button>
+        <input type="text" ng-model="capteur.unit"></input><br>
+        <button ng-click="clickButton()">créer</button><br>
+        </div>
+        <div layout-gt-xs="row">
+        </div>
     </div>
   </body>
 </html>

@@ -36,11 +36,11 @@
         
             var config = {
                 headers : {
-                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                    'Content-Type': 'application/json;'
                 }
             }
 
-            $http.post('/ServerRequest/PostDataResponse', data, config)
+            $http.post('/api/v1/scale', data, config)
             .success(function (data, status, headers, config) {
                 $scope.PostDataResponse = data;
             })
