@@ -61,7 +61,7 @@ h1 {
   content: "|";
 }
 .rky footer {
-  margin-top: 5em;
+  margin-top: 0.5em;
 }
 h1 ~ aside {
   font-size: small;
