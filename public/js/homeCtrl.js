@@ -23,7 +23,7 @@
       $scope.title = "Listes des Capteurs";
       var capteur = { tag:'', info:'', name:'', unit:''};
       $scope.d3OnClick = function(item){
-        alert(capteur.name,'/',capteur.tag);
+        alert(item.name,'/',item.tag);
       };
     }]);
 
