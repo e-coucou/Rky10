@@ -23,8 +23,8 @@
       $scope.title = "Listes des Capteurs";
       $scope.capteur = { tag:'', info:'', name:'', unit:''};
       $scope.clickButton = function(){
-        alert(capteur.name,'/',capteur.tag);
-        console.log(capteur);
+        alert($scope.capteur.name,'/',$scope.capteur.tag);
+        console.log($scope.capteur);
       };
     }]);
 
