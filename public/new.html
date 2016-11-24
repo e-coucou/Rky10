@@ -12,6 +12,15 @@
         <p>
 		c'est parti pour créer des mesures ...
         </p>
+        <span>Tag:</span>
+        <input type="text" ng-model="capteur.tag"></input>
+        <span>Libellé:</span>
+        <input type="text" ng-model="capteur.name"></input>
+        <span>Désignation:</span>
+        <input type="text" ng-model="capteur.info"></input>
+        <span>Unité:</span>
+        <input type="text" ng-model="capteur.unit"></input>
+        <button ng-click="clickButton()">créer</button>
     </div>
   </body>
 </html>
