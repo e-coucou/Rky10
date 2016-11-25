@@ -68,7 +68,7 @@
 
     .controller('listCapteur', function(sensors, $scope) {
       console.log("in ng");
-        $scope.sensors = sensors.data;
+//        $scope.sensors = sensors.data;
     });
 
 }());
