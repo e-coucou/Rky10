@@ -65,7 +65,7 @@
     }
   })
 
-    .controller('listCapteur', function($scope, $http) {
+    .controller('listCapteur', function(sensors, $scope) {
         $scope.sensors = sensors.data;
     });
 
