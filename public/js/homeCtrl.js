@@ -17,15 +17,15 @@
 
   angular.module('RkyApp.controllers')
     .controller('newRky', ['$scope', '$http', 'Sensors', function($scope, $http, Sensors){
+
+      $scope.sensors = Sensors.data;
       $scope.title = "Listes des Capteurs";
       $scope.capteur = { tag:'', info:'', name:'', unit:''};
       $scope.clickButton = function(){
         alert($scope.capteur.name,'/',$scope.capteur.tag);
         console.log($scope.capteur);
       };
-      $scope.sensors = Sensors.data;
-      console.log(Sensors.data);
-/*
+ /*
             $scope.SendData = function () {
            // use $.param jQuery function to serialize data from JSON 
             var data = $.param({
