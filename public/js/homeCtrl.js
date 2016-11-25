@@ -31,7 +31,7 @@
 
     .controller('listCapteur',['Sensors','$scope' , function(sensors, $scope) {
         $scope.sensors = sensors.data;
-        console.log(sensors);
+        console.log(sensors.data);
     }]);
 
 }());
