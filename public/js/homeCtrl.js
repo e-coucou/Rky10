@@ -18,6 +18,7 @@
   angular.module('RkyApp.controllers')
     .controller('newRky', ['Sensors', '$scope', function(Sensors, $scope){
 
+console.log(Sensors);
       $scope.sensors = Sensors.data;
       $scope.title = "Listes des Capteurs";
       $scope.capteur = { tag:'', info:'', name:'', unit:''};
