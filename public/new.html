@@ -13,11 +13,11 @@
 		c'est parti pour créer des mesures ...
         </p>
         <div layout-gt-xs="row">
-        <span>Tag:</span><div flex-gt-xs>
-        <input margin-left=100px type="text" ng-model="capteur.tag"></input></div></div>
+          <span>Tag:</span>
+            <input margin-left=100px type="text" ng-model="capteur.tag"></input></div>
         <div layout-gt-xs="row">
-        <span>Libellé:</span>
-        <input type="text" ng-model="capteur.name"></input></div>
+          <span>Libellé:</span>
+            <input type="text" ng-model="capteur.name"></input></div>
         <div layout-gt-xs="row">
         <span>Désignation:</span>
         <input type="text" ng-model="capteur.info"></input></div>
@@ -26,19 +26,17 @@
         <input type="text" ng-model="capteur.unit"></input></div>
         <div layout-gt-xs="row">
         <button ng-click="clickButton()">créer</button></div>
-        <div layout-gt-xs="row">
-        </div>
     </div>
-<div class="container" ng-controller="listCapteur">
-  <table class="table table-hover">
-    <tbody>
-      <tr ng-repeat="sensor in sensors" style="cursor:pointer">
-        <td>
-         <a ng-href="#/api/v1/test/{{sensor}}">{{ sensor}} </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+    <div class="container" ng-controller="listCapteur">
+      <table class="table table-hover">
+        <tbody>
+          <tr ng-repeat="sensor in sensors" style="cursor:pointer">
+            <td>
+             <a ng-href="#/api/v1/test/{{sensor}}">{{ sensor}} </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>
