@@ -7,7 +7,8 @@
     <html class="rky">
   </head>
   <body ng-app="RkyApp" >
-    <div class="container" ng-controller="listCapteur">
+      <div ng-controller="newRky">
+    <div class="container" >
       <table class="table table-hover">
         <tbody>
           <tr ng-repeat="sensor in Sensors" style="cursor:pointer">
@@ -17,8 +18,7 @@
           </tr>
         </tbody>
       </table>
-    </div>
-      <div ng-controller="newRky">
+      </div>
         <h1>{{title}}</h1><hr>
         <p>
 		c'est parti pour créer des mesures ...
