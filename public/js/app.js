@@ -22,7 +22,12 @@
         })
         .when('/new', {
             templateUrl: 'new.html',
-            controller: 'newRky'
+            controller: 'newRky',
+            resolve: {
+              sensors: function(Sensors) {
+                  return Sensors.getSensors();
+              }
+            }
         })
 		.otherwise({
             redirectTo: '/home'
