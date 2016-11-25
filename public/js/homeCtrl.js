@@ -58,6 +58,7 @@
     this.getSensors = function() {
       return $http.get("/api/v1/name").
         then(function(response) {
+          console.log(response);
             return response;
         }, function(response) {
             alert("Error retrieving name of sensors.");
@@ -66,6 +67,7 @@
   })
 
     .controller('listCapteur', function(sensors, $scope) {
+      console.log("in ng");
         $scope.sensors = sensors.data;
     });
 
