@@ -20,7 +20,7 @@
 
 console.log(Sensors);
       $scope.sensors = Sensors.data;
-/*      $scope.title = "Listes des Capteurs";
+      $scope.title = "Listes des Capteurs";
       $scope.capteur = { tag:'', info:'', name:'', unit:''};
       $scope.clickButton = function(){
         alert($scope.capteur.name,'/',$scope.capteur.tag);
