@@ -8,18 +8,6 @@
   </head>
   <body ng-app="RkyApp" >
       <div ng-controller="newRky">
-    <div class="container" >
-    <p>toto</p>
-      <table class="table table-hover">
-        <tbody>
-          <tr ng-repeat="sensor in Sensors" style="cursor:pointer">
-            <td>
-             <a ng-href="#/api/v1/test/{{sensor}}">Yop {{ sensor}} </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
         <h1>{{title}}</h1><hr>
         <p>
 		c'est parti pour créer des mesures ...
@@ -38,6 +26,18 @@
         <input type="text" ng-model="capteur.unit"></input></div>
         <div layout-gt-xs="row">
         <button ng-click="clickButton()">créer</button></div>
+    <div class="container" >
+    <p>toto</p>
+      <table class="table table-hover">
+        <tbody>
+          <tr ng-repeat="sensor in Sensors" style="cursor:pointer">
+            <td>
+             <a ng-href="#/api/v1/test/{{sensor}}">Yop {{ sensor}} </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
     </div>
   </body>
 </html>
