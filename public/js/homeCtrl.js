@@ -16,7 +16,7 @@
   'use strict';
 
   angular.module('RkyApp.controllers')
-    .controller('newRky', ['$scope', '$http', 'Sensors', function($scope, $http, Sensors){
+    .controller('newRky', ['Sensors', '$scope', function(Sensors, $scope){
 
       $scope.sensors = Sensors.data;
       $scope.title = "Listes des Capteurs";
