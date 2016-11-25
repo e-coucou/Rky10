@@ -29,7 +29,7 @@
     }
   })
 
-    .controller('listCapteur',['sensors','$scope' , function(sensors, $scope) {
+    .controller('listCapteur',['Sensors','$scope' , function(sensors, $scope) {
         $scope.sensors = sensors.data;
     }]);
 
