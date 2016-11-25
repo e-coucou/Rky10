@@ -29,9 +29,9 @@
     }
   })
 
-    .controller('listCapteur',['Sensors','$scope' , function(sensors, $scope) {
-        $scope.sensors = sensors.data;
-        console.log(sensors.data);
+    .controller('listCapteur',['Sensors','$scope' , function(Sensors, $scope) {
+        $scope.sensors = Sensors.data;
+        console.log(Sensors.data);
     }]);
 
 }());

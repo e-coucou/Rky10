@@ -24,7 +24,7 @@
             templateUrl: 'new.html',
             controller: 'newRky',
             resolve: {
-              sensors: function(Sensors) {
+              Sensors: function(Sensors) {
                   return Sensors.getSensors();
               }
             }
