@@ -30,7 +30,6 @@
   })
 
     .controller('listCapteur',['Sensors','$scope' , function(Sensors, $scope) {
-      console.log("in ng");
         $scope.sensors = Sensors.data;
     }]);
 
