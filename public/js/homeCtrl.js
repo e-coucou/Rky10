@@ -52,7 +52,7 @@
             });
         };
 
-    }]);
+    }])
 
     .controller('listCapteur', ['$scope', '$http', function($scope, $http) {
 
