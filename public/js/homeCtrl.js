@@ -29,10 +29,10 @@
     }
   })
 
-    .controller('listCapteur', function(sensors, $scope) {
+    .controller('listCapteur',['Sensors' , function(sensors, $scope) {
       console.log("in ng");
         $scope.sensors = sensors.data;
-    });
+    }]);
 
 }());
 
