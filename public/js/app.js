@@ -29,7 +29,7 @@
               }
             }
         })
-		.otherwise({
+		    .otherwise({
             redirectTo: '/home'
         });
       }
@@ -37,7 +37,7 @@
 
   // setup dependency injection
   angular.module('d3', []);
-  angular.module('RkyApp.controllers', ['ngMaterial', 'ngMessages']);
+  angular.module('RkyApp.controllers', ['ngMaterial', 'ngMessages','ngRoute']);
   angular.module('RkyApp.directives', ['d3']);
 
 
