@@ -16,7 +16,7 @@
   'use strict';
 
   angular.module('RkyApp.controllers')
-    .controller('newRky', ['$scope', '$http', 'Sensors', function($scope, $http,Sensors){
+    .controller('newRky', ['$scope', '$http', 'Sensors', function($scope, $http, Sensors){
       $scope.title = "Listes des Capteurs";
       $scope.capteur = { tag:'', info:'', name:'', unit:''};
       $scope.clickButton = function(){
@@ -25,7 +25,7 @@
       };
       $scope.sensors = Sensors.data;
       console.log(Sensors.data);
-
+/*
             $scope.SendData = function () {
            // use $.param jQuery function to serialize data from JSON 
             var data = $.param({
@@ -50,7 +50,7 @@
                     "<hr />config: " + config;
             });
         };
-
+*/
     }])
      .service("Sensors", function($http) {
     this.getSensors = function() {
