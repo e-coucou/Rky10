@@ -19,7 +19,7 @@
   'use strict';
 
   angular.module('RkyApp.controllers')
-    .controller('newRky', ['$scope', '$scope', function($scope, $http){
+    .controller('newRky', ['$scope', '$http', function($scope, $http){
       $scope.title = "Listes des Capteurs";
       $scope.capteur = { tag:'', info:'', name:'', unit:''};
       $scope.clickButton = function(){
@@ -51,6 +51,10 @@
                     "<hr />config: " + config;
             });
         };
+
+    }]);
+
+    .controller('listCapteur', ['$scope', '$http', function($scope, $http) {
 
     }]);
 
