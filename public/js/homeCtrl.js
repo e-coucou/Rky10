@@ -16,37 +16,15 @@
   'use strict';
 
   angular.module('RkyApp.controllers')
-
-  .service("Sensors", function($http) {
-    this.getSensors = function() {
-      return $http.get("/api/v1/name").
-        then(function(response) {
-          console.log(response);
-            return response;
-        }, function(response) {
-            alert("Error retrieving name of sensors.");
-        });
-    }
-  })
-
-    .controller('listCapteur',['Sensors','$scope' , function(Sensors, $scope) {
-        $scope.sensors = Sensors.data;
-        console.log(Sensors.data);
-    }]);
-
-}());
-
-(function () {
-  'use strict';
-
-  angular.module('RkyApp.controllers')
-    .controller('newRky', ['$scope', '$http', function($scope, $http){
+    .controller('newRky', ['$scope', '$http', 'Sensors', function($scope, $http,Sensors){
       $scope.title = "Listes des Capteurs";
       $scope.capteur = { tag:'', info:'', name:'', unit:''};
       $scope.clickButton = function(){
         alert($scope.capteur.name,'/',$scope.capteur.tag);
         console.log($scope.capteur);
       };
+      $scope.sensors = Sensors.data;
+      console.log(Sensors.data);
 
             $scope.SendData = function () {
            // use $.param jQuery function to serialize data from JSON 
@@ -73,6 +51,17 @@
             });
         };
 
-    }]);
+    }])
+     .service("Sensors", function($http) {
+    this.getSensors = function() {
+      return $http.get("/api/v1/name").
+        then(function(response) {
+          console.log(response);
+            return response;
+        }, function(response) {
+            alert("Error retrieving name of sensors.");
+        });
+    }
+  });
 
 }());

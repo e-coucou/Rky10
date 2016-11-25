@@ -22,7 +22,7 @@
         })
         .when('/new', {
             templateUrl: 'new.html',
-            controller: 'newRky', 'listCapteur',
+            controller: 'newRky',
             resolve: {
               Sensors: function(Sensors) {
                   return Sensors.getSensors();
