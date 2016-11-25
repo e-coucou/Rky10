@@ -54,8 +54,19 @@
 
     }])
 
-    .controller('listCapteur', ['$scope', '$http', function($scope, $http) {
+  .service("Sensors", function($http) {
+    this.getSensors = function() {
+      return $http.get("/api/v1/name").
+        then(function(response) {
+            return response;
+        }, function(response) {
+            alert("Error retrieving name of sensors.");
+        });
+    }
+  })
 
-    }]);
+    .controller('listCapteur', function($scope, $http) {
+        $scope.sensors = sensors.data;
+    });
 
 }());
