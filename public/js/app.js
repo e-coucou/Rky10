@@ -37,7 +37,7 @@
 
   // setup dependency injection
   angular.module('d3', []);
-  angular.module('RkyApp.controllers', ['ngMaterial', 'ngMessages','ngRoute', 'ngRepeat']);
+  angular.module('RkyApp.controllers', ['ngMaterial', 'ngMessages','ngRoute']);
   angular.module('RkyApp.directives', ['d3']);
 
 
