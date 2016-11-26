@@ -27,11 +27,11 @@
         <button ng-click="clickButton()">créer</button></div>
     <table class="table table-hover">  
     <tr ng-model="sensors" ng-repeat="x in sensors">
-    <td>{{$index}}</td><td>{{x}}</td></tr> 
+    <td>{{$index}}</td><td ng-href="#/api/v1/test/{{sensor}}">{{x}}</td></tr> 
     </table>
       <table class="table table-hover">
         <tbody>
-          <tr ng-model="sensors" ng-repeat="sensor in Sensors" style="cursor:pointer">
+          <tr ng-model="sensors" ng-repeat="sensor in sensors" style="cursor:pointer">
             <td>
              <a ng-href="#/api/v1/test/{{sensor}}">{{ sensor}} </a>
             </td>
