@@ -19,7 +19,7 @@
     .controller('newRky', ['Sensors', '$scope', function(Sensors, $scope){
 
       $scope.sensors = Sensors.data;
-console.log("controller: ", sensors);
+console.log("controller: ", $scope.sensors);
       $scope.title = "Listes des Capteurs";
       $scope.capteur = { tag:'first', info:'debut', name:'begin', unit:'start'};
       $scope.clickButton = function(){
