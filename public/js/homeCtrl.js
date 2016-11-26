@@ -18,7 +18,7 @@
   angular.module('RkyApp.controllers')
     .controller('newRky', ['Sensors', '$scope', function(Sensors, $scope){
 
-console.log(Sensors);
+console.log("controller: ", Sensors);
       $scope.sensors = Sensors.data;
       $scope.title = "Listes des Capteurs";
       $scope.capteur = { tag:'', info:'', name:'', unit:''};
@@ -57,7 +57,7 @@ console.log(Sensors);
     this.getSensors = function() {
       return $http.get("/api/v1/name").
         then(function(response) {
-          console.log(response);
+          console.log("service: ", response);
             return response;
         }, function(response) {
             alert("Error retrieving name of sensors.");
