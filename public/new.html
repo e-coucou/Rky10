@@ -27,7 +27,7 @@
         <button ng-click="clickButton()">créer</button></div>
     <table>  
     <tr ng-model="sensors" ng-repeat="x in sensors">
-    <td>test {{x}}</td></tr> 
+    <td>{{$index}}</td><td>{{x}}</td></tr> 
     </table>
     <div class="container" >
       <table class="table table-hover">
