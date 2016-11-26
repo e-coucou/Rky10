@@ -55,7 +55,7 @@ console.log("controller: ", $scope.sensors);
     }])
      .service("Sensors", function($http) {
     this.getSensors = function() {
-      return $http.get("/api/v1/name").
+      return $http.get("/api/v1/list/scale").
         then(function(response) {
           console.log("service: ", response);
             return response;
