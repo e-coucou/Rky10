@@ -144,4 +144,8 @@ svg {
     right: 80px;
     top: 15px;
 }
+table {
+  .tablerow:hover {
+    background-color: blue;}
+}
 
