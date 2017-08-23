@@ -140,7 +140,7 @@ app.post("/api/v1/webhook", function(req,res) {
 //	req.body.result.fulfillment.speech = "Je connais la réponse";
 //	req.body.result.
 	obj.id = req.body.id;
-	obj.metadata.intentId = req.body.result.metadata.itentId;
+	obj.metadata.result.intentId = req.body.result.metadata.itentId;
 	obj.sessionId = req.body.sessionId;
 	console.log(req.body);
 	console.log(obj);
