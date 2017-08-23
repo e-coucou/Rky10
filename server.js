@@ -145,7 +145,7 @@ app.post("/api/v1/webhook", function(req,res) {
 	console.log(req.body);
 	console.log(obj);
 	console.log(Date.now())
-	res.status(200).json(req.body);
+	res.status(200).json(obj);
 //	res.render('index', { title: 'WebHook Info' });
 });
 
