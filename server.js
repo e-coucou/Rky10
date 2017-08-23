@@ -108,7 +108,6 @@ app.post("/api/v1/webhook", function(req,res) {
 	console.log(req.body);
 	res.status(200).json(req.body);
 //	res.render('index', { title: 'WebHook Info' });
-	console.log(res);
 });
 
 /*  "/contacts/:id"
