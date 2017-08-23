@@ -103,8 +103,8 @@ app.post("/api/v1/scale", function(req, res) {
 // WebHook ?!
 app.post("/api/v1/webhook", function(req,res) {
 	console.log(req.body);
-//	res.status(200);
-	res.render('index', { title: 'WebHook Info' });
+	res.status(200);
+//	res.render('index', { title: 'WebHook Info' });
 });
 
 /*  "/contacts/:id"
