@@ -1,8 +1,10 @@
 //-------------
-// version 1.0
+// version 1.1
 // maj 11/2016
 // by e-Coucou
 //-------------
+// 08/2017 try to add webhook !!
+//
 var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
@@ -97,6 +99,13 @@ app.post("/api/v1/scale", function(req, res) {
     });
 });
 
+//------
+// WebHook ?!
+app.post("/api/v1/webhook", function(req,res) {
+	console.log(req.body);
+	res.status(200);
+	res.render('index', { title: 'WebHook Info' });
+});
 
 /*  "/contacts/:id"
  *    GET: find contact by id
