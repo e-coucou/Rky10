@@ -101,11 +101,46 @@ app.post("/api/v1/scale", function(req, res) {
 
 //------
 // WebHook ?!
+var obj = {
+  "id": "b340a1f7-abee-4e13-9bdd-5e8938a48b7d",
+  "timestamp": "2017-02-09T15:38:26.548Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "my name is Sam and I live in Paris",
+    "action": "greetings",
+    "actionIncomplete": false,
+    "parameters": {},
+    "contexts": [],
+    "metadata": {
+      "intentId": "9f41ef7c-82fa-42a7-9a30-49a93e2c14d0",
+      "webhookUsed": "false",
+      "webhookForSlotFillingUsed": "false",
+      "intentName": "greetings"
+    },
+    "fulfillment": {
+      "speech": "Hi Sam! Nice to meet you!",
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Hi Sam! Nice to meet you!"
+        }
+      ]
+    },
+    "score": 1
+  },
+  "status": {
+    "code": 200,
+    "errorType": "success"
+  },
+  "sessionId": "4b6a6779-b8ea-4094-b2ed-a302ba201815"
+}
 app.post("/api/v1/webhook", function(req,res) {
 	console.log(req.body.result.fulfillment.speech);
 	req.body.result.fulfillment.speech = "Je connais la réponse";
 //	req.body.result.
 	console.log(req.body);
+	concole.log(obj);
 	res.status(200).json(req.body);
 //	res.render('index', { title: 'WebHook Info' });
 });
