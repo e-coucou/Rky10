@@ -102,28 +102,28 @@ app.post("/api/v1/scale", function(req, res) {
 //------
 // WebHook ?!
 var obj = {
-  "id": "b340a1f7-abee-4e13-9bdd-5e8938a48b7d",
+  "id": "id",
   "timestamp": "2017-02-09T15:38:26.548Z",
-  "lang": "en",
+  "lang": "fr",
   "result": {
     "source": "agent",
-    "resolvedQuery": "my name is Sam and I live in Paris",
-    "action": "greetings",
+    "resolvedQuery": "Population Test",
+    "action": "complete",
     "actionIncomplete": false,
     "parameters": {},
     "contexts": [],
     "metadata": {
       "intentId": "9f41ef7c-82fa-42a7-9a30-49a93e2c14d0",
-      "webhookUsed": "false",
+      "webhookUsed": "true",
       "webhookForSlotFillingUsed": "false",
-      "intentName": "greetings"
+      "intentName": "Population"
     },
     "fulfillment": {
-      "speech": "Hi Sam! Nice to meet you!",
+      "speech": "Ca roule pour moi",
       "messages": [
         {
           "type": 0,
-          "speech": "Hi Sam! Nice to meet you!"
+          "speech": "Ca roule pour moi"
         }
       ]
     },
@@ -137,10 +137,14 @@ var obj = {
 }
 app.post("/api/v1/webhook", function(req,res) {
 	console.log(req.body.result.fulfillment.speech);
-	req.body.result.fulfillment.speech = "Je connais la réponse";
+//	req.body.result.fulfillment.speech = "Je connais la réponse";
 //	req.body.result.
+	obj.id = req.body.id;
+	obj.metadata.intentId = req.body.result.metadata.itentId;
+	obj.sessionId = req.body.sessionId;
 	console.log(req.body);
 	console.log(obj);
+	console.log(Date.now())
 	res.status(200).json(req.body);
 //	res.render('index', { title: 'WebHook Info' });
 });
