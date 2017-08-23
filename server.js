@@ -103,9 +103,12 @@ app.post("/api/v1/scale", function(req, res) {
 // WebHook ?!
 app.post("/api/v1/webhook", function(req,res) {
 	console.log(req.body.result.fulfillment.speech);
-	req.body.result.fulfillment.speech = "je connais la reponse";
+	req.body.result.fulfillment.speech = "Je connais la réponse";
+	req.body.status.code = 200;
+	req.body.errtype = "Success";
 	console.log(req.body);
 	res.status(200);
+	res.json(req.body);
 //	res.render('index', { title: 'WebHook Info' });
 });
 
