@@ -1,0 +1,39 @@
+{
+  "id": "73b676cf-4360-4eda-8123-e36651c9e451",
+  "timestamp": "2017-08-23T07:57:36.226Z",
+  "lang": "fr",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "en 2012 pour les 25 ans",
+    "action": "",
+    "actionIncomplete": false,
+    "parameters": {
+      "age": "25",
+      "geo-country": "Espagne",
+      "year": "2012"
+    },
+    "contexts": [],
+    "metadata": {
+      "intentId": "cb609a03-16f0-4dd3-beaa-29c452cf7ccf",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false",
+      "intentName": "Population"
+    },
+    "fulfillment": {
+      "speech": "Parfait! la population de Espagne en 2012 pour les 25 ans est connue.",
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Parfait! la population de Espagne en 2012 pour les 25 ans est connue."
+        }
+      ]
+    },
+    "score": 1
+  },
+  "status": {
+    "code": 206,
+    "errorType": "partial_content",
+    "errorDetails": "Webhook call failed. Error: 404 Not Found"
+  },
+  "sessionId": "c17e6dd6-e749-4605-9209-e78e0490378d"
+}
