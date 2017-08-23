@@ -140,7 +140,7 @@ app.post("/api/v1/webhook", function(req,res) {
 	req.body.result.fulfillment.speech = "Je connais la réponse";
 //	req.body.result.
 	console.log(req.body);
-	concole.log(obj);
+	console.log(obj);
 	res.status(200).json(req.body);
 //	res.render('index', { title: 'WebHook Info' });
 });
