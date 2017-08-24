@@ -138,7 +138,7 @@ var obj = {
   "sessionId": "4b6a6779-b8ea-4094-b2ed-a302ba201815"
 };
 var reponse = { source : "Heroku server", speech : "xx", displayText : "xx" };
-var text = "Je connais la réponse concernant {0}";
+var text = "réponse";
 
 app.post("/api/v1/webhook", function(req,res) {
 	console.log(req.body.result.fulfillment.speech);
@@ -150,7 +150,7 @@ app.post("/api/v1/webhook", function(req,res) {
 	console.log(req.body);
 	console.log(obj);
 	console.log(Date.now())
-	text = text.format(req.body.result.parameters.country);
+	text = util.format("Je connais la réponse concernant %s",req.body.result.parameters.country);
 	console.log(text);
 	reponse.speech = text;
 	reponse.displayText = text;
