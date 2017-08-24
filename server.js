@@ -134,10 +134,10 @@ var obj = {
     "errorType": "success"
   },
   "sessionId": "4b6a6779-b8ea-4094-b2ed-a302ba201815"
-}
-var reponse = {
-	source : "Heroku server", speech : "je connais cette information", displayText : "je la connais c'est 25" 
-}
+};
+var reponse = { source : "Heroku server", speech : "xx", displayText : "xx" };
+var text = "Je connais la réponse concernant {0}";
+
 app.post("/api/v1/webhook", function(req,res) {
 	console.log(req.body.result.fulfillment.speech);
 //	req.body.result.fulfillment.speech = "Je connais la réponse";
@@ -148,6 +148,10 @@ app.post("/api/v1/webhook", function(req,res) {
 	console.log(req.body);
 	console.log(obj);
 	console.log(Date.now())
+	text = text.format(req.body.result.parameters.geo-country);
+	console.log(text);
+	reponse.speech = text;
+	reponse.displayText = text;
 	res.setHeader('Content-Type', 'application/json'); //Requires application/json MIME type
 	res.status(200).json(reponse); //try !
 //	res.render('index', { title: 'WebHook Info' });
