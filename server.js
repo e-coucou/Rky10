@@ -136,7 +136,7 @@ var obj = {
   "sessionId": "4b6a6779-b8ea-4094-b2ed-a302ba201815"
 }
 var reponse = {
-	Source : "Heroku server", Speech : "je connais cette information", DisplayText : "je la connais c'est 25" 
+	source : "Heroku server", speech : "je connais cette information", displayText : "je la connais c'est 25" 
 }
 app.post("/api/v1/webhook", function(req,res) {
 	console.log(req.body.result.fulfillment.speech);
@@ -148,7 +148,8 @@ app.post("/api/v1/webhook", function(req,res) {
 	console.log(req.body);
 	console.log(obj);
 	console.log(Date.now())
-	res.status(200).json(obj);
+	res.setHeader('Content-Type', 'application/json'); //Requires application/json MIME type
+	res.status(200).json(reponse); //try !
 //	res.render('index', { title: 'WebHook Info' });
 });
 
