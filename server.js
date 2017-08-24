@@ -11,6 +11,8 @@ var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
 
+require('util');
+
 var CONTACTS_COLLECTION = "contacts";
 
 var app = express();
