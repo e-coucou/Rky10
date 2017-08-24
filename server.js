@@ -148,7 +148,7 @@ app.post("/api/v1/webhook", function(req,res) {
 	console.log(req.body);
 	console.log(obj);
 	console.log(Date.now())
-	text = text.format(req.body.result.parameters.geo-country);
+	text = text.format(req.body.result.parameters.country);
 	console.log(text);
 	reponse.speech = text;
 	reponse.displayText = text;
