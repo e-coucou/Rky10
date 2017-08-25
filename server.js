@@ -141,16 +141,15 @@ var reponse = { source : "Heroku server", speech : "xx", displayText : "xx" };
 var text = "réponse";
 
 app.post("/api/v1/webhook", function(req,res) {
-	console.log(req.body.result.fulfillment.speech);
-//	req.body.result.fulfillment.speech = "Je connais la réponse";
-//	req.body.result.
 	obj.id = req.body.id;
 	obj.result.metadata.intentId = req.body.result.metadata.itentId;
 	obj.sessionId = req.body.sessionId;
 	console.log(req.body);
-	console.log(obj);
 	console.log(Date.now())
-	text = util.format("Je connais la réponse concernant %s",req.body.result.parameters.country);
+	var pays = req.body.result.parameters.country;
+	var annee = req.body.result.parameters.annee;
+	var age = req.body.result.parameters.age;
+	text = util.format("Je connais la réponse concernant %s pour l'année %s et la catégorie d'age de %s ans.",pays,annee,age);
 	console.log(text);
 	reponse.speech = text;
 	reponse.displayText = text;
