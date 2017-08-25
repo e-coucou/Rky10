@@ -150,11 +150,11 @@ app.post("/api/v1/webhook", function(req,res) {
 	var annee = req.body.result.parameters.annee;
 	var age = req.body.result.parameters.age;
 	text = util.format("Je connais la réponse concernant %s pour l'année %s et la catégorie d'age de %s ans.",pays,annee,age);
-	console.log(text);
 	reponse.speech = text;
 	reponse.displayText = text;
 	res.setHeader('Content-Type', 'application/json'); //Requires application/json MIME type
 	res.status(200).json(reponse); //try !
+	console.log(reponse);
 //	res.render('index', { title: 'WebHook Info' });
 });
 
