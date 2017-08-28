@@ -160,7 +160,7 @@ app.post("/api/v1/webhook", function(req,res) {
         var result = JSON.parse(body.join(''))
 //       return result
         console.log(result[0]);
-	text = util.format("Je connais la réponse concernant %s pour l'année %s et la catégorie d'age de %s ans. Sur un total de %s personnes il y a %s femmes et %s hommes",pays,annee,age,result[0].total,result[0].females,result[0].hommes);
+	text = util.format("Je connais la réponse concernant %s pour l'année %s et la catégorie d'age de %s ans. Sur un total de %s personnes il y a %s femmes et %s hommes",pays,annee,age,result[0].total,result[0].females,result[0].males);
 	reponse.speech = text;
 	reponse.displayText = text;
 	res.setHeader('Content-Type', 'application/json'); //Requires application/json MIME type
