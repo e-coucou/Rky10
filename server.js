@@ -157,7 +157,7 @@ app.post("/api/v1/webhook", function(req,res) {
           body.push(chunk);
       });
       resp.on('end', function() {
-        var result = JSON.parse(data.join(''))
+        var result = JSON.parse(body.join(''))
 //       return result
         console.log("Body: " + result);
 			  console.log("Femmes: " + result.females);
