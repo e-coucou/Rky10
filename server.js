@@ -12,6 +12,7 @@ var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
 
 const util = require('util');
+var http = require('http');
 
 var CONTACTS_COLLECTION = "contacts";
 
@@ -149,6 +150,13 @@ app.post("/api/v1/webhook", function(req,res) {
 	var pays = req.body.result.parameters.country;
 	var annee = req.body.result.parameters.annee;
 	var age = req.body.result.parameters.age;
+	// on interroge le serveur de population.io
+        apiResponse, err := http.Get("http://api.population.io/1.0/population/" + annee + "/" + pays + "/" + age + "/?format=json")
+        if err != nil {
+            fmt.Println(err)
+            http.Error(w, "Error in decoding the Request data", http.StatusInternalServerError)
+        }
+	console.log(apiResponse.body);
 	text = util.format("Je connais la réponse concernant %s pour l'année %s et la catégorie d'age de %s ans.",pays,annee,age);
 	reponse.speech = text;
 	reponse.displayText = text;
