@@ -151,7 +151,15 @@ app.post("/api/v1/webhook", function(req,res) {
 	var annee = req.body.result.parameters.annee;
 	var age = req.body.result.parameters.age;
 	// on interroge le serveur de population.io
-        apiResponse = http.get("http://api.population.io/1.0/population/" + annee + "/" + pays + "/" + age + "/?format=json", function (resp) { console.log(resp.body); });
+        apiResponse = http.get("http://api.population.io/1.0/population/" + annee + "/" + pays + "/" + age + "/?format=json", function (resp) { 
+		  
+		  resp.on("data", function(chunk) {
+			console.log("BODY: " + chunk);
+			});
+			}).on('error', function(e) {
+		console.log("Got error: " + e.message);
+		});
+		
 	text = util.format("Je connais la réponse concernant %s pour l'année %s et la catégorie d'age de %s ans.",pays,annee,age);
 	reponse.speech = text;
 	reponse.displayText = text;
