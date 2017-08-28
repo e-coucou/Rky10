@@ -151,11 +151,12 @@ app.post("/api/v1/webhook", function(req,res) {
 	var annee = req.body.result.parameters.annee;
 	var age = req.body.result.parameters.age;
 	// on interroge le serveur de population.io
-        apiResponse = http.get("http://api.population.io/1.0/population/" + annee + "/" + pays + "/" + age + "/?format=json", function (resp) { 
-		  
+  apiResponse = http.get("http://api.population.io/1.0/population/" + annee + "/" + pays + "/" + age + "/?format=json", function (resp) { 
+		  let body = [];
 		  resp.on("data", function(chunk) {
-			console.log("BODY: " + chunk);
-			console.log("Femmes: " + chunk[0].females);
+      body.push(chunk);
+			console.log("BODY: " + body);
+			console.log("Femmes: " + body.females);
 	text = util.format("Je connais la réponse concernant %s pour l'année %s et la catégorie d'age de %s ans.",pays,annee,age);
 	reponse.speech = text;
 	reponse.displayText = text;
