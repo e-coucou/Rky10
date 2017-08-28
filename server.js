@@ -155,17 +155,18 @@ app.post("/api/v1/webhook", function(req,res) {
 		  
 		  resp.on("data", function(chunk) {
 			console.log("BODY: " + chunk);
-			});
-			}).on('error', function(e) {
-		console.log("Got error: " + e.message);
-		});
-		
+			console.log("Femmes: " + chunk[0].females);
 	text = util.format("Je connais la réponse concernant %s pour l'année %s et la catégorie d'age de %s ans.",pays,annee,age);
 	reponse.speech = text;
 	reponse.displayText = text;
 	res.setHeader('Content-Type', 'application/json'); //Requires application/json MIME type
 	res.status(200).json(reponse); //try !
 	console.log(reponse);
+			});
+			}).on('error', function(e) {
+		console.log("Got error: " + e.message);
+		});
+		
 //	res.render('index', { title: 'WebHook Info' });
 });
 
