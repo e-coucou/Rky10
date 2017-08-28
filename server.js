@@ -159,8 +159,8 @@ app.post("/api/v1/webhook", function(req,res) {
       resp.on('end', function() {
         var result = JSON.parse(body.join(''))
 //       return result
-        console.log("Body: " + result);
-			  console.log("Femmes: " + result.females);
+        console.log("Body: " + result[0]);
+			  console.log("Femmes: " + result[0].females);
 	text = util.format("Je connais la réponse concernant %s pour l'année %s et la catégorie d'age de %s ans.",pays,annee,age);
 	reponse.speech = text;
 	reponse.displayText = text;
