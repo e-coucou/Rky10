@@ -151,27 +151,24 @@ app.post("/api/v1/webhook", function(req,res) {
 	var annee = req.body.result.parameters.annee;
 	var age = req.body.result.parameters.age;
 	// on interroge le serveur de population.io
-  apiResponse = http.get("http://api.population.io/1.0/population/" + annee + "/" + pays + "/" + age + "/?format=json", function (resp) { 
-		  let body = [];
-		  resp.on("data", function(chunk) {
-          body.push(chunk);
-      });
-      resp.on('end', function() {
-        var result = JSON.parse(body.join(''))
-//       return result
-        console.log(result[0]);
-	text = util.format("Je connais la réponse concernant %s pour l'année %s et la catégorie d'age de %s ans. Sur un total de %s personnes il y a %s femmes et %s hommes",pays,annee,age,result[0].total,result[0].females,result[0].males);
-	reponse.speech = text;
-	reponse.displayText = text;
-	res.setHeader('Content-Type', 'application/json'); //Requires application/json MIME type
-	res.status(200).json(reponse); //try !
-	console.log(reponse);
+	apiResponse = http.get("http://api.population.io/1.0/population/" + annee + "/" + pays + "/" + age + "/?format=json", function (resp) { 
+		let body = [];
+		resp.on("data", function(chunk) {
+			body.push(chunk); });
+		resp.on('end', function() {
+			var result = JSON.parse(body.join(''))
+			console.log(result[0]);
+			text = util.format("Je connais la réponse concernant %s pour l'année %s et la catégorie d'age de %s ans. Sur un total de %s personnes il y a %s femmes et %s hommes",pays,annee,age,result[0].total,result[0].females,result[0].males);
+			reponse.speech = text;
+			reponse.displayText = text;
+			res.setHeader('Content-Type', 'application/json'); //Requires application/json MIME type
+			res.status(200).json(reponse); //try !
+			console.log(reponse);  });
+		}).on('error', function(e) {
+			console.log("Got error: " + e.message);
+			res.status(404).json({source : "Heroku server", speech : "No data found", displayText : "No data found " }); //try ! 
 			});
-			}).on('error', function(e) {
-		console.log("Got error: " + e.message);
-		});
 		
-//	res.render('index', { title: 'WebHook Info' });
 });
 
 /*  "/contacts/:id"
